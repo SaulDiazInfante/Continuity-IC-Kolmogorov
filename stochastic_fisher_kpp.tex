@@ -1,0 +1,78 @@
+Let $\mathcal{H} = L^2 (0,1)$. We consider the stochastic Fisher-KPP 
+    equation in the interval $[0, 1]$
+    \begin{equation}
+        \label{eqn:fisher-kpp}
+        \begin{aligned}
+            d X(t, \xi) &= 
+                \left[
+                    \nu 
+                    \partial_{\xi} ^ 2 X(t, \xi)
+                    +
+                    X(t, \xi) (1 -X(t, \xi) )
+                \right]
+                dt
+                +
+                dW(t, \xi),
+            \\
+            X(t, 0) &= X(t, 1) =0, \quad t>0, 
+            \\
+            X(0, \xi) &= x(\xi), \quad x\in \mathcal{H}
+        \end{aligned}
+    \end{equation}
+    
+\begin{table}[H]
+    \begin{tabular}{rc}
+        \toprule
+        $h$ 
+        &
+        $x$
+        \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+%
+\begin{figure}[H]
+    \centering
+    \caption{
+        Numerical Solution of the Fisher-KPP 
+        \cref{eqn:fisher-kpp} 
+        with initial conditions $x$, $y$ at time
+        $t=0$.
+     }
+    \label{fig:fisher_kpp_approximation_t0}
+    \includegraphics[width=\linewidth, keepaspectratio]%
+    {StochasticFisherEquation/Approximation_t=0}
+\end{figure}
+%
+\begin{figure}[H]
+    \centering
+    \caption{
+        Likening between two solution with closed 
+        initial conditions $x$, $y$
+        of the stochastic Fisher-KPP
+        \cref{eqn:fisher-kpp}.
+     }
+    \label{fig:likening_fisher_kpp}
+    \includegraphics[width=\linewidth, keepaspectratio]%
+    {StochasticFisherEquation/simulation_Approximation.png}
+\end{figure}
+\paragraph{Likening}
+    In \Cref{fig:likening_fisher_kpp} we illustrate the distance between initial
+    conditions distance between...
+\todo{A paragraph to describe and stress the likening}
+\todo{plot the two solutions and make zooms to stress the contrast}
+%
+\begin{figure}[H]
+    \centering
+    \caption{
+        Distance evolution of the distance
+        between two solutions of the
+        stochastic Burgers
+        \cref{eqn:stochastic_burgers}
+        with initial conditions  $x$ and $y$.
+     }
+    \label{fig:error convergence_fisher}
+    \includegraphics[width=\linewidth, keepaspectratio]%
+    {StochasticFisherEquation/Convergence.png}
+\end{figure}
+\todo{Change linear scale to logy scale}
