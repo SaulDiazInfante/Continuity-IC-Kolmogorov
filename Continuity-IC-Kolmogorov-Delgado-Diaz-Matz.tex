@@ -4,6 +4,7 @@
 \usepackage{booktabs}
 \usepackage{etoolbox}
 \usepackage{todonotes}
+\usepackage{epstopdf}
 \patchcmd{\SetTagPlusEndMark}{$}{}{}{}
 \patchcmd{\SetTagPlusEndMark}{$}{}{}{}
 %
@@ -695,7 +696,7 @@ We now prove the existence and uniqueness of a solution to the initial- value
 problem \eqref{P1s3.2}. Let $\mathbb{X}_T$ denote the
 Banach space $\mathcal{C}([0,T];\mathbb{H})$ with the sup-norm
  \begin{equation*}
-  |||\Psi |||_T := \sup_{0\le t\le T} |||\Psi |||
+  |||\Psi |||_T := \sup_{0\le t\le T} |||\Psi ||| \ .
  \end{equation*}
 In $\mathbb{X}_T$ define the linear operator $\mathbb{Q}$ as
 \begin{equation*}
@@ -723,7 +724,7 @@ small $t$. Let $\Psi,\Psi'\in \mathbb{X}_T$. Then
  ||| \mathbb{Q}\Psi- \mathbb{Q}\Psi'|||^2 &=  |||\int_0^t e^{-\lambda
 (t-s)}P_{t-s}\big[(B,D\Psi_s)-(B,D\Psi_s')\big] ds |||^2\\
  &\le  C_\lambda \int_0^t |||(B,D\Psi_s-D\Psi') |||_{-1}^2 ds \\
- &\le  C_2 \int_0^t |||\Psi_s-\Psi'|||^2 ds,
+ &\le  C_2 \int_0^t |||\Psi_s-\Psi'|||^2 ds.
 \end{align*}
 For some $C_2>0$. It follows that
 \begin{align*}
@@ -755,7 +756,7 @@ will denote by $\Psi_t^\varphi$ its mild solution at time $t$ with initial
 condition $\varphi$:
 \begin{align*}
 \Psi_t^\varphi=e^{-\lambda t} P_t  \varphi+  \int_0^t e^{-\lambda
-(t-s)}P_{t-s}(B,D\Psi_s) ds
+(t-s)}P_{t-s}(B,D\Psi_s) ds \ .
 \end{align*}
 Then,
 \begin{align*}
@@ -802,7 +803,8 @@ Fourier-Hermite decomposition:
         u_{\bm{n}}(t) H_{\bm{n}}(x),
         \qquad
         x \in \mathcal{H},
-        \quad t \in [0,T]\label{num-approx}
+        \quad t \in [0,T] \ .
+        \label{num-approx}
 \end{align}
 
 Notice that the time-dependent coefficients $ u_{\bm{n}}(t)$ depend on the
