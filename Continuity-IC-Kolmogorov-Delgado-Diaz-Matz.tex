@@ -232,7 +232,7 @@ $\mathcal{H}$ can be computed as follows:
         (D^2 \Phi(h), v)
         &=
             \sum_{j,k=1}^n \big[\partial_j\partial_k
-            \phi(h_1,\ldots,h_n)\big] l_j(v) l_k(v)
+            \phi(h_1,\ldots,h_n)\big] l_j(v) l_k(v),
     \end{aligned}
 \end{equation}
 for any $u, v \in \mathcal{H}$, where
@@ -374,7 +374,7 @@ Its proof can be seen, for instance, in \cite{liu}, Theorem 3.3, chapter 9.
     \begin{align}
         \int_{\mathcal{H}} (\Lambda h,D\Phi(v))_{\mathcal{H}}  \mu(dv) =
             \int_{\mathcal{H}} (v,h)_{\mathcal{H}}
-            \Phi(v) \mu(dv)
+            \Phi(v) \mu(dv) \ .
             \label{s2.2.1}
     \end{align}
 
@@ -386,7 +386,7 @@ Its proof can be seen, for instance, in \cite{liu}, Theorem 3.3, chapter 9.
     \begin{align}
          \int_{\mathcal{H}} (\mathcal{A}_0 \Phi)\Psi d\mu &=
              \int_{\mathcal{H}} \Phi(\mathcal{A}_0 \Psi) d\mu=
-            -\frac{1}{2}\int_{\mathcal{H}} (QD\Phi, D\Psi) d\mu
+            -\frac{1}{2}\int_{\mathcal{H}} (QD\Phi, D\Psi) d\mu \ .
     \end{align}
 
 \end{lemma}
@@ -403,10 +403,15 @@ positive numbers with $\alpha_{\mathbf{n}} > 0$, such that
 $\alpha_{\mathbf{n}} \rightarrow \infty$ as $n \rightarrow \infty$.
 Define
 \begin{align*}
-     |||\Phi|||_{k,\alpha} &= \Bigg[ \sum_{\mathbf{n}}
-    \big(1+\alpha_{\mathbf{n}}\big)^k |\phi_n|^2 \Bigg]^{1/2}\nonumber\\
-    |||\Phi|||_{0,\alpha} &= |||\Phi|||=\Bigg[ \sum_{\mathbf{n}} |\phi_n|^2
-    \Bigg]^{1/2}
+     |||\Phi|||_{k,\alpha} 
+        &= \Bigg[ \sum_{\mathbf{n}}
+        \big(
+            1 + \alpha_{\mathbf{n}}
+        \big) ^ k |\ phi_n |^2 \Bigg]^{1/2} ,
+    \\
+    |||\Phi|||_{0,\alpha} 
+        &= |||\Phi|||=\Bigg[ \sum_{\mathbf{n}} |\phi_n|^2
+    \Bigg]^{1/2},
 \end{align*}
 which is $L^2(\mu)$-norm of $\Phi$. For the given sequence
 $\alpha = \{\alpha_n \}$, let $\mathbb{H}_{k,\alpha}$ denote
@@ -459,7 +464,7 @@ We denote the duality between $ \mathbb{H}_{k}$ and $ \mathbb{H}_{-k}$ by
     \rangle_k,
     \qquad
     \Phi\in\mathbb{H}_{k},
-    \quad \Psi\in\mathbb{H}_{-k}
+    \quad \Psi\in\mathbb{H}_{-k} \ .
 \]
 We also set $\mathbb{H}_{0}= \mathbb{H}$,
 with $|||\cdot|||_{0}= |||\cdot|||$ and
@@ -501,7 +506,7 @@ Consider the following \sloppy Kolmogorov equation,
         \\
         \Psi(v,0)
             &=
-                \phi(v)\nonumber
+                \phi(v)\nonumber \ ,
     \end{aligned}
 \end{equation}
 %
@@ -514,7 +519,7 @@ $\mathcal{A}:\mathbb{H}_2 \to \mathbb{H}$ is given by
         +
         \langle
             A v, D\Phi(v)
-        \rangle
+        \rangle \ .
  \end{equation}
 Hypothesis on $B$ will be specified latter. For now, we will consider that it
 is a locally Lipschitz function. The additional term
@@ -537,7 +542,7 @@ be a parameter. By changing $\Psi$ to $e^{\lambda t}\Psi$ in
         v \in \mathbb{H}_2
     \\
     \Psi(v,0)
-        &= \phi(v)
+        &= \phi(v) \ ,
 \end{align*}
 where $\mathcal{A}_\lambda=\mathcal{A}-\lambda I$, with $I$ the identity
 operator in $\mathbb{H}$. Clearly, the problems \eqref{P1s3.1} and
@@ -563,9 +568,11 @@ Chow \cite{liu} had proved the following lemma.
     $\lambda>0$ there exists $C_\lambda>0$ such that
      \begin{align}
         |||\int_0^t e^{-\lambda (t-s)} P_{t-s} \Psi_{s} ds |||^2 \le C_\lambda
-        \int_0^T |||\Psi_s|||_{-1}^2 ds\qquad 0< t\le T\label{s3.1.0}
+        \int_0^T |||\Psi_s|||_{-1}^2 ds,
+        \qquad 0< t\le T
+        \ .
+        \label{s3.1.0}
      \end{align}
-
 \end{lemma}
 
     We now prove the following theorem on existence and uniqueness of a mild
@@ -585,7 +592,8 @@ Chow \cite{liu} had proved the following lemma.
     \begin{align}
         ||| \big(B(v),D\Phi(v) \big) |||_{-1}^2 \le C |||\Phi(v) |||^2  \qquad
         \mbox{for any } \Phi\in \mathbb{H},
-        \quad v\in \mathbb{H}_2\label{s3.1.1}
+        \quad v\in \mathbb{H}_2 ,
+        \label{s3.1.1}
     \end{align}
     for some $C>0$.
     Moreover, for $\Phi\in \mathbb{H}$, the initial- value problem
@@ -682,14 +690,16 @@ I_1&\le \int_{\mathcal{H}}\big|\big|\Lambda^{-1/2}B(v)
 The last inequality follows by using proposition 3.11 in page 64 from
 \cite{da1}. Then, by using this bound on \eqref{s3.1.3} we have.
 \begin{align*}
-| \phi_n |^2 &\le C \int_{\mathcal{H}}\big|  \Phi(v)\big|^2  \mu(dv)\\
-&\le C |||\Phi(v) |||^2
- \end{align*}
- Thus,
-  \begin{align*}
-  ||| \big(B(v),D\Phi(v) \big) |||_{-1}^2 &\le C |||\Phi(v)
-|||^2\sum_{\mathbf{n}} (1+\lambda_{\mathbf{n}})^{-1}  \le C |||\Phi(v) |||^2
- \end{align*}
+    | \phi_n |^2 &\le C \int_{\mathcal{H}}\big|  \Phi(v)\big|^2  \mu(dv)\\
+    &\le C |||\Phi(v) |||^2  .
+\end{align*}
+Thus,
+\begin{align*}
+    ||| \big(B(v),D\Phi(v) \big) |||_{-1}^2 
+        &\le C |||\Phi(v) |||^2
+        \sum_{\mathbf{n}} (1+\lambda_{\mathbf{n}})^{-1}  
+        \le C |||\Phi(v) |||^2 ,
+\end{align*}
  which proves \eqref{s3.1.1}.
 
 We now prove the existence and uniqueness of a solution to the initial- value
@@ -777,8 +787,10 @@ From this expression we get
 \end{align*}
 Thus, by Gronwall's inequality we obtain
 \begin{align}\label{s2.23}
-\| | \Psi_t^\varphi-\Phi_t^\psi\| |^2&\le \exp(C_2t)  \|  | \varphi - \psi\|
-|^2
+    \| |
+         \Psi_t^\varphi-\Phi_t^\psi\| |^2&\le \exp(C_2t)  \|  | \varphi - 
+         \psi
+    \| |^2, 
 \end{align}
 which implies,
 \begin{align*}
@@ -832,35 +844,44 @@ unnormalized Hermite polynomial of $k$ degree.
  P_k(\xi)=\frac{(-1)^k}{(k!)^{1/2}} e^{\xi^2/2}\frac{d}{d\xi^k}e^{-\xi^2/2}.
  $$
  Set $c(k)=(-1)^k (k!)^{-1/2}$, then
- \begin{align}
- P_k(\xi)-P_k(\eta)&=c(k)\Big[
-e^{\xi^2/2}\frac{d}{d\xi^k}e^{-\xi^2/2}-e^{\eta^2/2}\frac{d}{d\eta^k}e^{-\eta^2/2}\Big]\nonumber\\
-  & =c(k)
-\Bigg[e^{x^2/2}\frac{d}{dx^k}e^{-x^2/2}\Big|_{x=\eta}^\xi\Bigg]\nonumber\\
-  & = c(k) \int_{\eta}^\xi F_k(x) dx \nonumber
- \end{align}
+\begin{align*}
+    P_k(\xi)-P_k(\eta)
+        &=c(k)
+        \Big[
+            e^{\xi^2/2}
+            \frac{d}{d\xi^k} e^{-\xi ^ 2/2} - e^{\eta^2/2}
+            \frac{d}{d\eta^k} e^{-\eta ^ 2/2}
+        \Big] 
+        \\
+    & =c(k)
+        \Bigg[
+            e^{x^2/2} \frac{d}{dx^k} e^{-x^2/2}
+        \Big|_{x=\eta}^\xi\Bigg]
+        \\
+    & = c(k) \int_{\eta}^\xi F_k(x) dx,
+\end{align*}
 where $F_k$ is a continuous function such that
 $F_k'(x)=e^{x^2/2}\frac{d}{dx^k}e^{-x^2/2}$. In fact, denoting by $Pe_k(x)$
 the
 unnormalized Hermite polynomial of $k$ degree, results
 $$
-F_k'(x)=e^{x^2/2}\frac{d}{dx^k}e^{-x^2/2}= Pe_k(x)
+    F_k'(x)=e^{x^2/2}\frac{d}{dx^k}e^{-x^2/2}= Pe_k(x),
 $$
- and since the Hermite polynomials constitute an Appell sequence we have that
+and since the Hermite polynomials constitute an Appell sequence we have that
 $$
-F_k'(x)=Pe_k(x)=\frac{1}{k+1} Pe_{k+1}'(x)
+    F_k'(x)=Pe_k(x)=\frac{1}{k+1} Pe_{k+1}'(x),
 $$
- which implies that $F_k(x)=\frac{1}{k+1} Pe_{k+1}(x)$. Now, since $F_k(x)$ is
+which implies that $F_k(x)=\frac{1}{k+1} Pe_{k+1}(x)$. Now, since $F_k(x)$ is
 a continuous function, then there exists
- $\gamma\in (\eta,\xi)$ such that
- $$
- \int_{\eta}^\xi F_k(x) dx = F_k(\gamma)\cdot (\xi-\eta).
- $$
+$\gamma\in (\eta,\xi)$ such that
+$$
+    \int_{\eta}^\xi F_k(x) dx = F_k(\gamma)\cdot (\xi-\eta).
+$$
  All these implies that
- \begin{equation*}
-  P_k(\xi)-P_k(\eta)= c(k) F_k(\gamma) \cdot (\xi-\eta).
- \end{equation*}
- From this expression the lemma follows immediately.
+\begin{equation*}
+    P_k(\xi)-P_k(\eta)= c(k) F_k(\gamma) \cdot (\xi-\eta).
+\end{equation*}
+    From this expression the lemma follows immediately.
 \end{proof}
 
 Consider the stochastic differential equation in $\mathcal{H}$
