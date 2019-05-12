@@ -1,4 +1,5 @@
 \documentclass[review, onefignum, onetabnum]{siamart171218}
+\usepackage[square,sort&compress]{natbib}
 \usepackage[utf8x]{inputenc}
 \usepackage{bm}
 \usepackage{booktabs}
@@ -278,7 +279,6 @@ result.
             \tfrac{1}{2}Q(-A)^{-1}
             =\tfrac{1}{2}(-A)^{-1}Q
     $.
-
 \end{lemma}
 
 
@@ -309,12 +309,11 @@ on $\mathcal{S}(\mathbb{H})$ by
   \mathcal{A}_0
     \Phi(v) = \tfrac{1}{2}Tr [RD^2 \Phi(v)] + \langle Av, D\Phi(v)\rangle
     ,\qquad v \in H,
- \end{equation}
+\end{equation}
 which is well defined, since $D\Phi \in D(A)$ and
 $\langle Av, D\Phi(v)\rangle = (v, A D \Phi(v))_\mathcal{H}$.
 
 The following results have been proved in \cite{liu}.
-
 \begin{lemma}
     Let $P_t$ be the transition operator as defined by \eqref{OU}. Then
     the following properties hold:
@@ -358,11 +357,10 @@ The following results have been proved in \cite{liu}.
         \displaystyle
         \lambda_{\mathbf{n}}=\sum_{i=1}^\infty n_i\lambda_i.
     $
-
 \end{lemma}
 
 The following Theorem is a Green formula that we will need forward.
-Its proof can be seen, for instance, in \cite{liu}, Theorem 3.3, chapter 9.
+Its proof can be seen, for instance, in \cite[Thm. 3.3, Ch. 9,][]{liu}.
 
 \begin{theorem}\label{green-form}
     Let
@@ -1524,9 +1522,10 @@ then this implies that
 where $C$ is a finite constant. Putting together \eqref{s3.8} and
 \eqref{s3.10} we get that
 \begin{align}
-  \sum_{\bar n\in \mathcal{J}} \int_{\mathcal{H}\times \mathcal{H}}  \big|
-  H_{\bar n}(x) -H_{\bar n}(y) \big|^2 \mu(dx)\mu(dy) &\le
-  C \| x-y\|_{\mathcal{H}}. \label{s3.11}
+    \sum_{\bar n\in \mathcal{J}} \int_{\mathcal{H}\times \mathcal{H}}  \big|
+    H_{\bar n}(x) -H_{\bar n}(y) \big|^2 \mu(dx)\mu(dy) &\le
+    C \| x-y\|_{\mathcal{H}} \ .
+    \label{s3.11}
 \end{align}
 Putting together inequalities \eqref{s3.9.1}, \eqref{s3.10.1} and
 \eqref{s3.11} we obtain
@@ -1560,7 +1559,7 @@ which implies the theorem. The proof is complete.
                  &+
                 \exp(CT)
                 \int_{\mathcal{H}\times \mathcal{H}}
-                \|x-y\|_{\mathcal{H}}^2 \mu(dx)\mu(dy).
+                \|x-y\|_{\mathcal{H}}^2 \mu(dx)\mu(dy) \ .
         \end{aligned}
     \end{equation}
     Notice that $f(t)$ is differentiable and continuous, then
@@ -1578,7 +1577,7 @@ which implies the theorem. The proof is complete.
             & +
             \exp(CT)
             \int_{\mathcal{H}\times \mathcal{H}}
-            \| x-y\|_{\mathcal{H}}^2 \mu(dx)\mu(dy).
+            \| x-y\|_{\mathcal{H}}^2 \mu(dx)\mu(dy) \ .
         \end{aligned}
     \end{equation}
     From this inequality it is possible to show the continuously dependence on
@@ -1586,13 +1585,15 @@ which implies the theorem. The proof is complete.
 \end{remark}
 
 \section{Numerical experiments}
-        In this section we run two numerical experiments for illustrate
-    the initial condition continuity. To this end, we use the Kolmogorov
-    equation associated to the
-    stochastic partial differential equations with initial and boundary
-    conditions. Thus we change the initial condition  by a functions which
-    is near of the original.
-    \todo{Convert plots formats to eps and with size according to ELSEVIER}
+        In this section we run numerical experiments to illustrate that our
+    scheme preserves the underlying initial condition continuity. To 
+    this end, we employ as benchmarks problems stochastic versions of the 
+    Fisher and Burgers PDEs with two near initial function conditions $x(\xi)$, 
+    $\widehat{x}(\xi)$. In \cite{matsumyaRepo} we provide a repository with a 
+    Python implementation to reproduce the following figures. We also provide 
+    in \cite{plotlyFisher, plotlyBurgers},
+    the 3D on-line plotly versions of 
+    \Cref{fig:likening_fisher_kpp,fig:likening_burgers}.
 %
     \subsection*{Stochastic Fisher-KPP equation in an interval}
         \input{stochastic_fisher_kpp.tex}
