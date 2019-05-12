@@ -88,6 +88,20 @@ mathematics as population biology, fluid dynamics, and mathematical finance.''.
 This kind of equations have been deeply studied in the last years, see for
 instance \cite{bo-da-ro}, \cite{da-fl-ro}, \cite{da} and the references therein.
 
+    Find analytical solutions of (FPK) is impractical. Thus, work with efficient
+and accurate numerical schemes is crucial. In this way, the spectral methods
+offers play and important role to obtain better schemes. Here better would 
+be in accordance with accuracy, consistence, stability and other targets 
+properties. In this work we explore the ability of the scheme reported in
+\cite{de-fl} to preserve the continuity respect to initial conditions. That is,
+if a given problem satisfies certain regularity conditions, then two of its 
+solution will remain close, if its initial function conditions are close. So, 
+we would desire that a numerical method reproduce this behavior.
+
+    Indeed the theory of stability for spectral methods is under construction 
+and until our knowledge is a active research are. We mention [], [] as seminal 
+reference for the deterministic case and [] [] for its stochastic version.
+
     This paper is organized as follows. In section \ref{fpk-sect} we review the
 Fokker-Plank-Kolmogorov equation associated with SPDEs in
 a separable Hilbert space.
@@ -924,13 +938,16 @@ We will use some technical results on the SPDE to prove
 the following result\textemdash the main result of this section.
 
 \begin{theorem}
-Assume that the eigenvalues of $\Lambda$, satisfies that for every $k\in\IN$,
-$\lambda_k<\lambda_{k+1}\rightarrow \infty $. Assume that
-the functional $ \varphi$ is Lipschitz.
-Then, the numeric approximation $\Psi_t^\varphi$ (given by \eqref{num-approx})
-to the solution of the Kolmogorov equation
- $\Psi\in C((0,T); \mathbb{H})$ also depends continuously on the initial
-conditions.
+    \label{thm:ic_continuity}
+    Assume that the eigenvalues of $\Lambda$, satisfies that for every 
+    $k\in\IN$,
+    $\lambda_k<\lambda_{k+1}\rightarrow \infty $. Assume that
+    the functional $ \varphi$ is Lipschitz.
+    Then, the numeric approximation $\Psi_t^\varphi$ (given by 
+    \eqref{num-approx})
+    to the solution of the Kolmogorov equation
+     $\Psi\in C((0,T); \mathbb{H})$ also depends continuously on the initial
+    conditions.
 \end{theorem}
 \begin{proof}
 Let $x,y\in H$ be two different initial values. We want to estimate
@@ -971,7 +988,7 @@ initial condition we obtain the following expression for
 the time-dependent coefficient
 \begin{align*}
   u_{\bar n}^x(t) &=
-    \int_{\mathcal{H}} H_{\bar n}(x) \E\big[\varphi(X_t^x)\big] \mu(dx).
+    \int_{\mathcal{H}} H_{\bar n}(x) \E\big[\varphi(X_t^x)\big] \mu(dx) \ .
 \end{align*}
 %
 From this we get
@@ -1021,7 +1038,7 @@ From this we get
             \Big)
             \E\big[
                 \varphi(X_t^y)
-            \big] \mu(dx) \mu(dy) .
+            \big] \mu(dx) \mu(dy) \ .
 \end{align*}
 %
 %
@@ -1587,13 +1604,12 @@ which implies the theorem. The proof is complete.
 \section{Numerical experiments}
         In this section we run numerical experiments to illustrate that our
     scheme preserves the underlying initial condition continuity. To 
-    this end, we employ as benchmarks problems stochastic versions of the 
-    Fisher and Burgers PDEs with two near initial function conditions $x(\xi)$, 
-    $\widehat{x}(\xi)$. In \cite{matsumyaRepo} we provide a repository with a 
-    Python implementation to reproduce the following figures. We also provide 
-    in \cite{plotlyFisher, plotlyBurgers},
-    the 3D on-line plotly versions of 
-    \Cref{fig:likening_fisher_kpp,fig:likening_burgers}.
+    this end, we solve  a stochastic version of the  Fisher and Burgers PDEs 
+    with two near initial function conditions $x(\xi)$, 
+    $\widehat{x}(\xi)$. In \cite{matsumyaRepo} we provide a GitHub repository 
+    with a Python implementation to reproduce the following figures. We also 
+    provide in \cite{plotlyFisher, plotlyBurgers}, the 3D on-line plotly 
+    versions of \Cref{fig:likening_fisher_kpp,fig:likening_burgers}.
 %
     \subsection*{Stochastic Fisher-KPP equation in an interval}
         \input{stochastic_fisher_kpp.tex}
