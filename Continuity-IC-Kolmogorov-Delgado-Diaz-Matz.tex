@@ -1,11 +1,12 @@
 \documentclass[review, onefignum, onetabnum]{siamart171218}
-\usepackage[square,sort&compress]{natbib}
+\usepackage[square, sort&compress, numbers]{natbib}
 \usepackage[utf8x]{inputenc}
 \usepackage{bm}
 \usepackage{booktabs}
 \usepackage{etoolbox}
 \usepackage{todonotes}
 \usepackage{epstopdf}
+\usepackage{siunitx}
 \patchcmd{\SetTagPlusEndMark}{$}{}{}{}
 \patchcmd{\SetTagPlusEndMark}{$}{}{}{}
 %
@@ -88,23 +89,37 @@ mathematics as population biology, fluid dynamics, and mathematical finance.''.
 This kind of equations have been deeply studied in the last years, see for
 instance \cite{bo-da-ro}, \cite{da-fl-ro}, \cite{da} and the references therein.
 
-    Find analytical solutions of (FPK) is impractical. Thus, work with efficient
-and accurate numerical schemes is crucial. In this way, the spectral methods
-offers play and important role to obtain better schemes. Here better would 
-be in accordance with accuracy, consistence, stability and other targets 
-properties. In this work we explore the ability of the scheme reported in
-\cite{de-fl} to preserve the continuity respect to initial conditions. That is,
-if a given problem satisfies certain regularity conditions, then two of its 
-solution will remain close, if its initial function conditions are close. So, 
-we would desire that a numerical method reproduce this behavior.
+    Finding analytical solutions of FPK associated with SPDEs results
+impractical. Thus, work with efficient and accurate numerical schemes is
+crucial. In this way, the spectral methods play an essential role to obtain
+better schemes\textemdash under certain conditions, this sort of methods are
+more accurate than finite differences of finite elements and  need fewer grid
+points. Here the adjective ``better'' would be under accuracy, consistency,
+stability, and other targets properties. In this work, we explore the ability of
+the method reported in \cite{de-fl} to preserve the continuity respect to
+initial conditions. That is, if a given problem satisfies certain regularity
+conditions, then two of its solution will remain closed if its initial function
+conditions are close. So, we would desire that a numerical method reproduce this
+behavior and if it is the case, we say that a underlaying method is stably in
+this context.
 
-    Indeed the theory of stability for spectral methods is under construction 
-and until our knowledge is a active research are. We mention [], [] as seminal 
-reference for the deterministic case and [] [] for its stochastic version.
+    Our main contribution is the characterization of mild conditions to
+assure the continuity respect to initial function conditions to a family of
+SPDEs and the stability of a regarding weak spectral approximation.
 
-    This paper is organized as follows. In section \ref{fpk-sect} we review the
+    The stability theory for spectral methods is still under 
+construction and is an active research area. We mention the seminal works of
+L.N. Trefethen and M.R. Trummer \cite{Trefethen1987}, D. Gottlieb et. al.
+\cite{Gottlieb1987a} as reference for the deterministic case, and N. Li, J.
+Fiordilino, and X. Feng, \cite{Li2019} A. Lang, A. Petersson,  and A.
+Thalhammer, \cite{Lang2017} for its stochastic version.
+
+
+    This paper is organized as follows. In \Cref{fpk-sect} we review the
 Fokker-Plank-Kolmogorov equation associated with SPDEs in
-a separable Hilbert space.
+a separable Hilbert space. \Cref{sec:ContinuityRespectToInitialConditions} 
+provides .... and in \Cref{sec:NumericalExperiments} we illustrate our
+results with numerical experiments.
 
 \section{Kolmogorov equations for SPDEs in Hilbert spaces}\label{fpk-sect}
     Let $\mathcal{H}$ be a separable infinite-dimensional Hilbert space with
@@ -118,6 +133,7 @@ $\Lambda$ with  $Tr(\Lambda)<+\infty$.
     \frac{\partial u}{\partial t}= \frac{1}{2}Tr(QD^2u)+ \langle Ax, Du
     \rangle_\mathcal{H} + \langle B(x),Du \rangle_\mathcal{H},\qquad x\in D(A).
 \end{equation}
+
     Several authors have proved results on existence and uniqueness of the
 solution of the Kolmogorov equations, see for instance Da Prato \cite{da} for a
 survey, Da Prato-Debussche \cite{da-de} for the Burgers equation,  Barbu-Da
@@ -133,8 +149,16 @@ on $\mathcal{H}$.
 
     Define the inner product
 \[
-    ( g, h )_0 := \big( \Lambda^{-1/2}g ,  \Lambda^{-1/2} h \big)_\mathcal{H},
-    \quad \hbox{\rm for}\quad g,h\in \Lambda^{1/2} \mathcal{H}.
+    ( g, h )_0 := 
+    \big( 
+        \Lambda^{-1/2}g ,
+        \Lambda^{-1/2} h
+    \big)_\mathcal{H},
+    \quad 
+    \hbox{\rm for}
+    \quad g, h \in 
+    \Lambda^{1/2} 
+    \mathcal{H}.
 \]
 Let $\mathcal{H}_0$ denote the Hilbert subspace of $\mathcal{H}$, which is the
 completion of $\Lambda^{1/2} \mathcal{H}$ with
@@ -151,9 +175,16 @@ denote the Hilbert space of Borel
 measurable functionals on the probability space with inner
 product
 \[
-    \big [ \Phi,\Psi\big ]_\mathbb{H}:=\int_{\mathcal{H}} \Phi(v)
-    \Psi(v)\mu(dv),\quad
-    \text{ for } \Phi,\Psi\in\mathbb{H},
+    \big[ 
+        \Phi,
+        \Psi
+    \big]_\mathbb{H}
+    :=
+        \int_{\mathcal{H}} 
+        \Phi(v)
+        \Psi(v)\mu(dv),\quad
+        \text{ for } 
+        \Phi,\Psi\in\mathbb{H},
 \]
 and norm $\|\Phi\|_{\mathbb{H}}:=\big [\Phi,\Phi\big ]_\mathbb{H}^{1/2}$.
 We choose a basis system $\{\varphi_k\}$ for $\mathcal{H}$.
@@ -220,17 +251,16 @@ $n\in\IN$.
 Prato-Zabczyk \cite{da-za} or Lemma 3.1 in chapter 9 from Chow \cite{liu}).
 
 \begin{lemma}\label{s1.le1}
-     For $h\in\mathcal{H}  $ let $l_i(h)=\langle h,  \Lambda^{-1/2}\varphi_i
+        For $h\in\mathcal{H}  $ let $l_i(h)=\langle h,  \Lambda^{-1/2}\varphi_i
     \rangle_\mathcal{H}$, $ i=1,2,\ldots$. The set $\{H_{\bm{n}}\}$ of all
     Hermite polynomials on $\mathcal{H} $ forms a complete orthonormal system
     for $\mathbb{H} $. Hence the set of all functionals are dense in
     $\mathbb{H}$. Moreover, we have the direct sum decomposition:
-     \[
+    \[
         \mathbb{H} = \bigoplus_{j=0}^\infty K_j,
     \]
     where $K_j$ is the subspace of $\mathbb{H} $ spanned by $\{H_{\bm{n}}:
     |\bm{n}|=j\}$.
-
 \end{lemma}
 %
 Let $\Phi$ be a smooth simple functional given by \eqref{S1.2}. Then the
@@ -256,10 +286,8 @@ Similarly, for $m > 2$, $D^m \Phi(h)$ is a $m-$linear form on $\mathcal{H}^m$
 with inner product $(\cdot,\cdot)_m$.
 We have
 $
-%
     [D^m\Phi(h) ](v_1 , \cdots, v_m )
         = (D^m \Phi(h), v_1 \otimes \cdots \otimes v_m )_m
-%
 $,
 for $h, v_1 , \ldots , v_m \in \mathcal{H}$.
 Consider the following linear stochastic equation
@@ -294,7 +322,6 @@ result.
             =\tfrac{1}{2}(-A)^{-1}Q
     $.
 \end{lemma}
-
 
 Suppose that $A$ and $Q$ have the same eigenfunctions $e_k$ with eigenvalues
 $\lambda_k$ and $\rho_k$ respectively.
@@ -799,10 +826,14 @@ condition $\varphi$:
 \end{align*}
 Then,
 \begin{align*}
-\Psi_t^\varphi-\Phi_t^\psi&=e^{-\lambda t} P_t \varphi -e^{-\lambda t} P_t
-\psi+  \int_0^t e^{-\lambda (t-s)}P_{t-s}(B,D\Psi_s^\varphi-D\Phi_s^\psi) ds\\
-&= e^{-\lambda t} P_t (\varphi - \psi)+  \int_0^t e^{-\lambda
-(t-s)}P_{t-s}(B,D\Psi_s^\varphi-D\Phi_s^\psi) ds.
+    \Psi_t^\varphi-\Phi_t^\psi
+        &=  e^{-\lambda t} P_t \varphi -e^{-\lambda t} P_t
+        \psi +  
+        \int_0^t e^{-\lambda (t-s)}P_{t-s}(B,D\Psi_s^\varphi-D\Phi_s^\psi) ds
+        \\
+        &= e^{-\lambda t} P_t (\varphi - \psi) 
+        + \int_0^t
+            e^{-\lambda(t-s)} P_{t-s} (B, D \Psi_s^\varphi - D\Phi_s^\psi) ds.
 \end{align*}
 From this expression we get
 \begin{align*}
@@ -830,7 +861,7 @@ This completes the proof.
 
 \section{Continuity with respect to the initial conditions of a numerical
 approximations }
-
+\label{sec:ContinuityRespectToInitialConditions}
 
 In this section we will prove the continuity with respect to the initial
 conditions for a numerical approximations
@@ -946,7 +977,7 @@ the following result\textemdash the main result of this section.
     Then, the numeric approximation $\Psi_t^\varphi$ (given by 
     \eqref{num-approx})
     to the solution of the Kolmogorov equation
-     $\Psi\in C((0,T); \mathbb{H})$ also depends continuously on the initial
+    ${\Psi\in C((0,T); \mathbb{H})}$ also depends continuously on the initial
     conditions.
 \end{theorem}
 \begin{proof}
@@ -1602,6 +1633,7 @@ which implies the theorem. The proof is complete.
 \end{remark}
 
 \section{Numerical experiments}
+    \label{sec:NumericalExperiments}
         In this section we run numerical experiments to illustrate that our
     scheme preserves the underlying initial condition continuity. To 
     this end, we solve  a stochastic version of the  Fisher and Burgers PDEs 

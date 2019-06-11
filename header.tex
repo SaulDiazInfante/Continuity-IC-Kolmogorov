@@ -4,22 +4,17 @@
 \usepackage{graphicx}
 \usepackage{epstopdf}
 \usepackage{algorithmic}
+\DeclareMathOperator{\sech}{sech}
 \ifpdf
   \DeclareGraphicsExtensions{.eps,.pdf,.png,.jpg}
 \else
   \DeclareGraphicsExtensions{.eps}
 \fi
-
-% Add a serial/Oxford comma by default.
 \newcommand{\creflastconjunction}{, and~}
-
-% Used for creating new theorem and remark environments
 \newsiamremark{remark}{Remark}
 \newsiamremark{hypothesis}{Hypothesis}
 \crefname{hypothesis}{Hypothesis}{Hypotheses}
 \newsiamthm{claim}{Claim}
-
-% Sets running headers as well as PDF title and authors
 \headers{Continuity respect to initial conditions}{F. Delgado-Vences, 
 S. Diaz-Infante, A. Matsumya}
 

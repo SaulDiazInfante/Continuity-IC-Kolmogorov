@@ -8,13 +8,24 @@ interval $[0, 1]$
                 \nu \partial_{\xi} ^ 2 X(t, \xi)
                 + \frac{1}{2} \partial_{\xi} X^2(t, \xi)
             \right]dt
-            +dW(t, \xi)
+            +dW(t, \xi),
             \\
         X(t, 0) &= X(t, 1) =0, \quad t>0, \\
         X(0, \xi) &= x(\xi), \quad x\in \mathcal{H} \ .
     \end{aligned}
 \end{equation} 
+As in the above experiment, we use the initial conditions $x(\xi)$ and its 
+truncated Chebyshev expansion 
+\begin{equation}
+    x(\xi) := \sin(\pi \xi),
+    \qquad
+    \widehat{x}(\xi) :=
+        \sum_{k=0} ^ N
+         T_k x(\xi).
+\end{equation}
 
+\Cref{fig:approximationt0,fig:likening_burgers,fig:error_convergence} 
+illustrate a similar argument presented  in the above experiment.
 \begin{figure}[H]
     \centering
     \caption{
@@ -39,7 +50,7 @@ interval $[0, 1]$
     \includegraphics[width=\linewidth, keepaspectratio]%
     {StochasticBurgersEquation/simulation_Approximation.png}
 \end{figure}
-
+%
 \begin{figure}[H]
     \centering
     \caption{
@@ -47,9 +58,9 @@ interval $[0, 1]$
         between two solutions of the
         stochastic Burgers
         \cref{eqn:stochastic_burgers}
-        with initial conditions  $x(\xi)$, and $\widehat{x}(\xi)$.
+        with initial conditions  $x = x(\xi)$, and $y = x(\xi)$.
      }
-    \label{fig:error convergence}
+    \label{fig:error_convergence}
     \includegraphics[width=\linewidth, keepaspectratio]%
     {StochasticBurgersEquation/error_burgers.eps}
 \end{figure}
