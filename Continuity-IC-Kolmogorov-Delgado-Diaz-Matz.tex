@@ -1079,39 +1079,39 @@ Then, by the Cauchy-Schwartz inequality, we obtain
 %
 %
 \begin{equation}
-    \label{s3.4.1}
     \begin{aligned}
         |u_{\bar n} ^ x(t) - u_{\bar n} ^ y(t)| ^ 2
             \le&
-            \Bigg |
-                \int_{\mathcal{H} \times
+            \left|
+                \int_{\mathcal{H} 
+                \times
                 \mathcal{H}} H_{\bar n}(x)
-                \Big(
+                \left(
                     \E
-                     \big[
+                     \left[
                         \varphi(X_t^x)
-                     \big]
+                     \right]
                      -
-                    \E\big[
+                    \E\left[
                         \varphi(X_t^y)
-                    \big]
-                \Big) \mu(dx)\mu(dy)
-                \Bigg|^2
+                    \right]
+                \right) \mu(dx)\mu(dy)
+            \right|^2
             \\
             &+
-            \Bigg|
+            \left|
                 \int_{\mathcal{H}
                 \times
                 \mathcal{H}
                 }
-                \Big(
+                \left(
                     H_{\bar n}(x) - H_{\bar n}(y)
-                \Big)
-                \E\big[
+                \right)
+                \E\left[
                     \varphi(X_t ^ y)
-                \big]
+                \right]
                 \mu(dx)\mu(dy)
-            \Bigg|^2
+            \right|^2
             \\
             \le &
             \int_{\mathcal{H}\times \mathcal{H}}
@@ -1120,61 +1120,65 @@ Then, by the Cauchy-Schwartz inequality, we obtain
             \\
             &\times
                 \int_{\mathcal{H}\times \mathcal{H}}
-                \Big|
-                    \E\big [
+                \left|
+                    \E\left [
                         \varphi(X_t^x)
-                    \big]
+                    \right]
                     -
-                    \E\big[
+                    \E\left[
                         \varphi(X_t^y)
-                    \big]
-                \Big|^2
+                    \right]
+                \right|^2
                 \mu(dx)\mu(dy)
             \\
             &+
             \int_{\mathcal{H} \times \mathcal{H}}
-                \E^2\big[
+                \E^2
+                \left[
                     \varphi(X_t^y)
-                \big]
+                \right]
             \mu(dx)\mu(dy)
             \\
              &\times
             \int_{\mathcal{H}\times \mathcal{H}}
-            \Big|
+            \left|
                 H_{\bar n}(x)-H_{\bar n}(y)
-            \Big|^2
+            \right|^2
             \mu(dx)\mu(dy)
             \\
             =&
             \int_{\mathcal{H}\times \mathcal{H}}
-                \Big|
-                    \E\big [
+            \left|
+                    \E 
+                    \left [
                         \varphi(X_t^x)
-                    \big]
+                    \right]
                     -
-                    \E\big[
+                    \E\left[
                         \varphi(X_t^y)
-                    \big]
-                \Big|^2
+                    \right]
+                \right|^2
                 \mu(dx) \mu(dy)
             \\
             &+
             \int_{\mathcal{H}\times \mathcal{H}}
-                \E^2\big[
+                \E^2
+                \left[
                     \varphi(X_t^y)
-                \big]
+                \right]
             \mu(dx)\mu(dy)
             \\
             & \times
             \int_{\mathcal{H}\times \mathcal{H}}
-                \Big|
-                    H_{\bar n}(x)
+            \left|
+                H_{\bar n}(x)
                     -
                     H_{\bar n}(y)
-                \Big|^2
+            \right|^2
             \mu(dx)\mu(dy)
         \ .
     \end{aligned}
+    \label{s3.4.1}
 \end{equation}
 We now estimate the norm of the expression \eqref{s3.4} with the help of
 \eqref{s3.4.1}.
