@@ -21,7 +21,7 @@
         Continuity with respect to initial conditions for a numerical
         approximation of Kolmogorov equations
     },
-  pdfauthor={Fracisco Delgado-Veces, Saul Diaz-Infante, Alan Matsumya}
+  pdfauthor={Francisco Delgado-Vences, Saul Diaz-Infante, Alan Matzumiya}
 }
 \fi
 
@@ -32,7 +32,7 @@
 }
 
 \author{
-    Francisco Delgado-Vences
+    Francisco Delgado-Vences,
     CONACYT-UNAM,
     Instituto de Matem\'aticas,
     Sede Oaxaca, M\'exico.
@@ -57,8 +57,8 @@
 \maketitle
 
 \begin{abstract}
-    In this paper we prove that the numerical method proposed in \cite{de-fl}
-    is continuous with respect to the initial condition.
+    In this paper we prove that the numerical method, introduced in \cite{de-fl}, for Kolmogorov equations associated with stochastic partial differential equations in Hilbert spaces
+    is continuous with respect to the initial condition. We test our results with the stochastic Burgers equation and the stochastic Fisher-KPP equation.
 \end{abstract}
 
 \begin{keywords}
@@ -89,7 +89,7 @@ mathematics as population biology, fluid dynamics, and mathematical finance.''.
 This kind of equations have been deeply studied in the last years, see for
 instance \cite{bo-da-ro}, \cite{da-fl-ro}, \cite{da} and the references therein.
 
-    Finding analytical solutions of FPK associated with SPDEs results
+    Finding analytic solutions of FPK associated with SPDEs results
 impractical. Thus, work with efficient and accurate numerical schemes is
 crucial. In this way, the spectral methods play an essential role to obtain
 better schemes\textemdash under certain conditions, this sort of methods are
@@ -118,7 +118,7 @@ Thalhammer, \cite{Lang2017} for its stochastic version.
     This paper is organized as follows. In \Cref{fpk-sect} we review the
 Fokker-Plank-Kolmogorov equation associated with SPDEs in
 a separable Hilbert space. \Cref{sec:ContinuityRespectToInitialConditions} 
-provides .... and in \Cref{sec:NumericalExperiments} we illustrate our
+provides the main result on the stability of the numerical method and in \Cref{sec:NumericalExperiments} we illustrate our
 results with numerical experiments.
 
 \section{Kolmogorov equations for SPDEs in Hilbert spaces}\label{fpk-sect}
@@ -234,18 +234,13 @@ and where
 where $P_n(\xi)$ is the usual Hermite polynomial for  $\xi\in\R$ and
 $n\in\IN$.
 %
-\begin{remark}
+
     Notice that $l_i(h)$ is defined only for $h \in\mathcal{H}_0$. However,
     regarding $h$ as a $\mu$-random variable in
     $\mathcal{H}$, we have $\E\big(l_i (h)\big) = \|\varphi_i \|^2  = 1$ and
     then $l_k (h)$ can be defined $\mu$-a.e. $h \in\mathcal{H}$,
     similar to defining a stochastic integral.
 
-    It is possible to identify the Hermite polynomial functionals
-    defined in \eqref{s1.2}, for $h \in\mathcal{H}_0$, as a deterministic
-    version of the Wick polynomials defined on the canonical Wiener space.(for
-    further details see \cite{im} for instance).
-\end{remark}
 
     We have the following result (See Theorems 9.1.5 and 9.1.7 in Da
 Prato-Zabczyk \cite{da-za} or Lemma 3.1 in chapter 9 from Chow \cite{liu}).
@@ -1375,7 +1370,7 @@ From the proof of Theorem \ref{Cont-Mild-Sol} (see \eqref{s2.23}) we know that
 Therefore the first term in the right side of \eqref{s3.9.1} is bounded by
 \eqref{s3.10.1}.
 
-We now focus on the second term in the last inequality. Notice that for every
+We now focus on the second term in the inequality \eqref{s3.8.1}. Notice that for every
 $\bar n\in \mathcal{J}$ we have
 \begin{align}\label{s3.5}
     H_{\bar n}(x) - H_{\bar n}(y) =
