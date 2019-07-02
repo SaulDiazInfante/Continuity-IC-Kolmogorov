@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.9.21)  1 JUL 2019 17:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.9.21)  1 JUL 2019 18:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1188,9 +1188,9 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 20.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 2103) in paragraph at lines 22--22
-[][] \OT1/cmr/m/n/8 Uni-ver-si-dad de Sonora, De-par-ta-mento de Matem^^Saticas
-, Her-mosillo, Sonora, M^^Sexico,
+Underfull \hbox (badness 2707) in paragraph at lines 22--22
+[][] \OT1/cmr/m/n/8 Uni-ver-si-dad de Sonora De-par-ta-mento de Matem^^Saticas,
+ Her-mosillo, Sonora, M^^Sexico,
  []
 
 [1
@@ -1396,7 +1396,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1624.
 Here is how much of TeX's memory you used:
  33046 strings out of 492649
  636689 string characters out of 6129622
- 771026 words of memory out of 5000000
+ 771030 words of memory out of 5000000
  34809 multiletter control sequences out of 15000+600000
  542669 words of font info for 69 fonts, out of 8000000 for 9000
  2715 hyphenation exceptions out of 8191
@@ -1429,7 +1429,7 @@ t/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2018/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
 Output written on Continuity-IC-Kolmogorov-Delgado-Diaz-Matz.pdf (22 pages, 589
-371 bytes).
+054 bytes).
 PDF statistics:
  602 PDF objects out of 1000 (max. 8388607)
  530 compressed objects within 6 object streams
