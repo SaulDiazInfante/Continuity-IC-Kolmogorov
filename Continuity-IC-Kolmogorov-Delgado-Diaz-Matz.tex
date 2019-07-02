@@ -1,4 +1,4 @@
-\documentclass[review,onefignum,onetabnum]{siamart190516}
+\documentclass[onefignum,onetabnum]{siamart190516}
 %
 \input{header}
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
@@ -23,9 +23,9 @@
 \begin{abstract}
     We provide theory to characterizes the stability respect to initial 
     conditions of a weak numerical scheme to approximate the solution of a
-    particular family of SPDEs. Our approach follows the idea of solving the 
-    associated Kolmogorov equation to the underlying SPDE whit a spectral 
-    approach. We also run numerical experiments to illustrate our results.
+    particular family of SPDEs. Our approach consists in solving the associated 
+    Kolmogorov equation of the underlying SPDE whit a spectral method. We also 
+    run numerical experiments to illustrate our results.
 %    
 %    In this paper we prove that the numerical method proposed in \cite{de-fl}
 %    is continuous with respect to the initial condition.
@@ -119,7 +119,7 @@ $\Lambda^{1/2}$ is a positive definite, self-adjoint Hilbert-Schmidt operator
 on $\mathcal{H}$.
 
     Define the inner product
-\[
+$
     ( g, h )_0 := 
     \big( 
         \Lambda^{-1/2}g ,
@@ -130,7 +130,7 @@ on $\mathcal{H}$.
     \quad g, h \in 
     \Lambda^{1/2} 
     \mathcal{H}.
-\]
+$
 Let $\mathcal{H}_0$ denote the Hilbert subspace of $\mathcal{H}$, which is the
 completion of $\Lambda^{1/2} \mathcal{H}$ with
 respect to the norm $\|g\|_0:= ( g, g )_0^{1/2} $. Then ${\mathcal{H}_0}$ is
@@ -198,10 +198,10 @@ on $\mathcal{H}$ by
     h \in \mathcal{H}_0, \quad \bm{n} \in \mathcal{J},
 \end{align}
 and where
-\[
+$
     l_i(h) = \langle h,  \Lambda^{-1/2} \varphi_i \rangle_\mathcal{H}, \quad
-    i=1,2,\ldots
-\]
+    i=1,2,\ldots \quad
+$
 where $P_n(\xi)$ is the usual Hermite polynomial for  $\xi\in\R$ and
 $n\in\IN$.
 %
@@ -227,9 +227,9 @@ Prato-Zabczyk \cite{da-za} or Lemma 3.1 in chapter 9 from Chow \cite{liu}).
     Hermite polynomials on $\mathcal{H} $ forms a complete orthonormal system
     for $\mathbb{H} $. Hence the set of all functionals are dense in
     $\mathbb{H}$. Moreover, we have the direct sum decomposition:
-    \[
+    $
         \mathbb{H} = \bigoplus_{j=0}^\infty K_j,
-    \]
+    $
     where $K_j$ is the subspace of $\mathbb{H} $ spanned by $\{H_{\bm{n}}:
     |\bm{n}|=j\}$.
 \end{lemma}
@@ -262,10 +262,10 @@ $
 $,
 for $h, v_1 , \ldots , v_m \in \mathcal{H}$.
 Consider the following linear stochastic equation
-\begin{align*}
-    du_t&=Au_tdt+dW_t,\label{OU}\\
-    u_0&=h\in \mathcal{H}.
-\end{align*}
+$$
+    du_t=Au_tdt+dW_t \qquad 
+    u_0=h\in \mathcal{H}.
+$$
 Where $A: \mathcal{D}(A) \subset \mathcal{H} \rightarrow \mathcal{H}$ is the
 infinitesimal generator of a strongly continuous semigroup $e^{tA}$ in
 $\mathcal{H}$. $W_t$ is a $Q$-Wiener process
@@ -311,9 +311,9 @@ operator $P_t$  defined for $\Phi\in\mathbb{H}$ given by
 \end{equation}
     Let $\Phi\in\mathcal{S}(\mathbb{H})$ be a smooth simple functional. By
 setting $\varphi_k = e_k$ in \eqref{S1.2}, it takes the form
-\[
+$
   \Phi(h) = \phi(l_1(h), \cdots, l_n (h)),
-\]
+$
 where $l_k(h) = (h, \Lambda^{-1/2} e_k )$. Define a differential operator
 $A_0$
 on $\mathcal{S}(\mathbb{H})$ by
@@ -356,13 +356,11 @@ The following results have been proved in \cite{liu}.
         Let $H_n(h)$ be a Hermite polynomial functional given by \eqref{s1.2}.
         Then the following hold:
     \begin{align}
-        \mathcal{A}_0 H_{\mathbf{n}}(h) =
-        -\lambda_{\mathbf{n}} H_{\mathbf{n}}(h),
-    \end{align}
-    and
-    \begin{align}
+        \mathcal{A}_0 H_{\mathbf{n}}(h) 
+            &= -\lambda_{\mathbf{n}} H_{\mathbf{n}}(h),
+            \\
         P_t H_{\mathbf{n}} (h)
-        = \exp\{-\lambda_{\mathbf{n}} t\} H_{\mathbf{n}} (h),
+            &= \exp\{-\lambda_{\mathbf{n}} t\} H_{\mathbf{n}} (h),
     \end{align}
     for any $\mathbf{n}\in\mathcal{J}$ and $h \in H$, where
     $
@@ -461,12 +459,12 @@ proofs can be found in \cite{liu} for instance.
 
     Given the Gauss-Sobolev space $\mathbb{H}_{k}$ with norm
 $|||\cdot|||_{k} $ we denote its dual space by $\mathbb{H}_{-k}$ with norm
-$|||\cdot|||_{-k}$. Thus, we have the following inclusions,
-\[
+$|||\cdot|||_{-k}$. Thus, we have the inclusions,
+$
     \mathbb{H}_{k} \subset \mathbb{H} \subset \mathbb{H}_{k}.
-\]
+$
 We denote the duality between $ \mathbb{H}_{k}$ and $ \mathbb{H}_{-k}$ by
-\[
+$
     \langle
         \langle
             \Psi,\Phi
@@ -475,7 +473,7 @@ We denote the duality between $ \mathbb{H}_{k}$ and $ \mathbb{H}_{-k}$ by
     \qquad
     \Phi\in\mathbb{H}_{k},
     \quad \Psi\in\mathbb{H}_{-k} \ .
-\]
+$
 We also set $\mathbb{H}_{0}= \mathbb{H}$,
 with $|||\cdot|||_{0}= |||\cdot|||$ and
 $
@@ -750,9 +748,9 @@ fact and Lemma \ref{Lemma.s3.1} we have
  &\le 2 |||\Phi|||^2 + C_1 \int_0^t |||\Psi_s|||^2 ds,
 \end{align*}
 for some $C_1>0$. Hence,
-\[
+$
  ||| \mathbb{Q}\Psi|||_T \le C(1+||| \Psi|||_T),
-\]
+$
 with $C=C(\Phi,\lambda, T)$. Then, the map $\mathbb{Q}:\mathbb{X}_T
 \rightarrow \mathbb{X}_T$ is well defined. We now show that is a contraction
 for a
@@ -764,10 +762,10 @@ small $t$. Let $\Psi,\Psi'\in \mathbb{X}_T$. Then
  &\le  C_2 \int_0^t |||\Psi_s-\Psi'|||^2 ds.
 \end{align*}
 For some $C_2>0$. It follows that
-\begin{align*}
- ||| \mathbb{Q}\Psi- \mathbb{Q}\Psi'|||_T  &\le  \sqrt{C_2 T}
+$%\begin{align*}
+ ||| \mathbb{Q}\Psi- \mathbb{Q}\Psi'|||_T  \le  \sqrt{C_2 T}
 |||\Psi_s-\Psi'|||_T.
-\end{align*}
+$%\end{align*}
 Then, for small $T$, $\mathbb{Q}$ is a contraction on $\mathbb{X}_T$. Hence
 the Cauchy problem \eqref{P1s3.2} has a unique mild solution.
 
@@ -824,9 +822,9 @@ Thus, by Gronwall's inequality we obtain
     \| |^2, 
 \end{align}
 which implies,
-\begin{align*}
-\| | \Psi_t^\varphi-\Phi_t^\psi\| |&\le \exp(Ct)  \| | \varphi - \psi\| |.
-\end{align*}
+$
+\| | \Psi_t^\varphi-\Phi_t^\psi\| |\le \exp(Ct)  \| | \varphi - \psi\| |.
+$
 This completes the proof.
 \end{proof}
 
@@ -869,9 +867,9 @@ unnormalized Hermite polynomial of $k$ degree.
 \end{lemma}
 \begin{proof}
  We know that
- $$
- P_k(\xi)=\frac{(-1)^k}{(k!)^{1/2}} e^{\xi^2/2}\frac{d}{d\xi^k}e^{-\xi^2/2}.
- $$
+ $
+     P_k(\xi)=\frac{(-1)^k}{(k!)^{1/2}} e^{\xi^2/2}\frac{d}{d\xi^k}e^{-\xi^2/2}.
+ $
  Set $c(k)=(-1)^k (k!)^{-1/2}$, then
 \begin{align*}
     P_k(\xi)-P_k(\eta)
@@ -907,9 +905,9 @@ $$
     \int_{\eta}^\xi F_k(x) dx = F_k(\gamma)\cdot (\xi-\eta).
 $$
  All these implies that
-\begin{equation*}
+$
     P_k(\xi)-P_k(\eta)= c(k) F_k(\gamma) \cdot (\xi-\eta).
-\end{equation*}
+$
     From this expression the lemma follows immediately.
 \end{proof}
 
@@ -1556,12 +1554,10 @@ Putting together inequalities \eqref{s3.9.1}, \eqref{s3.10.1} and
   \label{s3.17}
 \end{align}
 Now, if $\| x-y\|_{\mathcal{H}}\le \delta $, then from \eqref{s3.17} we get
-
-\begin{align}
- \| \Psi_t^x-\Psi_t^y\|_{\big(L^2(\mathcal{H},\mu) \big)^2} &\le
-  G(t) \delta, \label{s3.12}
-\end{align}
-which implies the theorem. The proof is complete.
+$
+ \| \Psi_t^x-\Psi_t^y\|_{\big(L^2(\mathcal{H},\mu) \big)^2} \le
+  G(t) \delta %\label{s3.12}
+$.
 \end{proof}
 
 \begin{remark}
