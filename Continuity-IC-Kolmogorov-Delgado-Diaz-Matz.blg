@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: Continuity-IC-Kolmogorov-Delgado-Diaz-Matz.aux
+The style file: siamplain.bst
+Database file #1: references.bib
+Warning--entry type for "plotlyFisher" isn't style-file defined
+--line 247 of file references.bib
+Warning--entry type for "plotlyBurgers" isn't style-file defined
+--line 255 of file references.bib
+Warning--empty publisher in da1
+You've used 17 entries,
+            2244 wiz_defined-function locations,
+            683 strings with 7945 characters,
+and the built_in function-call counts, 6243 in all, are:
+= -- 562
+> -- 215
+< -- 0
++ -- 87
+- -- 67
+* -- 451
+:= -- 854
+add.period$ -- 21
+call.type$ -- 17
+change.case$ -- 78
+chr.to.int$ -- 0
+cite$ -- 18
+duplicate$ -- 368
+empty$ -- 594
+format.name$ -- 67
+if$ -- 1426
+int.to.chr$ -- 0
+int.to.str$ -- 17
+missing$ -- 19
+newline$ -- 58
+num.names$ -- 36
+pop$ -- 133
+preamble$ -- 1
+purify$ -- 66
+quote$ -- 0
+skip$ -- 285
+stack$ -- 0
+substring$ -- 344
+swap$ -- 150
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 58
+warning$ -- 1
+while$ -- 53
+width$ -- 19
+write$ -- 178
+(There were 3 warnings)

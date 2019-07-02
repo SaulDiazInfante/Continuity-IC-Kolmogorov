@@ -1,0 +1,108 @@
+\begin{thebibliography}{10}
+
+\bibitem{ba-da}
+{\sc V.~Barbu and G.~D. Prato}, {\em {The Kolmogorov equation for a
+  2D-Navier–Stokes stochastic flow in a channel}}, Nonlinear Analysis:
+  Theory, Methods \& Applications, 69 (2008), p.~940–949,
+  \url{https://doi.org/10.1016/j.na.2008.02.072},
+  \url{http://www.sciencedirect.com/science/article/pii/S0362546X08001569}.
+\newblock Trends in Nonlinear Analysis: in Honour of Professor
+  V.Lakshmikantham.
+
+\bibitem{bo-da-ro}
+{\sc V.~Bogachev, G.~D. Prato, and M.~Röckner}, {\em {Existence Results for
+  Fokker–Planck Equations in Hilbert Spaces}}, in {Seminar on Stochastic
+  Analysis, Random Fields and Applications VI}, R.~Dalang, M.~Dozzi, and
+  F.~Russo, eds., Basel, 2011, Springer Basel, p.~23–35.
+
+\bibitem{liu}
+{\sc P.-L. Chow}, {\em Stochastic partial differential equations}, Chapman \&
+  Hall/CRC Applied Mathematics and Nonlinear Science Series, Chapman \&
+  Hall/CRC, Boca Raton, FL, 2007.
+
+\bibitem{da}
+{\sc G.~Da~Prato}, {\em Kolmogorov equations for stochastic {PDE}s}, Advanced
+  Courses in Mathematics. CRM Barcelona, Birkh\"{a}user Verlag, Basel, 2004,
+  \url{https://doi.org/10.1007/978-3-0348-7909-5},
+  \url{https://doi.org/10.1007/978-3-0348-7909-5}.
+
+\bibitem{da-de}
+{\sc G.~{Da Prato} and A.~Debussche}, {\em {m-Dissipativity of Kolmogorov
+  Operators Corresponding to Burgers Equations with Space-time White Noise}},
+  Potential Analysis, 26 (2007), p.~31–55,
+  \url{https://doi.org/10.1007/s11118-006-9021-5},
+  \url{https://doi.org/10.1007/s11118-006-9021-5}.
+
+\bibitem{da-fl-ro}
+{\sc G.~Da~Prato, F.~Flandoli, and M.~R\"{o}ckner}, {\em Fokker-{P}lanck
+  equations for {SPDE} with non-trace-class noise}, Commun. Math. Stat., 1
+  (2013), pp.~281--304, \url{https://doi.org/10.1007/s40304-013-0015-5},
+  \url{https://doi.org/10.1007/s40304-013-0015-5}.
+
+\bibitem{da-za}
+{\sc G.~Da~Prato and J.~Zabczyk}, {\em Second order partial differential
+  equations in {H}ilbert spaces}, vol.~293 of London Mathematical Society
+  Lecture Note Series, Cambridge University Press, Cambridge, 2002,
+  \url{https://doi.org/10.1017/CBO9780511543210},
+  \url{https://doi.org/10.1017/CBO9780511543210}.
+
+\bibitem{de-fl}
+{\sc F.~Delgado-Vences and F.~Flandoli}, {\em A spectral-based numerical method
+  for {K}olmogorov equations in {H}ilbert spaces}, Infin. Dimens. Anal. Quantum
+  Probab. Relat. Top., 19 (2016), pp.~1650020, 37,
+  \url{https://doi.org/10.1142/S021902571650020X},
+  \url{https://doi.org/10.1142/S021902571650020X}.
+
+\bibitem{plotlyBurgers}
+{\sc S.~Diaz-Infante}, {\em Likening of two solutions of the burgers equation
+  with two initial function conditions}.
+\newblock https://plot.ly/~sauldiazinfante/30/ [2019/05/11],
+  \url{https://plot.ly/~sauldiazinfante/30/}.
+
+\bibitem{plotlyFisher}
+{\sc S.~Diaz-Infante}, {\em Likening of two solutions of the fisher equation
+  with two initial function conditions}.
+\newblock https://plot.ly/~sauldiazinfante/28/ [2019/05/11],
+  \url{https://plot.ly/~sauldiazinfante/28/}.
+
+\bibitem{Gottlieb1987a}
+{\sc D.~Gottlieb, L.~Lustman, and E.~Tadmor}, {\em Stability analysis of
+  spectral methods for hyperbolic initial-boundary value systems}, SIAM J.
+  Numer. Anal., 24 (1987), pp.~241--256, \url{https://doi.org/10.1137/0724020},
+  \url{https://doi.org/10.1137/0724020}.
+
+\bibitem{im}
+{\sc P.~Imkeller}, {\em Malliavin's calculus and applications in stochastic
+  control and finance}, vol.~1 of IMPAN Lecture Notes, Polish Academy of
+  Sciences, Institute of Mathematics, Warsaw, 2008.
+
+\bibitem{Lang2017}
+{\sc A.~Lang, A.~Petersson, and A.~Thalhammer}, {\em {Mean-square stability
+  analysis of approximations of stochastic differential equations in infinite
+  dimensions}}, BIT Numerical Mathematics, 57 (2017), p.~963–990,
+  \url{https://doi.org/10.1007/s10543-017-0684-7},
+  \url{https://doi.org/10.1007/s10543-017-0684-7}.
+
+\bibitem{Li2019}
+{\sc N.~Li, J.~Fiordilino, and X.~Feng}, {\em {Ensemble Time-Stepping Algorithm
+  for the Convection-Diffusion Equation with Random Diffusivity}}, Journal of
+  Scientific Computing, 79 (2019), pp.~1271--1293,
+  \url{https://doi.org/10.1007/s10915-018-0890-8},
+  \url{https://doi.org/10.1007/s10915-018-0890-8}.
+
+\bibitem{matsumyaRepo}
+{\sc A.~D. Matzumiya}, {\em Github of the python implementation of the weak
+  spectral method}.
+\newblock \url{https://github.com/alanmatzumiya/Paper}, May 2019,
+  \url{https://github.com/alanmatzumiya/Paper} (accessed 2019-05-11).
+
+\bibitem{da1}
+{\sc G.~D. Prato}, {\em An introduction to Kolmogorov equations in Hibert
+  spaces.}, 2011.
+
+\bibitem{Trefethen1987}
+{\sc L.~N. Trefethen and M.~R. Trummer}, {\em An instability phenomenon in
+  spectral methods}, SIAM J. Numer. Anal., 24 (1987), pp.~1008--1023,
+  \url{https://doi.org/10.1137/0724066}, \url{https://doi.org/10.1137/0724066}.
+
+\end{thebibliography}

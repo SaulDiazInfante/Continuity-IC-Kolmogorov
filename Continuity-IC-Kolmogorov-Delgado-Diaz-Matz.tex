@@ -1,16 +1,6 @@
-\documentclass[review, onefignum, onetabnum]{siamart171218}
-\usepackage[square, sort&compress, numbers]{natbib}
-\usepackage[utf8x]{inputenc}
-\usepackage{bm}
-\usepackage{booktabs}
-\usepackage{etoolbox}
-\usepackage{todonotes}
-\usepackage{epstopdf}
-\usepackage{siunitx}
-\patchcmd{\SetTagPlusEndMark}{$}{}{}{}
-\patchcmd{\SetTagPlusEndMark}{$}{}{}{}
+\documentclass[review,onefignum,onetabnum]{siamart190516}
 %
-\include{header}
+\input{header}
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 \floatstyle{boxed}
 \restylefloat{figure}
@@ -21,44 +11,24 @@
         Continuity with respect to initial conditions for a numerical
         approximation of Kolmogorov equations
     },
-  pdfauthor={Francisco Delgado-Vences, Saul Diaz-Infante, Alan Matzumiya}
+  pdfauthor={Fracisco Delgado-Veces, Alan Matsumya, Saul Diaz-Infante}
 }
 \fi
 
 %opening
-\title{%
-    Continuity with respect to initial conditions for a numerical
-    approximation of Kolmogorov equations.
-}
-
-\author{
-    Francisco Delgado-Vences,
-    CONACYT-UNAM,
-    Instituto de Matem\'aticas,
-    Sede Oaxaca, M\'exico.
-    (\email{delgado@im.unam.mx})
-%
-    \and
-    Saul Diaz-Infante,
-    CONACYT-Universidad
-    de Sonora, Departamento de Matem\'aticas.
-    Hermosillo, Sonora, M\'exico,
-    (\email{saul.diazinfante@unison.mx})
-%
-    \and
-    Alan Matzumiya
-    Universidad de Sonora,
-    Departamento de Matem\'aticas,
-    Hermosillo, Sonora, M\'exico,
-    (\email{alan.matzumiya@gmail.com})
-}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-    In this paper we prove that the numerical method, introduced in \cite{de-fl}, for Kolmogorov equations associated with stochastic partial differential equations in Hilbert spaces
-    is continuous with respect to the initial condition. We test our results with the stochastic Burgers equation and the stochastic Fisher-KPP equation.
+    We provide theory to characterizes the stability respect to initial 
+    conditions of a weak numerical scheme to approximate the solution of a
+    particular family of SPDEs. Our approach follow the idea of solve
+    the associated Kolmogorov equation to the underlying SPDE whit a spectral 
+    approach. We also run numerical experiments to illustrate our results.
+%    
+%    In this paper we prove that the numerical method proposed in \cite{de-fl}
+%    is continuous with respect to the initial condition.
 \end{abstract}
 
 \begin{keywords}
@@ -72,7 +42,7 @@
 \section{Introduction}
     Stochastic Partial Differential Equations (SPDEs) are important tools in
 modeling complex phenomena, they arise in many fields of knowledge like
-Physics, Biology, Economy, Finance, etc.. Develop efficient numerical
+Physics, Biology, Economy, Finance, etc. Develop efficient numerical
 methods for simulating SPDEs is very important but also very difficult and
 challenging.
 
@@ -87,20 +57,20 @@ theory. Infinite-dimensional parabolic equations provide an analytic description
 of infinite dimensional diffusion processes in such branches of applied
 mathematics as population biology, fluid dynamics, and mathematical finance.''.
 This kind of equations have been deeply studied in the last years, see for
-instance \cite{bo-da-ro}, \cite{da-fl-ro}, \cite{da} and the references therein.
+instance \cite{bo-da-ro, da-fl-ro, da} and the references therein.
 
-    Finding analytic solutions of FPK associated with SPDEs results
-impractical. Thus, work with efficient and accurate numerical schemes is
-crucial. In this way, the spectral methods play an essential role to obtain
-better schemes\textemdash under certain conditions, this sort of methods are
-more accurate than finite differences of finite elements and  need fewer grid
-points. Here the adjective ``better'' would be under accuracy, consistency,
-stability, and other targets properties. In this work, we explore the ability of
-the method reported in \cite{de-fl} to preserve the continuity respect to
-initial conditions. That is, if a given problem satisfies certain regularity
-conditions, then two of its solution will remain closed if its initial function
-conditions are close. So, we would desire that a numerical method reproduce this
-behavior and if it is the case, we say that a underlaying method is stably in
+    Finding analytical solutions of FPK associated with SPDEs results
+impractical. Thus, work with efficient and accurate numerical schemes is 
+crucial. In this way, the spectral methods play an essential role to obtain 
+better schemes\textemdash under certain conditions; this sort of methods are 
+more accurate than finite differences of finite elements and need fewer grid 
+points. Here the adjective ``better'' would be under accuracy, consistency, 
+stability, and other targets properties. In this work, we explore the ability 
+of the method reported in \cite{de-fl} to preserve the continuity respect to 
+initial conditions. That is, if a given problem satisfies certain regularity 
+conditions, then two of its solution remain closed if its initial function 
+conditions are close. So, we desire that a numerical method reproduce this 
+behavior and if it is the case, we say that an underlying method is stable in 
 this context.
 
     Our main contribution is the characterization of mild conditions to
@@ -118,7 +88,8 @@ Thalhammer, \cite{Lang2017} for its stochastic version.
     This paper is organized as follows. In \Cref{fpk-sect} we review the
 Fokker-Plank-Kolmogorov equation associated with SPDEs in
 a separable Hilbert space. \Cref{sec:ContinuityRespectToInitialConditions} 
-provides the main result on the stability of the numerical method and in \Cref{sec:NumericalExperiments} we illustrate our
+provides conditions to assure stability respect initial conditions and in 
+\Cref{sec:NumericalExperiments} we illustrate our
 results with numerical experiments.
 
 \section{Kolmogorov equations for SPDEs in Hilbert spaces}\label{fpk-sect}
@@ -234,13 +205,18 @@ and where
 where $P_n(\xi)$ is the usual Hermite polynomial for  $\xi\in\R$ and
 $n\in\IN$.
 %
-
+\begin{remark}
     Notice that $l_i(h)$ is defined only for $h \in\mathcal{H}_0$. However,
     regarding $h$ as a $\mu$-random variable in
     $\mathcal{H}$, we have $\E\big(l_i (h)\big) = \|\varphi_i \|^2  = 1$ and
     then $l_k (h)$ can be defined $\mu$-a.e. $h \in\mathcal{H}$,
     similar to defining a stochastic integral.
 
+    It is possible to identify the Hermite polynomial functionals
+    defined in \eqref{s1.2}, for $h \in\mathcal{H}_0$, as a deterministic
+    version of the Wick polynomials defined on the canonical Wiener space.(for
+    further details see \cite{im} for instance).
+\end{remark}
 
     We have the following result (See Theorems 9.1.5 and 9.1.7 in Da
 Prato-Zabczyk \cite{da-za} or Lemma 3.1 in chapter 9 from Chow \cite{liu}).
@@ -854,13 +830,14 @@ which implies,
 This completes the proof.
 \end{proof}
 
-\section{Continuity with respect to the initial conditions of a numerical
-approximations }
+\section{Numerical stability respect to  initial conditions}
 \label{sec:ContinuityRespectToInitialConditions}
 
-In this section we will prove the continuity with respect to the initial
-conditions for a numerical approximations
-of the Kolmogorov equations associated to SPDE's.
+    In this section, we prove the continuity with respect to the initial
+conditions for a numerical approximation of the Kolmogorov equation associated 
+with an SPDE. Here we understand that a  numerical scheme is stable respect to 
+initial conditions if this method reproduces the same behavior when the 
+continuous problem satisfies continuity respect initial conditions.
 
 We use \Cref{s1.le1} to write the solution $\Psi_t^\varphi$ as in a
 Fourier-Hermite decomposition:
@@ -874,12 +851,9 @@ Fourier-Hermite decomposition:
         \label{num-approx}
 \end{align}
 
-Notice that the time-dependent coefficients $ u_{\bm{n}}(t)$ depend on the
+Note that the time-dependent coefficients $ u_{\bm{n}}(t)$ depend on the
 functional and on the initial condition but it is not a function of
-the initial condition.
-
-We now prove a previous result before proving the result on the dependence of
-the initial conditions.
+the initial condition. First we  prove an auxiliary result.
 
 \begin{lemma}\label{le-s3-1}
  Set $\{P_k(\xi)\}_{k\in \IN}$ the family of normalized Hermite polynomials in
@@ -1374,7 +1348,7 @@ From the proof of Theorem \ref{Cont-Mild-Sol} (see \eqref{s2.23}) we know that
 Therefore the first term in the right side of \eqref{s3.9.1} is bounded by
 \eqref{s3.10.1}.
 
-We now focus on the second term in the inequality \eqref{s3.8.1}. Notice that for every
+We now focus on the second term in the last inequality. Notice that for every
 $\bar n\in \mathcal{J}$ we have
 \begin{align}\label{s3.5}
     H_{\bar n}(x) - H_{\bar n}(y) =
