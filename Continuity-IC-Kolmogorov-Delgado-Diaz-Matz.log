@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.9.21)  1 JUL 2019 19:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.9.21)  1 JUL 2019 20:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1183,26 +1183,16 @@ Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
  line 209.
 Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input 
 line 224.
-
-
-LaTeX Warning: Reference `OU' on page 3 undefined on input line 287.
-
-[3]
-
-LaTeX Warning: Reference `OU' on page 4 undefined on input line 301.
-
-
-LaTeX Warning: Reference `OU' on page 4 undefined on input line 330.
-
+ [3]
 Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
-t line 375.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/ucs/data/uni-32.def
+t line 376.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-) [4] [5]
+)
+[4] [5]
 Package hyperref Info: bookmark level for unknown proof defaults to 0 on input 
-line 615.
-
-[6] [7] [8] [9] [10]
+line 616.
+ [6] [7] [8] [9] [10]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11]
@@ -1231,7 +1221,7 @@ Package epstopdf Info: Output file is already uptodate.
 pdfTeX warning: /usr/local/texlive/2018/bin/x86_64-linux/pdflatex (file ./Stoch
 asticFisherEquation/Approximation_t=0-eps-converted-to.pdf): PDF inclusion: fou
 nd PDF version <1.7>, but at most version <1.5> allowed
-<StochasticFisherEquation/Approximation_t=0-eps-converted-to.pdf, id=301, 397.4
+<StochasticFisherEquation/Approximation_t=0-eps-converted-to.pdf, id=305, 397.4
 85pt x 245.91875pt>
 File: StochasticFisherEquation/Approximation_t=0-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -1239,7 +1229,7 @@ ile (type pdf)
 Package pdftex.def Info: StochasticFisherEquation/Approximation_t=0-eps-convert
 ed-to.pdf  used on input line 59.
 (pdftex.def)             Requested size: 370.38374pt x 229.15985pt.
-<StochasticFisherEquation/simulation_Approximation.png, id=306, 993.7125pt x 77
+<StochasticFisherEquation/simulation_Approximation.png, id=310, 993.7125pt x 77
 3.89125pt>
 File: StochasticFisherEquation/simulation_Approximation.png Graphic file (type 
 png)
@@ -1264,7 +1254,7 @@ Package epstopdf Info: Output file is already uptodate.
 pdfTeX warning: /usr/local/texlive/2018/bin/x86_64-linux/pdflatex (file ./Stoch
 asticFisherEquation/error_fisher-eps-converted-to.pdf): PDF inclusion: found PD
 F version <1.7>, but at most version <1.5> allowed
-<StochasticFisherEquation/error_fisher-eps-converted-to.pdf, id=308, 397.485pt 
+<StochasticFisherEquation/error_fisher-eps-converted-to.pdf, id=312, 397.485pt 
 x 245.91875pt>
 File: StochasticFisherEquation/error_fisher-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -1298,7 +1288,7 @@ Package epstopdf Info: Output file is already uptodate.
 pdfTeX warning: /usr/local/texlive/2018/bin/x86_64-linux/pdflatex (file ./Stoch
 asticBurgersEquation/Approximation_t=0-eps-converted-to.pdf): PDF inclusion: fo
 und PDF version <1.7>, but at most version <1.5> allowed
-<StochasticBurgersEquation/Approximation_t=0-eps-converted-to.pdf, id=383, 397.
+<StochasticBurgersEquation/Approximation_t=0-eps-converted-to.pdf, id=387, 397.
 485pt x 245.91875pt>
 File: StochasticBurgersEquation/Approximation_t=0-eps-converted-to.pdf Graphic 
 file (type pdf)
@@ -1306,7 +1296,7 @@ file (type pdf)
 Package pdftex.def Info: StochasticBurgersEquation/Approximation_t=0-eps-conver
 ted-to.pdf  used on input line 37.
 (pdftex.def)             Requested size: 370.38374pt x 229.15985pt.
-<StochasticBurgersEquation/simulation_Approximation.png, id=386, 960.58875pt x 
+<StochasticBurgersEquation/simulation_Approximation.png, id=390, 960.58875pt x 
 782.925pt>
 File: StochasticBurgersEquation/simulation_Approximation.png Graphic file (type
  png)
@@ -1332,7 +1322,7 @@ Package epstopdf Info: Output file is already uptodate.
 pdfTeX warning: /usr/local/texlive/2018/bin/x86_64-linux/pdflatex (file ./Stoch
 asticBurgersEquation/error_burgers-eps-converted-to.pdf): PDF inclusion: found 
 PDF version <1.7>, but at most version <1.5> allowed
-<StochasticBurgersEquation/error_burgers-eps-converted-to.pdf, id=389, 397.485p
+<StochasticBurgersEquation/error_burgers-eps-converted-to.pdf, id=393, 397.485p
 t x 245.91875pt>
 File: StochasticBurgersEquation/error_burgers-eps-converted-to.pdf Graphic file
  (type pdf)
@@ -1368,26 +1358,22 @@ m/it/10 En-sem-ble Time-Stepping Al-go-
 \openout5 = `Continuity-IC-Kolmogorov-Delgado-Diaz-Matz.thm'.
 
  [20]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1620.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1620.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1621.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1621.
  (./Continuity-IC-Kolmogorov-Delgado-Diaz-Matz.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1620.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1620.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1621.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1621.
 
 Package rerunfilecheck Info: File `Continuity-IC-Kolmogorov-Delgado-Diaz-Matz.o
 ut' has not changed.
-(rerunfilecheck)             Checksum: D479931D5E8DDA946C18537F656F0139;434.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1620.
+(rerunfilecheck)             Checksum: 78D611790600B0FF5CF3CC90E8D62656;434.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1621.
  ) 
 Here is how much of TeX's memory you used:
- 32812 strings out of 492649
- 633222 string characters out of 6129622
- 768917 words of memory out of 5000000
- 34582 multiletter control sequences out of 15000+600000
+ 32814 strings out of 492649
+ 633242 string characters out of 6129622
+ 769013 words of memory out of 5000000
+ 34583 multiletter control sequences out of 15000+600000
  542669 words of font info for 69 fonts, out of 8000000 for 9000
  2715 hyphenation exceptions out of 8191
  64i,13n,56p,10427b,860s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1419,10 +1405,10 @@ t/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2018/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
 Output written on Continuity-IC-Kolmogorov-Delgado-Diaz-Matz.pdf (20 pages, 583
-130 bytes).
+015 bytes).
 PDF statistics:
- 577 PDF objects out of 1000 (max. 8388607)
- 507 compressed objects within 6 object streams
- 121 named destinations out of 1000 (max. 500000)
+ 581 PDF objects out of 1000 (max. 8388607)
+ 511 compressed objects within 6 object streams
+ 122 named destinations out of 1000 (max. 500000)
  91 words of extra memory for PDF output out of 10000 (max. 10000000)
 
