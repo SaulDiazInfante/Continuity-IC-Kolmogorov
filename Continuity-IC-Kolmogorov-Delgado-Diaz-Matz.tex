@@ -1,4 +1,4 @@
-\documentclass[onefignum,onetabnum]{siamart190516}
+\documentclass[review,onefignum,onetabnum]{siamart190516}
 %
 \input{header}
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
@@ -11,7 +11,7 @@
         Initial conditions continuity of a numerical
         approximation for Kolmogorov equations
     }
-  pdfauthor={Fracisco Delgado-Veces, Alan Matsumya, Saul Diaz-Infante}
+  pdfauthor={Fracisco Delgado-Veces, Alan Matsumya-Zazueta, Saul Diaz-Infante}
 }
 \fi
 
@@ -19,26 +19,23 @@
 
 \begin{document}
 \maketitle
-
+%
 \begin{abstract}
     We provide theory to characterizes the stability respect to initial 
     conditions of a weak numerical scheme to approximate the solution of a
     particular family of SPDEs. Our approach consists in solving the associated 
-    Kolmogorov equation of the underlying SPDE whit a spectral method. We also 
-    run numerical experiments to illustrate our results.
-%    
-%    In this paper we prove that the numerical method proposed in \cite{de-fl}
-%    is continuous with respect to the initial condition.
+    Kolmogorov equation of the underlying SPDE whit a spectral method. We 
+    illustrate our results with numerical experiments.
 \end{abstract}
-
+%
 \begin{keywords}
     Stability, spectral methods, Kolmogorov equation.
 \end{keywords}
-
+%
 \begin{AMS}
     60H10, 65C20, 35Q84
 \end{AMS}
-
+%
 \section{Introduction}
     Stochastic Partial Differential Equations (SPDEs) are important tools in
 modeling complex phenomena, they arise in many fields of knowledge like
@@ -82,7 +79,7 @@ construction and is an active research area. We mention the seminal works of
 L.N. Trefethen and M.R. Trummer \cite{Trefethen1987}, D. Gottlieb et. al.
 \cite{Gottlieb1987a} as reference for the deterministic case, and N. Li, J.
 Fiordilino, and X. Feng, \cite{Li2019} A. Lang, A. Petersson,  and A.
-Thalhammer, \cite{Lang2017} for its stochastic version.
+Thalhammer, \cite{Lang2017} for the stochastic version.
 
 
     This paper is organized as follows. In \Cref{fpk-sect} we review the
@@ -264,7 +261,7 @@ for $h, v_1 , \ldots , v_m \in \mathcal{H}$.
 Consider the following linear stochastic equation
 \begin{equation}
     \label{OU}
-    du_t=Au_tdt+dW_t \qquad 
+    du_t=Au_tdt+dW_t, \quad 
     u_0=h\in \mathcal{H}.
 \end{equation}
 Where $A: \mathcal{D}(A) \subset \mathcal{H} \rightarrow \mathcal{H}$ is the
