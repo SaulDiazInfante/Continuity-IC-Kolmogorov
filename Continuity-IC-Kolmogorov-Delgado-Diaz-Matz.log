@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.9.21)  4 JUL 2019 10:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.9.21)  4 JUL 2019 10:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1210,7 +1210,12 @@ File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 [4] [5]
 Package hyperref Info: bookmark level for unknown proof defaults to 0 on input 
 line 614.
- [6] [7] [8] [9] [10]
+ [6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 764--773
+
+ []
+
+[8] [9] [10]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11]
@@ -1315,7 +1320,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [17 <./StochasticBurgersEquation/Approximation_t=0-eps-converted-to.pdf>])
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 1622.
+ine 1630.
  [18 <./StochasticBurgersEquation/simulation_Approximation_color.png> <./Stocha
 sticBurgersEquation/error_burgers.pdf>]
 
@@ -1344,21 +1349,21 @@ m/it/10 En-sem-ble Time-Stepping Al-go-
 \openout5 = `Continuity-IC-Kolmogorov-Delgado-Diaz-Matz.thm'.
 
  [20]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1626.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1626.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1634.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1634.
  (./Continuity-IC-Kolmogorov-Delgado-Diaz-Matz.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1626.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1626.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1634.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1634.
 
 Package rerunfilecheck Info: File `Continuity-IC-Kolmogorov-Delgado-Diaz-Matz.o
 ut' has not changed.
 (rerunfilecheck)             Checksum: BF3AB3E46E879A9B990048525B41DCBF;482.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1626.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1634.
  ) 
 Here is how much of TeX's memory you used:
  33122 strings out of 492649
  638416 string characters out of 6129622
- 773093 words of memory out of 5000000
+ 773087 words of memory out of 5000000
  34884 multiletter control sequences out of 15000+600000
  542669 words of font info for 69 fonts, out of 8000000 for 9000
  2715 hyphenation exceptions out of 8191
@@ -1386,7 +1391,7 @@ e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texl
 ive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
 Output written on Continuity-IC-Kolmogorov-Delgado-Diaz-Matz.pdf (20 pages, 691
-876 bytes).
+861 bytes).
 PDF statistics:
  558 PDF objects out of 1000 (max. 8388607)
  493 compressed objects within 5 object streams
