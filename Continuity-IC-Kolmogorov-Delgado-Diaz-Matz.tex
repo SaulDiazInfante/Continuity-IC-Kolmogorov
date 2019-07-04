@@ -414,7 +414,7 @@ Define
         &= \Bigg[ \sum_{\mathbf{n}}
         \big(
             1 + \alpha_{\mathbf{n}}
-        \big) ^ k |\ phi_n |^2 \Bigg]^{1/2} ,
+        \big) ^ k |\phi_n |^2 \Bigg]^{1/2} ,
     \\
     |||\Phi|||_{0,\alpha} 
         &= |||\Phi|||=\Bigg[ \sum_{\mathbf{n}} |\phi_n|^2
@@ -760,14 +760,16 @@ small $t$. Let $\Psi,\Psi'\in \mathbb{X}_T$. Then
  &\le  C_\lambda \int_0^t |||(B,D\Psi_s-D\Psi') |||_{-1}^2 ds \\
  &\le  C_2 \int_0^t |||\Psi_s-\Psi'|||^2 ds.
 \end{align*}
+
 For some $C_2>0$. It follows that
 $%\begin{align*}
  ||| \mathbb{Q}\Psi- \mathbb{Q}\Psi'|||_T  \le  \sqrt{C_2 T}
 |||\Psi_s-\Psi'|||_T.
 $%\end{align*}
+\\
 Then, for small $T$, $\mathbb{Q}$ is a contraction on $\mathbb{X}_T$. Hence
 the Cauchy problem \eqref{P1s3.2} has a unique mild solution.
-
+\newline
 \end{proof}
 
 
@@ -790,7 +792,7 @@ will denote by $\Psi_t^\varphi$ its mild solution at time $t$ with initial
 condition $\varphi$:
 \begin{align*}
 \Psi_t^\varphi=e^{-\lambda t} P_t  \varphi+  \int_0^t e^{-\lambda
-(t-s)}P_{t-s}(B,D\Psi_s) ds \ .
+(t-s)}P_{t-s}(B,D\Psi_s^\varphi) ds \ .
 \end{align*}
 Then,
 \begin{align*}
@@ -835,6 +837,29 @@ conditions for a numerical approximation of the Kolmogorov equation associated
 with an SPDE. Here we understand that a  numerical scheme is stable respect to 
 initial conditions if this method reproduces the same behavior when the 
 continuous problem satisfies continuity respect initial conditions.
+
+Consider the stochastic differential equation in $\mathcal{H}$
+\begin{equation}
+\label{P1s2.1}
+ dX_t=AX_tdt+B(X_t)dt+\sqrt{Q}dW_t,
+\end{equation}
+where the operator $A:\mathcal{D}(A)\subset \mathcal{H}\rightarrow
+\mathcal{H}$ is the infinitesimal generator of a strongly
+continuous semigroup $e^{tA}$ in $\mathcal{H}$, $Q$ is a bounded operator from
+another Hilbert space $\mathcal{U}$ to $\mathcal{H}$
+and $B:\mathcal{D}(B)\subset \mathcal{H}\rightarrow \mathcal{H}$ is a
+nonlinear mapping.
+
+The equation \eqref{P1s2.1} can be associated to a Kolmogorov equation in the
+next way, we define
+\begin{equation}
+\label{P1s2.2}
+u(t,x)=\E\big[\varphi(X_t^x)\big],
+\end{equation}
+where $\varphi:\mathcal{H}\rightarrow \IR$ and $X_t^x$ is the solution to
+\eqref{P1s2.1} with initial conditions $X_0=x$ where
+$x\in\mathcal{H}$. Then $u$ satisfies the Kolmogorov equation \eqref{P1s2.3}.
+
 
 We use \Cref{s1.le1} to write the solution $\Psi_t^\varphi$ as in a
 Fourier-Hermite decomposition:
@@ -910,27 +935,6 @@ $
     From this expression the lemma follows immediately.
 \end{proof}
 
-Consider the stochastic differential equation in $\mathcal{H}$
-\begin{equation}
-\label{P1s2.1}
- dX_t=AX_tdt+B(X_t)dt+\sqrt{Q}dW_t,
-\end{equation}
-where the operator $A:\mathcal{D}(A)\subset \mathcal{H}\rightarrow
-\mathcal{H}$ is the infinitesimal generator of a strongly
-continuous semigroup $e^{tA}$ in $\mathcal{H}$, $Q$ is a bounded operator from
-another Hilbert space $\mathcal{U}$ to $\mathcal{H}$
-and $B:\mathcal{D}(B)\subset \mathcal{H}\rightarrow \mathcal{H}$ is a
-nonlinear mapping.
-
-The equation \eqref{P1s2.1} can be associated to a Kolmogorov equation in the
-next way, we define
-\begin{equation}
-\label{P1s2.2}
-u(t,x)=\E\big[\varphi(X_t^x)\big],
-\end{equation}
-where $\varphi:\mathcal{H}\rightarrow \IR$ and $X_t^x$ is the solution to
-\eqref{P1s2.1} with initial conditions $X_0=x$ where
-$x\in\mathcal{H}$. Then $u$ satisfies the Kolmogorov equation \eqref{P1s2.3}.
 We will use some technical results on the SPDE to prove
 the following result\textemdash the main result of this section.
 
@@ -943,7 +947,7 @@ the following result\textemdash the main result of this section.
     Then, the numeric approximation $\Psi_t^\varphi$ (given by 
     \eqref{num-approx})
     to the solution of the Kolmogorov equation
-    ${\Psi\in C((0,T); \mathbb{H})}$ also depends continuously on the initial
+    ${\Psi\in C((0,T); \mathbb{H})}$ depends continuously on the initial
     conditions.
 \end{theorem}
 \begin{proof}
@@ -1314,7 +1318,11 @@ converges and it is also a continuous bounded function of $t$. Thus, from
             \big|^2 \mu(dx)\mu(dy) \ ,
     \end{aligned}
 \end{equation}
-where $f(t)= \sum_{\bar n\in \mathcal{J}} \big[u_{\bar n}^y(t)\big]^2$.
+where $f(t)= \sum_{\bar n\in \mathcal{J}} \big[u_{\bar n}^y(t)\big]^2+ \int_\mathcal{H}
+            \E ^ 2\big[
+                \varphi(X_t^y)
+            \big] \mu(dy)
+            $.
 
 From the proof of Theorem \ref{Cont-Mild-Sol} (see \eqref{s2.23}) we know that
 \begin{equation}
