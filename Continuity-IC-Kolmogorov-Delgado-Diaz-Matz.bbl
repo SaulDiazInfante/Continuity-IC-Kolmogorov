@@ -39,6 +39,13 @@
   (2013), pp.~281--304, \url{https://doi.org/10.1007/s40304-013-0015-5},
   \url{https://doi.org/10.1007/s40304-013-0015-5}.
 
+\bibitem{da-za1}
+{\sc G.~Da~Prato and J.~Zabczyk}, {\em Stochastic equations in infinite
+  dimensions}, vol.~44 of Encyclopedia of Mathematics and its Applications,
+  Cambridge University Press, Cambridge, 1992,
+  \url{https://doi.org/10.1017/CBO9780511666223},
+  \url{https://doi.org/10.1017/CBO9780511666223}.
+
 \bibitem{da-za}
 {\sc G.~Da~Prato and J.~Zabczyk}, {\em Second order partial differential
   equations in {H}ilbert spaces}, vol.~293 of London Mathematical Society
@@ -95,10 +102,6 @@
   spectral method}.
 \newblock \url{https://github.com/alanmatzumiya/Paper}, May 2019,
   \url{https://github.com/alanmatzumiya/Paper} (accessed 2019-05-11).
-
-\bibitem{da1}
-{\sc G.~D. Prato}, {\em An introduction to Kolmogorov equations in Hibert
-  spaces.}, 2011.
 
 \bibitem{Trefethen1987}
 {\sc L.~N. Trefethen and M.~R. Trummer}, {\em An instability phenomenon in

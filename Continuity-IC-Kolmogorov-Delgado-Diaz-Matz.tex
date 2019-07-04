@@ -24,14 +24,14 @@
     We provide theory to characterizes the stability respect to initial 
     conditions of a weak numerical scheme to approximate the solution of a
     particular family of SPDEs. Our approach consists in solving 
-    numerically the associated 
-    Kolmogorov equation of the underlying SPDE whit a spectral method. We 
-    illustrate our results with numerical experiments.
+    numerically the associated Kolmogorov equation of the underlying SPDE whit 
+    a spectral method. We illustrate our results with numerical experiments.
 \end{abstract}
 
 %
 \begin{keywords}
-    Stability, spectral methods, Kolmogorov equation, stochastic parabolic equations.
+    Stability, spectral methods, Kolmogorov equation,
+    stochastic parabolic equations.
 \end{keywords}
 %
 \begin{AMS}
@@ -781,28 +781,36 @@ the Cauchy problem \eqref{P1s3.2} has a unique mild solution.
 \newline
 \end{proof}
 
-
  We now prove a theorem on the dependence on initial conditions for the mild
 solution of \eqref{P1s3.2}.
- \begin{theorem}\label{Cont-Mild-Sol}
-Suppose that $B:\mathcal{H}\rightarrow \mathcal{H}_0$ satisfies $(B,D\Phi)\in
-L^2((0,T);\mathbb{H})$ for any $\Phi\in\mathbb{H}$ and
- \begin{align}\label{s2.22}
-  \sup_{v\in \mathcal{H}} ||\Lambda^{-1/2}B(v)||_{\mathcal{H}}<+\infty.
- \end{align}
- Then, the unique mild solution $\Psi\in C((0,T); \mathbb{H})$ for
-\eqref{P1s3.2} depends continuously on the initial conditions.
-
- \end{theorem}
+\begin{theorem}\label{Cont-Mild-Sol}
+    Suppose that 
+    $B:
+        \mathcal{H}
+        \rightarrow 
+        \mathcal{H}_0
+    $ satisfies 
+    $(B,D\Phi)\in L^2((0,T);\mathbb{H})$ 
+    for any $\Phi\in\mathbb{H}$ and
+    \begin{equation}\label{s2.22}
+        \sup_{v\in \mathcal{H}} ||\Lambda^{-1/2}B(v)||_{\mathcal{H}}<+\infty.
+    \end{equation}
+    Then, the unique mild solution $\Psi\in C((0,T); \mathbb{H})$ for
+    \eqref{P1s3.2} depends continuously on the initial conditions.
+\end{theorem}
 \begin{proof}
 We know, with the assumption \eqref{s2.22}, that the existence of a unique
 mild solution for \eqref{P1s3.2} is guaranteed by the Theorem \ref{Th-EU}. We
 will denote by $\Psi_t^\varphi$ its mild solution at time $t$ with initial
 condition $\varphi$:
-\begin{align*}
-\Psi_t^\varphi=e^{-\lambda t} P_t  \varphi+  \int_0^t e^{-\lambda
-(t-s)}P_{t-s}(B,D\Psi_s^\varphi) ds \ .
-\end{align*}
+\begin{equation*}
+    \Psi_t^\varphi
+    =   e^{-\lambda t} P_t  
+    \varphi
+    +  
+    \int_0^t e^{-\lambda (t-s)} P_{t-s}
+    (B,D\Psi_s^\varphi) ds \ .
+\end{equation*}
 Then,
 \begin{align*}
     \Psi_t^\varphi-\Phi_t^\psi
