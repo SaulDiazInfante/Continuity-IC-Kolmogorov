@@ -15,11 +15,11 @@
 }
 \fi
 
-%opening
-
 \begin{document}
+
 \maketitle
 %
+
 \begin{abstract}
     We provide theory to characterizes the stability respect to initial 
     conditions of a weak numerical scheme to approximate the solution of a
@@ -27,6 +27,7 @@
     Kolmogorov equation of the underlying SPDE whit a spectral method. We 
     illustrate our results with numerical experiments.
 \end{abstract}
+
 %
 \begin{keywords}
     Stability, spectral methods, Kolmogorov equation.
@@ -72,7 +73,9 @@ this context.
 
     Our main contribution is the characterization of mild conditions to
 assure the continuity respect to initial function conditions to a family of
-SPDEs and the stability of a regarding weak spectral approximation.
+SPDEs and the stability of a regarding weak spectral approximation. 
+To the best of our knowledge, this paper is the first in report numerical 
+stability theory for Kolmogorov equations in infinite dimensions.
 
     The stability theory for spectral methods is still under 
 construction and is an active research area. We mention the seminal works of
@@ -81,7 +84,12 @@ L.N. Trefethen and M.R. Trummer \cite{Trefethen1987}, D. Gottlieb et. al.
 Fiordilino, and X. Feng, \cite{Li2019} A. Lang, A. Petersson,  and A.
 Thalhammer, \cite{Lang2017} for the stochastic version.
 
-\paragraph{the scientific importance of the paper and its conclusion}
+\paragraph{The scientific importance of the paper and its conclusion}
+    Since our scheme ask specific conditions to obtain weak solution
+of a underlying SPDE, we convert the stochastic problem into a 
+a deterministic ODE for the first moment of the strong solution.
+
+
 
     This paper is organized as follows. In \Cref{fpk-sect} we review the
 Fokker-Plank-Kolmogorov equation associated with SPDEs in
@@ -762,10 +770,10 @@ small $t$. Let $\Psi,\Psi'\in \mathbb{X}_T$. Then
 \end{align*}
 
 For some $C_2>0$. It follows that
-$%\begin{align*}
+$
  ||| \mathbb{Q}\Psi- \mathbb{Q}\Psi'|||_T  \le  \sqrt{C_2 T}
 |||\Psi_s-\Psi'|||_T.
-$%\end{align*}
+$
 \\
 Then, for small $T$, $\mathbb{Q}$ is a contraction on $\mathbb{X}_T$. Hence
 the Cauchy problem \eqref{P1s3.2} has a unique mild solution.
@@ -1628,6 +1636,19 @@ $.
         Resume, connect with other literature 
         and stress the relevance of our results
     }
+    To the best of our knowledge, our results represent the first contribution 
+    on the numeric stability respect to initial conditions of weak 
+    approximations of Kolmogorov equations in infinite dimensions. This kind of 
+    stability, combining with the weak approximation approach, would save 
+    computation time. That is, since our scheme asks specific conditions to 
+    obtain a weak solution of an underlying SPDE, we convert the stochastic 
+    problem into a deterministic ODE for the first moment. This procedure 
+    overcome simulation of realizations to approximate moments or distributions.
+    Further, under our setting, the regarding spectral approximation
+    assure high precision and order of convergence. Thus we guess that
+    our method would improve the time and save resources of
+    computation\textemdash we are preparing another article to confirm this 
+    conjectures.
 
 \bibliographystyle{siamplain}
 \bibliography{references}
