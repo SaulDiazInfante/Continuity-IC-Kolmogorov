@@ -1726,50 +1726,53 @@ solution of \eqref{P1s3.2}.
         Now, if $\| x-y\|_{\mathcal{H}}\le \delta $, then from \eqref{s3.17} we 
         get
         $
-         \| \Psi_t^x-\Psi_t^y\|_{\big(L^2(\mathcal{H},\mu) \big)^2} \le
-          G(t) \delta
+             \| 
+                \Psi_t^x - \Psi_t^y
+             \|_{\big( L^2(\mathcal{H}, \mu) \big)^2} 
+             \le
+                G(t) \delta
         $.
     \end{proof}
-
-\begin{remark}
-    If we consider in addition the supremum norm on $t$, then from
-    \eqref{s3.17} we get
-    \begin{equation}
-        \label{s3.13}
-        \begin{aligned}
-            \sup_{0\le t\le T}\| \Psi_t^x-\Psi_t^y\|_{
-                \big(L^2(\mathcal{H},\mu) \big)^2} ^ 2
-                \le&
-                 C \| x-y\|_{\mathcal{H}}^2
-                 \sup_{0\le t\le T} f(t)
-                 \\
-                 &+
+%
+    \begin{remark}
+        If we consider in addition the supremum norm on $t$, then from
+        \eqref{s3.17} we get
+        \begin{equation}
+            \label{s3.13}
+            \begin{aligned}
+                \sup_{0\le t\le T}\| \Psi_t^x-\Psi_t^y\|_{
+                    \big(L^2(\mathcal{H},\mu) \big)^2} ^ 2
+                    \le&
+                     C \| x-y\|_{\mathcal{H}}^2
+                     \sup_{0\le t\le T} f(t)
+                     \\
+                     &+
+                    \exp(CT)
+                    \int_{\mathcal{H}\times \mathcal{H}}
+                    \|x-y\|_{\mathcal{H}}^2 \mu(dx)\mu(dy) \ .
+            \end{aligned}
+        \end{equation}
+        Notice that $f(t)$ is differentiable and continuous, then
+        $\sup_{0\le t\le T} f(t)\le C$, then from \eqref{s3.13} we obtain
+        \begin{equation}
+            \label{s3.14}
+            \begin{aligned}
+                \sup_{0\le t\le T}
+                \|
+                    \Psi_t^x-\Psi_t^y
+                \|_{\big(L^2(\mathcal{H},\mu)\big)^2}
+                &\le
+                C \| x-y\|_{\mathcal{H}}
+                \\
+                & +
                 \exp(CT)
                 \int_{\mathcal{H}\times \mathcal{H}}
-                \|x-y\|_{\mathcal{H}}^2 \mu(dx)\mu(dy) \ .
-        \end{aligned}
-    \end{equation}
-    Notice that $f(t)$ is differentiable and continuous, then
-    $\sup_{0\le t\le T} f(t)\le C$, then from \eqref{s3.13} we obtain
-    \begin{equation}
-        \label{s3.14}
-        \begin{aligned}
-            \sup_{0\le t\le T}
-            \|
-                \Psi_t^x-\Psi_t^y
-            \|_{\big(L^2(\mathcal{H},\mu)\big)^2}
-            &\le
-            C \| x-y\|_{\mathcal{H}}
-            \\
-            & +
-            \exp(CT)
-            \int_{\mathcal{H}\times \mathcal{H}}
-            \| x-y\|_{\mathcal{H}}^2 \mu(dx)\mu(dy) \ .
-        \end{aligned}
-    \end{equation}
-    From this inequality it is possible to show the continuously dependence on
-    the initial conditions for this norm.
-\end{remark}
+                \| x-y\|_{\mathcal{H}}^2 \mu(dx)\mu(dy) \ .
+            \end{aligned}
+        \end{equation}
+        From this inequality it is possible to show the continuously dependence 
+        on the initial conditions for this norm.
+    \end{remark}
 
 \section{Numerical experiments}
     \label{sec:NumericalExperiments}
