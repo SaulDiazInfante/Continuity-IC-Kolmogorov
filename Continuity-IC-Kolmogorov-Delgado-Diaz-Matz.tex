@@ -1,4 +1,4 @@
-\documentclass[review,onefignum,onetabnum]{siamart190516}
+\documentclass[onefignum,onetabnum]{siamart190516}
 \input{header}
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 \floatstyle{boxed}
@@ -7,8 +7,8 @@
 \ifpdf
 \hypersetup{
     pdftitle={
-        Initial conditions continuity of a numerical
-        approximation for Kolmogorov equations
+        Initial conditions stability of a numerical
+        approximation for Kolmogorov equations in infinite dimensions
     }
   pdfauthor={Fracisco Delgado-Veces, Alan Matsumya-Zazueta, Saul Diaz-Infante}
 }
@@ -18,11 +18,14 @@
     \maketitle
 %
     \begin{abstract}
-            We provide theory to characterizes the stability respect to initial 
-        conditions of a weak numerical scheme to approximate the solution of a 
-        particular family of SPDEs. Our approach consists in solving the 
-        associated Kolmogorov equation of the underlying SPDE whit a spectral 
-        method. We illustrate our results with numerical experiments.
+            We establish conditions to ensure stability of initial 
+        conditions for Kolmogorov equations associated to some kind of stochastic partial 
+        differential equations in infinite dimensions.
+        Our approach consists in solving the 
+        associated Kolmogorov equation of the underlying SPDE with a spectral 
+        method. The numerical solution of the Kolmogorov equation results to be a
+        weak approximation, in probability sense, of a parabolic type of SPDEs. 
+        We illustrate our results with numerical experiments.
     \end{abstract}
 %
     \begin{keywords}
