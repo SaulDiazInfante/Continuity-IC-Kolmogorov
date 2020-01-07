@@ -1,0 +1,79 @@
+\begin{figure}[htb]
+    \centering
+    \caption{
+        Numerical Solution of the Fisher-KPP
+        \cref{eqn:fisher-kpp}
+        with initial conditions $x$, $\widehat{x}$ at time
+        $t=0$.
+     }
+    \label{fig:fisher_kpp_approximation_t0}
+    \includegraphics[width=\linewidth, keepaspectratio]%
+    {StochasticFisherEquation/Approximation_t=0.eps}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[htb]
+    \centering
+    \caption{
+        Likening between two solution with closed
+        initial conditions $x$, $\widehat{x}$
+        of the stochastic Fisher-KPP
+        \cref{eqn:fisher-kpp}.
+        See \cite{plotlyFisher} to obtain other camera perspectives.
+     }
+    \label{fig:likening_fisher_kpp}
+    \includegraphics[width=.9\linewidth, keepaspectratio]%
+    {./StochasticFisherEquation/simulation_Approximation_color.png}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[htb]
+    \includegraphics[width=\textwidth]{./StochasticFisherEquation/error_fisher.pdf}
+    \caption{
+        $\mathcal{L}^2(\mathcal{H}, \mu)$
+        distance between two solutions of the stochastic Fisher PDE
+        with initial conditions $x = x(\xi)$, and  $y = \widehat{x}(\xi)$.
+    }
+    \label{fig:errorfisher}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[htb]
+    \caption{
+        Numerical Solution of the Burgers
+        \cref{eqn:stochastic_burgers}
+        with initial conditions $x(\xi)$, $\widehat{x}(\xi)$.
+     }
+    \label{fig:approximationt0}
+    \includegraphics[width=\linewidth, keepaspectratio]%
+    {./StochasticBurgersEquation/Approximation_t=0.eps}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[htb]
+    \centering
+    \caption{
+        Likening between two solution with closed
+        initial conditions $x(\xi)$, and $\widehat{x}(\xi)$
+        of the stochastic Burgers
+        \cref{eqn:stochastic_burgers}.
+        See \cite{plotlyFisher} to obtain other camera perspectives.
+     }
+    \label{fig:likening_burgers}
+    \includegraphics[width=.9\textwidth, keepaspectratio]%
+    {./StochasticBurgersEquation/simulation_Approximation_color.png}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}[htb]
+    \centering
+    \caption{
+        Distance between two solutions of the
+        stochastic Burgers
+        \cref{eqn:stochastic_burgers}
+        with initial conditions  $x = x(\xi)$, and $y = \widehat{x}(\xi)$.
+     }
+    \label{fig:error_convergence}
+    \includegraphics[width=\linewidth, keepaspectratio]%
+    {./StochasticBurgersEquation/error_burgers.eps}
+\end{figure}

@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2019)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: IJCM.aux
+The style file: plainnat.bst
+Database file #1: references.bib
+Warning--entry type for "plotlyFisher" isn't style-file defined
+--line 246 of file references.bib
+Warning--entry type for "plotlyBurgers" isn't style-file defined
+--line 254 of file references.bib
+Warning--empty year in plotlyBurgers
+Warning--empty year in plotlyFisher
+You've used 17 entries,
+            2773 wiz_defined-function locations,
+            749 strings with 8969 characters,
+and the built_in function-call counts, 7717 in all, are:
+= -- 749
+> -- 347
+< -- 16
++ -- 120
+- -- 102
+* -- 629
+:= -- 1213
+add.period$ -- 94
+call.type$ -- 17
+change.case$ -- 79
+chr.to.int$ -- 16
+cite$ -- 36
+duplicate$ -- 351
+empty$ -- 644
+format.name$ -- 131
+if$ -- 1633
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 19
+newline$ -- 133
+num.names$ -- 70
+pop$ -- 140
+preamble$ -- 1
+purify$ -- 67
+quote$ -- 0
+skip$ -- 255
+stack$ -- 0
+substring$ -- 268
+swap$ -- 44
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 162
+warning$ -- 2
+while$ -- 65
+width$ -- 0
+write$ -- 307
+(There were 4 warnings)

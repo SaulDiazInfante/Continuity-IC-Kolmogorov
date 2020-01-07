@@ -1,0 +1,142 @@
+\documentclass[longtitle, review, 12pt]{elsarticle}
+%\documentclass[3p,sort&compress,times]{elsarticle}
+\usepackage[USenglish]{babel}
+\usepackage{amsmath}
+\usepackage{afterpage}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{ragged2e}
+\usepackage{bbm}
+\usepackage{bm}
+\usepackage[titletoc,toc,title]{appendix}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{lineno}
+\usepackage{hyperref}
+\usepackage{todonotes}
+\usepackage{proba}
+\usepackage{cleveref}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{txfonts}
+\usepackage{float}
+\usepackage{lineno}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{remark}{Remark}
+\newtheorem{assumption}{Assumption}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\DeclareRobustCommand{\1}[1]{\ensuremath \mathbbm{1}_{\{#1\}}}
+\journal{Communications in Nonlinear Science and Numerical Simulation}
+\captionsetup[subfigure]{style=default, 
+    margin=10pt, parskip=0pt, hangindent=0pt, indention=5pt,
+    singlelinecheck=false}
+%
+%
+\newcommand{\creflastconjunction}{, and~}
+\crefname{hypothesis}{Hypothesis}{Hypotheses}
+\DeclareMathOperator{\diag}{diag}
+\newcommand{\cqd}{\hfill$\Box$}
+\newcommand{\f}{{\mathcal F}}
+\newcommand{\IR}{{\mathbb R}}
+\newcommand{\IN}{{\mathbb N}}
+\newcommand{\ind}{\mbox{\Large$\chi$}}
+\newcommand{\tor}{{\mathbb T}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bal}{\begin{align}}
+\newcommand{\eal}{\end{align}}
+\newcommand{\beqn}{\begin{equation*}}
+\newcommand{\eeqn}{\end{equation*}}
+\newcommand{\baln}{\begin{align*}}
+\newcommand{\ealn}{\end{align*}}
+\newcommand{\tbar}{\bar t}
+\newcommand{\xbar}{\bar x}
+\newcommand{\ep}{\epsilon}
+\newcommand{\Pb}{\mathbb P}
+\newcommand{\Rl}{\mathbb R}
+\newcommand{\tf}{\mathcal{F}}
+\newcommand{\hac}{\mathcal{H}}
+\newcommand{\hact}{\mathcal{H}_T}
+\DeclareMathOperator{\sech}{sech}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\modulolinenumbershttps[1]
+\begin{document}
+    \begin{frontmatter}
+        \title{
+            Initial conditions stability of a numerical
+            approximation for Kolmogorov equations 
+            in infinite dimensions%
+        }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \author[add:CONACYT-IMATE]{%
+            Francisco Delgado-Vences
+        }%
+        \ead{delgado@im.unam.mx}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \author[add:unison]{%
+            Alan Matzumiya-Zazueta
+        }%
+        \ead{alan.matzumiya@gmail.com}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \author[add:conacyt_unison]{%
+            Sa\'ul D\'iaz-Infante
+            \corref{corresponding_author}
+        }%
+        \ead{saul.diazinfante@unison.mx}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \address[add:CONACYT-IMATE]{
+            CONACYT-UNAM, 
+            Instituto de Matem\'aticas, 
+            Sede Oaxaca,
+            Antonio de Le\'on \#2, altos, Col. Centro,
+            Oaxaca de Ju\'arez, CP. 68000
+            Phone: +52(951) 5160541
+        }
+        \address[add:conacyt_unison]{
+            CONACYT-Universidad de Sonora, 
+            Departamento de Matem\'aticas, Boulevard Luis Encinas y 
+            Rosales S/N, 83000, Hermosillo, Sonora, M\'exico.
+        }
+        \cortext[corresponding_author]{Corresponding author}
+%
+        \address[add:unison]{
+            Universidad de Sonora
+            Departamento de Matem\'aticas,
+            Departamento de Matem\'aticas. 
+            Blvd Luis Encinas y Rosales S/N, 
+            Colonia Centro. 
+            Edificio 3K-1. C.P. 83000.
+            Hermosillo, Sonora, M\'exico,
+        }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{abstract}
+                We establish conditions to ensure stability 
+            of initial conditions for Kolmogorov equations associated to some 
+            kind of stochastic partial differential equations in infinite 
+            dimensions. Our approach consists in solving the associated 
+            Kolmogorov equation of the underlying SPDE with a spectral method. 
+            The numerical solution of the Kolmogorov equation results to be a 
+            weak approximation, in probability sense, of a parabolic type of 
+            SPDEs. We illustrate our results with numerical experiments. 
+		\end{abstract}
+		\begin{keyword}
+			numerical stability,
+			weak approximation,
+			Kolmogorov,
+			spectral methods,
+			SPDs .
+		\end{keyword}
+	\end{frontmatter}
+	%\linenumbers
+    \pagebreak
+\end{document}

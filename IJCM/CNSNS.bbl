@@ -1,0 +1,140 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{da-za}
+G.~Da~Prato, J.~Zabczyk, \href{https://doi.org/10.1017/CBO9780511543210}{Second
+  order partial differential equations in {H}ilbert spaces}, Vol. 293 of London
+  Mathematical Society Lecture Note Series, Cambridge University Press,
+  Cambridge, 2002.
+\newblock \href {http://dx.doi.org/10.1017/CBO9780511543210}
+  {\path{doi:10.1017/CBO9780511543210}}.
+\newline\urlprefix\url{https://doi.org/10.1017/CBO9780511543210}
+
+\bibitem{bo-da-ro}
+V.~Bogachev, G.~D. Prato, M.~Röckner, {Existence Results for Fokker–Planck
+  Equations in Hilbert Spaces}, in: R.~Dalang, M.~Dozzi, F.~Russo (Eds.),
+  {Seminar on Stochastic Analysis, Random Fields and Applications VI}, Springer
+  Basel, Basel, 2011, p. 23–35.
+
+\bibitem{da-fl-ro}
+G.~Da~Prato, F.~Flandoli, M.~R\"{o}ckner,
+  \href{https://doi.org/10.1007/s40304-013-0015-5}{Fokker-{P}lanck equations
+  for {SPDE} with non-trace-class noise}, Commun. Math. Stat. 1~(3) (2013)
+  281--304.
+\newblock \href {http://dx.doi.org/10.1007/s40304-013-0015-5}
+  {\path{doi:10.1007/s40304-013-0015-5}}.
+\newline\urlprefix\url{https://doi.org/10.1007/s40304-013-0015-5}
+
+\bibitem{da}
+G.~Da~Prato, \href{https://doi.org/10.1007/978-3-0348-7909-5}{Kolmogorov
+  equations for stochastic {PDE}s}, Advanced Courses in Mathematics. CRM
+  Barcelona, Birkh\"{a}user Verlag, Basel, 2004.
+\newblock \href {http://dx.doi.org/10.1007/978-3-0348-7909-5}
+  {\path{doi:10.1007/978-3-0348-7909-5}}.
+\newline\urlprefix\url{https://doi.org/10.1007/978-3-0348-7909-5}
+
+\bibitem{de-fl}
+F.~Delgado-Vences, F.~Flandoli,
+  \href{https://doi.org/10.1142/S021902571650020X}{A spectral-based numerical
+  method for {K}olmogorov equations in {H}ilbert spaces}, Infin. Dimens. Anal.
+  Quantum Probab. Relat. Top. 19~(3) (2016) 1650020, 37.
+\newblock \href {http://dx.doi.org/10.1142/S021902571650020X}
+  {\path{doi:10.1142/S021902571650020X}}.
+\newline\urlprefix\url{https://doi.org/10.1142/S021902571650020X}
+
+\bibitem{Trefethen1987}
+L.~N. Trefethen, M.~R. Trummer, \href{https://doi.org/10.1137/0724066}{An
+  instability phenomenon in spectral methods}, SIAM J. Numer. Anal. 24~(5)
+  (1987) 1008--1023.
+\newblock \href {http://dx.doi.org/10.1137/0724066}
+  {\path{doi:10.1137/0724066}}.
+\newline\urlprefix\url{https://doi.org/10.1137/0724066}
+
+\bibitem{Gottlieb1987a}
+D.~Gottlieb, L.~Lustman, E.~Tadmor,
+  \href{https://doi.org/10.1137/0724020}{Stability analysis of spectral methods
+  for hyperbolic initial-boundary value systems}, SIAM J. Numer. Anal. 24~(2)
+  (1987) 241--256.
+\newblock \href {http://dx.doi.org/10.1137/0724020}
+  {\path{doi:10.1137/0724020}}.
+\newline\urlprefix\url{https://doi.org/10.1137/0724020}
+
+\bibitem{Li2019}
+N.~Li, J.~Fiordilino, X.~Feng,
+  \href{https://doi.org/10.1007/s10915-018-0890-8}{{Ensemble Time-Stepping
+  Algorithm for the Convection-Diffusion Equation with Random Diffusivity}},
+  Journal of Scientific Computing 79~(2) (2019) 1271--1293.
+\newblock \href {http://dx.doi.org/10.1007/s10915-018-0890-8}
+  {\path{doi:10.1007/s10915-018-0890-8}}.
+\newline\urlprefix\url{https://doi.org/10.1007/s10915-018-0890-8}
+
+\bibitem{Lang2017}
+A.~Lang, A.~Petersson, A.~Thalhammer,
+  \href{https://doi.org/10.1007/s10543-017-0684-7}{{Mean-square stability
+  analysis of approximations of stochastic differential equations in infinite
+  dimensions}}, BIT Numerical Mathematics 57~(4) (2017) 963–990.
+\newblock \href {http://dx.doi.org/10.1007/s10543-017-0684-7}
+  {\path{doi:10.1007/s10543-017-0684-7}}.
+\newline\urlprefix\url{https://doi.org/10.1007/s10543-017-0684-7}
+
+\bibitem{da-de}
+G.~{Da Prato}, A.~Debussche,
+  \href{https://doi.org/10.1007/s11118-006-9021-5}{{m-Dissipativity of
+  Kolmogorov Operators Corresponding to Burgers Equations with Space-time White
+  Noise}}, Potential Analysis 26~(1) (2007) 31–55.
+\newblock \href {http://dx.doi.org/10.1007/s11118-006-9021-5}
+  {\path{doi:10.1007/s11118-006-9021-5}}.
+\newline\urlprefix\url{https://doi.org/10.1007/s11118-006-9021-5}
+
+\bibitem{ba-da}
+V.~Barbu, G.~D. Prato,
+  \href{http://www.sciencedirect.com/science/article/pii/S0362546X08001569}{{The
+  Kolmogorov equation for a 2D-Navier–Stokes stochastic flow in a channel}},
+  Nonlinear Analysis: Theory, Methods \& Applications 69~(3) (2008) 940–949,
+  trends in Nonlinear Analysis: in Honour of Professor V.Lakshmikantham.
+\newblock \href {http://dx.doi.org/10.1016/j.na.2008.02.072}
+  {\path{doi:10.1016/j.na.2008.02.072}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0362546X08001569}
+
+\bibitem{liu}
+P.-L. Chow, Stochastic partial differential equations, Chapman \& Hall/CRC
+  Applied Mathematics and Nonlinear Science Series, Chapman \& Hall/CRC, Boca
+  Raton, FL, 2007.
+
+\bibitem{im}
+P.~Imkeller, Malliavin's calculus and applications in stochastic control and
+  finance, Vol.~1 of IMPAN Lecture Notes, Polish Academy of Sciences, Institute
+  of Mathematics, Warsaw, 2008.
+
+\bibitem{da-za1}
+G.~Da~Prato, J.~Zabczyk,
+  \href{https://doi.org/10.1017/CBO9780511666223}{Stochastic equations in
+  infinite dimensions}, Vol.~44 of Encyclopedia of Mathematics and its
+  Applications, Cambridge University Press, Cambridge, 1992.
+\newblock \href {http://dx.doi.org/10.1017/CBO9780511666223}
+  {\path{doi:10.1017/CBO9780511666223}}.
+\newline\urlprefix\url{https://doi.org/10.1017/CBO9780511666223}
+
+\bibitem{matsumyaRepo}
+A.~D. Matzumiya, \href{https://github.com/alanmatzumiya/Paper}{Github of the
+  python implementation of the weak spectral method},
+  \url{https://github.com/alanmatzumiya/Paper} (May 2019).
+\newline\urlprefix\url{https://github.com/alanmatzumiya/Paper}
+
+\bibitem{plotlyFisher}
+S.~Diaz-Infante, \href{https://plot.ly/~sauldiazinfante/28/}{Likening of two
+  solutions of the fisher equation with two initial function conditions},
+  https://plot.ly/~sauldiazinfante/28/ [2019/05/11].
+\newline\urlprefix\url{https://plot.ly/~sauldiazinfante/28/}
+
+\bibitem{plotlyBurgers}
+S.~Diaz-Infante, \href{https://plot.ly/~sauldiazinfante/30/}{Likening of two
+  solutions of the burgers equation with two initial function conditions},
+  https://plot.ly/~sauldiazinfante/30/ [2019/05/11].
+\newline\urlprefix\url{https://plot.ly/~sauldiazinfante/30/}
+
+\end{thebibliography}
