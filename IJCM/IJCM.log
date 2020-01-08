@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.8.10)  26 DEC 2019 14:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.8.10)  7 JAN 2020 18:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1085,26 +1085,25 @@ LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 82.
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 138.
+(Font)              <10> on input line 142.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 138.
+(Font)              <7> on input line 142.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 138.
+(Font)              <5> on input line 142.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 142.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 142.
  [1
 
 
-{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 139.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 139.
- [2
 
-] [3] [4] [5]
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+ [4]
 (/usr/local/texlive/2019/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-) [6] [7]
-[8] [9] [10] [11] [12] [13] [14] [15] [16] (./stochastic_fisher_kpp.tex
+) [5] [6]
+[7] [8] [9] [10] [11] [12] [13] [14] [15] (./stochastic_fisher_kpp.tex
 Package epstopdf Info: Source file: <StochasticFisherEquation/Approximation_t=0
 .eps>
 (epstopdf)                    date: 2019-06-11 13:36:16
@@ -1123,15 +1122,15 @@ Package epstopdf Info: Output file is already uptodate.
 pdfTeX warning: /usr/local/texlive/2019/bin/x86_64-linux/pdflatex (file ./Stoch
 asticFisherEquation/Approximation_t=0-eps-converted-to.pdf): PDF inclusion: fou
 nd PDF version <1.7>, but at most version <1.5> allowed
-<StochasticFisherEquation/Approximation_t=0-eps-converted-to.pdf, id=103, 397.4
-85pt x 245.91875pt>
+<StochasticFisherEquation/Approximation_t=0-eps-converted-to.pdf, id=99, 397.48
+5pt x 245.91875pt>
 File: StochasticFisherEquation/Approximation_t=0-eps-converted-to.pdf Graphic f
 ile (type pdf)
 <use StochasticFisherEquation/Approximation_t=0-eps-converted-to.pdf>
 Package pdftex.def Info: StochasticFisherEquation/Approximation_t=0-eps-convert
 ed-to.pdf  used on input line 61.
 (pdftex.def)             Requested size: 408.0pt x 252.43231pt.
-<./StochasticFisherEquation/simulation_Approximation_color.png, id=104, 993.712
+<./StochasticFisherEquation/simulation_Approximation_color.png, id=100, 993.712
 5pt x 773.89125pt>
 File: ./StochasticFisherEquation/simulation_Approximation_color.png Graphic fil
 e (type png)
@@ -1139,14 +1138,14 @@ e (type png)
 Package pdftex.def Info: ./StochasticFisherEquation/simulation_Approximation_co
 lor.png  used on input line 75.
 (pdftex.def)             Requested size: 367.19751pt x 285.96921pt.
-<./StochasticFisherEquation/error_fisher.pdf, id=106, 356.00201pt x 217.24362pt
+<./StochasticFisherEquation/error_fisher.pdf, id=102, 356.00201pt x 217.24362pt
 >
 File: ./StochasticFisherEquation/error_fisher.pdf Graphic file (type pdf)
 <use ./StochasticFisherEquation/error_fisher.pdf>
 Package pdftex.def Info: ./StochasticFisherEquation/error_fisher.pdf  used on i
 nput line 81.
 (pdftex.def)             Requested size: 408.0pt x 248.97298pt.
-) (./stochastic_burgers.tex [17]
+) (./stochastic_burgers.tex [16]
 Package epstopdf Info: Source file: <./StochasticBurgersEquation/Approximation_
 t=0.eps>
 (epstopdf)                    date: 2019-06-06 15:06:50
@@ -1165,7 +1164,7 @@ Package epstopdf Info: Output file is already uptodate.
 pdfTeX warning: /usr/local/texlive/2019/bin/x86_64-linux/pdflatex (file ./Stoch
 asticBurgersEquation/Approximation_t=0-eps-converted-to.pdf): PDF inclusion: fo
 und PDF version <1.7>, but at most version <1.5> allowed
-<./StochasticBurgersEquation/Approximation_t=0-eps-converted-to.pdf, id=110, 39
+<./StochasticBurgersEquation/Approximation_t=0-eps-converted-to.pdf, id=106, 39
 7.485pt x 245.91875pt>
 File: ./StochasticBurgersEquation/Approximation_t=0-eps-converted-to.pdf Graphi
 c file (type pdf)
@@ -1173,7 +1172,7 @@ c file (type pdf)
 Package pdftex.def Info: ./StochasticBurgersEquation/Approximation_t=0-eps-conv
 erted-to.pdf  used on input line 37.
 (pdftex.def)             Requested size: 408.0pt x 252.43231pt.
-<./StochasticBurgersEquation/simulation_Approximation_color.png, id=111, 960.58
+<./StochasticBurgersEquation/simulation_Approximation_color.png, id=107, 960.58
 875pt x 782.925pt>
 File: ./StochasticBurgersEquation/simulation_Approximation_color.png Graphic fi
 le (type png)
@@ -1199,7 +1198,7 @@ Package epstopdf Info: Output file is already uptodate.
 pdfTeX warning: /usr/local/texlive/2019/bin/x86_64-linux/pdflatex (file ./Stoch
 asticBurgersEquation/error_burgers-eps-converted-to.pdf): PDF inclusion: found 
 PDF version <1.7>, but at most version <1.5> allowed
-<./StochasticBurgersEquation/error_burgers-eps-converted-to.pdf, id=112, 397.48
+<./StochasticBurgersEquation/error_burgers-eps-converted-to.pdf, id=108, 397.48
 5pt x 245.91875pt>
 File: ./StochasticBurgersEquation/error_burgers-eps-converted-to.pdf Graphic fi
 le (type pdf)
@@ -1207,12 +1206,99 @@ le (type pdf)
 Package pdftex.def Info: ./StochasticBurgersEquation/error_burgers-eps-converte
 d-to.pdf  used on input line 64.
 (pdftex.def)             Requested size: 408.0pt x 252.43231pt.
-) (./IJCM.bbl [18 <./StochasticFisherEquation/Approximation_t=0-eps-converted-t
-o.pdf>] [19 <./StochasticFisherEquation/simulation_Approximation_color.png>]
-[20 <./StochasticFisherEquation/error_fisher.pdf>]) [21 <./StochasticBurgersEqu
-ation/Approximation_t=0-eps-converted-to.pdf>] [22 <./StochasticBurgersEquation
-/simulation_Approximation_color.png> <./StochasticBurgersEquation/error_burgers
--eps-converted-to.pdf>] (./IJCM.aux)
+) (./IJCM.bbl
+Underfull \hbox (badness 6001) in paragraph at lines 9--20
+[]\OT1/lmr/m/n/10 Viorel Barbu and Giuseppe Da Prato.  The Kol-mogorov equa-tio
+n for a
+ []
+
+
+Underfull \hbox (badness 3977) in paragraph at lines 9--20
+\OT1/lmr/m/n/10 2D-Navier{Stokes stochas-tic flow in a chan-nel.  \OT1/lmr/m/it
+/10 Non-lin-ear Anal-y-sis: The-ory,
+ []
+
+
+Underfull \hbox (badness 3635) in paragraph at lines 9--20
+\OT1/lmr/m/it/10 Meth-ods & Ap-pli-ca-tions\OT1/lmr/m/n/10 , 69(3):940{949, 200
+8.  ISSN 0362-546X.  .  URL
+ []
+
+[17 <./StochasticFisherEquation/Approximation_t=0-eps-converted-to.pdf>]
+Underfull \hbox (badness 3977) in paragraph at lines 54--62
+[]\OT1/lmr/m/n/10 Giuseppe Da Prato and Ar-naud De-buss-che.  m-Dissipativity o
+f Kol-mogorov
+ []
+
+
+Underfull \hbox (badness 4013) in paragraph at lines 54--62
+\OT1/lmr/m/n/10 Op-er-a-tors Cor-re-spond-ing to Burg-ers Equa-tions with Space
+-time White Noise.
+ []
+
+
+Underfull \hbox (badness 6236) in paragraph at lines 54--62
+\OT1/lmr/m/it/10 Po-ten-tial Anal-y-sis\OT1/lmr/m/n/10 , 26(1):31{55, Feb 2007.
+  ISSN 1572-929X.  .  URL
+ []
+
+
+Underfull \hbox (badness 1874) in paragraph at lines 64--71
+\OT1/lmr/m/it/10 sions\OT1/lmr/m/n/10 , vol-ume 44 of \OT1/lmr/m/it/10 En-cy-cl
+o-pe-dia of Math-e-mat-ics and its Ap-pli-ca-tions\OT1/lmr/m/n/10 .  Cam-
+ []
+
+
+Underfull \hbox (badness 3439) in paragraph at lines 64--71
+\OT1/lmr/m/n/10 bridge Uni-ver-sity Press, Cam-bridge, 1992.  ISBN 0-521-38529-
+6.  .  URL
+ []
+
+[18 <./StochasticFisherEquation/simulation_Approximation_color.png>]
+Underfull \hbox (badness 1194) in paragraph at lines 73--81
+\OT1/lmr/m/it/10 in Hilbert spaces\OT1/lmr/m/n/10 , vol-ume 293 of \OT1/lmr/m/i
+t/10 Lon-don Math-e-mat-i-cal So-ci-ety Lec-ture Note Se-
+ []
+
+
+Underfull \hbox (badness 3009) in paragraph at lines 83--91
+\OT1/lmr/m/n/10 for Kol-mogorov equa-tions in Hilbert spaces.  \OT1/lmr/m/it/10
+ In-fin. Di-mens. Anal. Quan-tum
+ []
+
+
+Underfull \hbox (badness 3646) in paragraph at lines 83--91
+\OT1/lmr/m/it/10 Probab. Re-lat. Top.\OT1/lmr/m/n/10 , 19(3):1650020, 37, 2016.
+  ISSN 0219-0257.  .  URL
+ []
+
+
+Underfull \hbox (badness 1460) in paragraph at lines 134--142
+[]\OT1/lmr/m/n/10 Ning Li, Joseph Fiordilino, and Xin-long Feng.  En-sem-ble Ti
+me-Stepping Al-go-
+ []
+
+
+Underfull \hbox (badness 1502) in paragraph at lines 134--142
+\OT1/lmr/m/n/10 rithm for the Convection-Diffusion Equa-tion with Ran-dom Dif-f
+u-siv-ity.  \OT1/lmr/m/it/10 Jour-nal
+ []
+
+[19 <./StochasticFisherEquation/error_fisher.pdf>]
+Underfull \hbox (badness 2261) in paragraph at lines 144--148
+[]\OT1/lmr/m/n/10 Alan Daniel Matzu-miya.  Github of the python im-ple-men-ta-t
+ion of the weak
+ []
+
+
+Underfull \hbox (badness 1048) in paragraph at lines 144--148
+\OT1/lmr/m/n/10 spec-tral method.  \OT1/lmtt/m/n/10 https://github.com/alanmatz
+umiya/Paper\OT1/lmr/m/n/10 , May 2019.  URL
+ []
+
+) [20 <./StochasticBurgersEquation/Approximation_t=0-eps-converted-to.pdf>]
+[21 <./StochasticBurgersEquation/simulation_Approximation_color.png> <./Stochas
+ticBurgersEquation/error_burgers-eps-converted-to.pdf>] (./IJCM.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
@@ -1220,23 +1306,23 @@ LaTeX Font Warning: Size substitutions with differences
  ) 
 Here is how much of TeX's memory you used:
  30204 strings out of 492623
- 609284 string characters out of 6129552
- 730565 words of memory out of 5000000
+ 609298 string characters out of 6129552
+ 735565 words of memory out of 5000000
  33646 multiletter control sequences out of 15000+600000
- 648252 words of font info for 116 fonts, out of 8000000 for 9000
+ 648236 words of font info for 116 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,13n,81p,791b,382s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
-texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/20
-19/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/local/texlive/2019/texmf-dis
-t/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2019/texmf-dist/fonts/en
-c/dvips/lm/lm-mathex.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/loca
+l/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2019
+/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2019/texmf-dis
+t/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2019/texmf-dist/fonts/en
+c/dvips/lm/lm-mathsy.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmmi6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmmib10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfo
-nts/cmextra/cmmib7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/a
+nts/cmextra/cmmib8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmr5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/
@@ -1244,34 +1330,30 @@ cm/cmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmss8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 ssi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8
-.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr
-/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/tex
-live/2019/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr/local/texlive/2019/t
-exmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2019/texmf-dist/f
-onts/type1/public/lm/lmbx9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/
-public/lm/lmbxi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm
-/lmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi10.pf
-b></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/loc
-al/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/
-2019/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2019/texmf-
-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/
-type1/public/lm/lmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publi
-c/lm/lmr5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr6.pf
-b></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/loca
-l/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/20
-19/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2019/texmf-dis
-t/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
-pe1/public/lm/lmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public
-/lm/lmsy7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy8.p
-fb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/l
-ocal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></u
-sr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
-></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.
-pfb>
-Output written on IJCM.pdf (22 pages, 885086 bytes).
+.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr
+/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texl
+ive/2019/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></usr/local/texlive/2019/te
+xmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2019/texmf-dist/
+fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type
+1/public/lm/lmmi12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/l
+m/lmmi6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi8.pfb
+></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/loca
+l/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2
+019/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2019/texmf-di
+st/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2019/texmf-dist/fonts/typ
+e1/public/lm/lmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm
+/lmr9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmri10.pfb>
+</usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/loca
+l/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/
+2019/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2019/texmf-
+dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2019/texmf-dist/fonts
+/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texmf-dist/f
+onts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2019/texmf-di
+st/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on IJCM.pdf (21 pages, 848175 bytes).
 PDF statistics:
- 316 PDF objects out of 1000 (max. 8388607)
- 222 compressed objects within 3 object streams
+ 297 PDF objects out of 1000 (max. 8388607)
+ 208 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  139 words of extra memory for PDF output out of 10000 (max. 10000000)
 
