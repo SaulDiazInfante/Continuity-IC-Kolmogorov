@@ -173,6 +173,10 @@
     the last years, see for instance \cite{bo-da-ro, da-fl-ro, da} and the 
     references therein.
     
+     It is well-known that analytical solutions of SPDEs are rarely available, then the use of numerical methods to solve, or to approximate, these solutions are necessary. Numerical methods for SPDEs have been developed during the last decades, mostly of them are strong approximations, in the probabilistic sense, to the stochastic solutions. The list of references is large, here we will mention just a few and only on spectral approaches. For other methods we refer to the book \cite{milstein2013stochastic} and the references therein. For spectral methods there is two families of different approaches, the based on the Karhunen-Loeve expansion and the based on the Wiener-Chaos expansion, also called  stochastic polynomial chaos expansion. However, since the former approach has been proved to converge slower than the latter for non-linear SPDEs then the latter is more convenient, see \cite{zhang2017numerical} for further details. 
+     
+     Nevertheless, numerical methods for SPDEs based on weak approximations, in the probability sense, is a virgin research field.  There is just a few works on this direction, one result is the paper \cite{schwab2013adaptive}, where they propose a space-time variational method to approximate solution of Kolmogorov-type equations in infinite dimensions. However, numerical experiments on this method are not presented on their work. A second paper is the related to this work \cite{de-fl}, where it is proposed a numerical method for Kolmogorov equations associated to SPDEs, therefore, it is a numerical method for the SPDE based on weak approximations. The proposed method has good numerical performance with the three examples presented in \cite{de-fl} and then it is interesting to explore several properties and behaviour of the numerical method, for instance, the rate of convergence (it is well-known that, the rate of convergence of the weak approximations is twice the rate of the strong approximations and then is interesting to study it), the continuity with respect to the initial condition, etc. 
+    
         Try to finding analytical solutions of FPK associated with SPDEs results
     impractical. Thus, work with efficient and accurate numerical schemes is 
     crucial. In this way, the spectral methods play an essential role to obtain 
@@ -188,6 +192,8 @@
     behavior and if it is the case, we say that an underlying method is stable 
     in this context.
     
+   
+    
         Our main contribution is the characterization of mild conditions to
     assure the continuity respect to initial function conditions to a family of
     SPDEs and the stability of a regarding weak spectral approximation. 
@@ -200,6 +206,10 @@
     \cite{Gottlieb1987a} as reference for the deterministic case, and N. Li, J.
     Fiordilino, and X. Feng, \cite{Li2019} A. Lang, A. Petersson,  and A.
     Thalhammer, \cite{Lang2017} for the stochastic version.
+    
+   
+    
+    
     
         This paper is organized as follows. In \Cref{fpk-sect} we review the
     Fokker-Plank-Kolmogorov equation associated with SPDEs in
