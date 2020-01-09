@@ -1,0 +1,116 @@
+\usepackage{lipsum}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{algorithmic}
+\usepackage[square, sort&compress, numbers]{natbib}
+\usepackage[utf8x]{inputenc}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{etoolbox}
+\usepackage{todonotes}
+\usepackage{epstopdf}
+\usepackage{siunitx}
+\usepackage{amsopn}
+\patchcmd{\SetTagPlusEndMark}{$}{}{}{}
+\patchcmd{\SetTagPlusEndMark}{$}{}{}{}
+\ifpdf
+  \DeclareGraphicsExtensions{.eps,.pdf,.png,.jpg}
+\else
+  \DeclareGraphicsExtensions{.eps}
+\fi
+
+\newcommand{\creflastconjunction}{, and~}
+\newsiamremark{remark}{Remark}
+\newsiamremark{hypothesis}{Hypothesis}
+\crefname{hypothesis}{Hypothesis}{Hypotheses}
+\newsiamthm{claim}{Claim}
+\DeclareMathOperator{\diag}{diag}
+\newcommand{\cqd}{\hfill$\Box$}
+\newcommand{\f}{{\mathcal F}}
+\newcommand{\IR}{{\mathbb R}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\IN}{{\mathbb N}}
+\newcommand{\ind}{\mbox{\Large$\chi$}}
+\newcommand{\tor}{{\mathbb T}}
+\newcommand{\G}{{\mathbb G}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bal}{\begin{align}}
+\newcommand{\eal}{\end{align}}
+\newcommand{\beqn}{\begin{equation*}}
+\newcommand{\eeqn}{\end{equation*}}
+\newcommand{\baln}{\begin{align*}}
+\newcommand{\ealn}{\end{align*}}
+\newcommand{\tbar}{\bar t}
+\newcommand{\xbar}{\bar x}
+\newcommand{\ep}{\epsilon}
+\newcommand{\Pb}{\mathbb P}
+\newcommand{\Rl}{\mathbb R}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\tf}{\mathcal{F}}
+\newcommand{\hac}{\mathcal{H}}
+\newcommand{\hact}{\mathcal{H}_T}
+%
+
+\headers{Continuity with respect to initial conditions}{%
+    F. Delgdo-Vences, % 
+    A. Matzumiya-Zazueta and %
+    S. Diaz-Infante
+}
+
+\title{%
+        Initial conditions continuity of a numerical 
+        approximation for Kolmogorov equations
+    \thanks{Submitted to the editors \today}
+}
+%
+\author{
+    Francisco Delgado-Vences
+    \footnotemark[1]
+    \thanks{
+    CONACYT-UNAM, 
+    Instituto de Matem\'aticas, 
+    Sede Oaxaca,
+    Antonio de Le\'on \#2, altos, Col. Centro,
+    Oaxaca de Ju\'arez, CP. 68000
+    Phone: +52(951) 5160541
+    (\email{delgado@im.unam.mx})
+    }
+%
+    \and %
+    Alan Matzumiya-Zazueta
+   \footnotemark[2]
+    \thanks{
+    Universidad de Sonora
+    Departamento de Matem\'aticas,
+    Departamento de Matem\'aticas. 
+    Blvd Luis Encinas y Rosales S/N, 
+    Colonia Centro. 
+    Edificio 3K-1. C.P. 83000.
+    Hermosillo, Sonora, M\'exico,
+    (\email{alan.matzumiya@gmail.com})
+    }
+%
+    \and %
+    Saul Diaz-Infante
+   \footnotemark[3]
+    \thanks{%
+    CONACYT-Universidad de Sonora, 
+    Departamento de Matem\'aticas. 
+    Blvd Luis Encinas y Rosales S/N, 
+    Colonia Centro. 
+    Edificio 3K-1. C.P. 83000.
+    Hermosillo, Sonora, M\'exico,
+    Phone: +52(662) 2592219 ext. 2430
+    (\email{saul.diazinfante@unison.mx})
+    corresponding author*
+    }
+}
+%
+\DeclareMathOperator{\sech}{sech}
+\ifpdf
+  \DeclareGraphicsExtensions{.eps,.pdf,.png,.jpg}
+\else
+  \DeclareGraphicsExtensions{.eps}
+\fi
