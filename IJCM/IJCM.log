@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.8.10)  7 JAN 2020 19:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.8.10)  8 JAN 2020 19:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1106,11 +1106,11 @@ File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] (./stochastic_fisher_kpp.tex
 Package epstopdf Info: Source file: <StochasticFisherEquation/Approximation_t=0
 .eps>
-(epstopdf)                    date: 2019-06-11 13:36:16
+(epstopdf)                    date: 2020-01-08 18:06:36
 (epstopdf)                    size: 203879 bytes
 (epstopdf)             Output file: <StochasticFisherEquation/Approximation_t=0
 -eps-converted-to.pdf>
-(epstopdf)                    date: 2019-07-03 11:38:06
+(epstopdf)                    date: 2020-01-08 18:06:36
 (epstopdf)                    size: 12014 bytes
 (epstopdf)             Command: <repstopdf --outfile=StochasticFisherEquation/A
 pproximation_t=0-eps-converted-to.pdf StochasticFisherEquation/Approximation_t=
@@ -1148,11 +1148,11 @@ nput line 81.
 ) (./stochastic_burgers.tex [17]
 Package epstopdf Info: Source file: <./StochasticBurgersEquation/Approximation_
 t=0.eps>
-(epstopdf)                    date: 2019-06-06 15:06:50
+(epstopdf)                    date: 2020-01-08 18:06:36
 (epstopdf)                    size: 201472 bytes
 (epstopdf)             Output file: <./StochasticBurgersEquation/Approximation_
 t=0-eps-converted-to.pdf>
-(epstopdf)                    date: 2019-06-11 09:21:38
+(epstopdf)                    date: 2020-01-08 18:06:36
 (epstopdf)                    size: 11362 bytes
 (epstopdf)             Command: <repstopdf --outfile=./StochasticBurgersEquatio
 n/Approximation_t=0-eps-converted-to.pdf ./StochasticBurgersEquation/Approximat
@@ -1182,11 +1182,11 @@ olor.png  used on input line 51.
 (pdftex.def)             Requested size: 367.19751pt x 299.28267pt.
 Package epstopdf Info: Source file: <./StochasticBurgersEquation/error_burgers.
 eps>
-(epstopdf)                    date: 2019-05-08 12:02:22
+(epstopdf)                    date: 2020-01-08 18:06:36
 (epstopdf)                    size: 202298 bytes
 (epstopdf)             Output file: <./StochasticBurgersEquation/error_burgers-
 eps-converted-to.pdf>
-(epstopdf)                    date: 2019-06-11 09:58:33
+(epstopdf)                    date: 2020-01-08 18:06:36
 (epstopdf)                    size: 14721 bytes
 (epstopdf)             Command: <repstopdf --outfile=./StochasticBurgersEquatio
 n/error_burgers-eps-converted-to.pdf ./StochasticBurgersEquation/error_burgers.
@@ -1350,7 +1350,7 @@ dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2019/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texmf-dist/f
 onts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2019/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on IJCM.pdf (22 pages, 851561 bytes).
+Output written on IJCM.pdf (22 pages, 851386 bytes).
 PDF statistics:
  300 PDF objects out of 1000 (max. 8388607)
  210 compressed objects within 3 object streams

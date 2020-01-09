@@ -176,42 +176,44 @@
     the last years, see for instance \cite{bo-da-ro, da-fl-ro, da} and the 
     references therein.
     
-        It is well-known that analytical solutions of SPDEs are rarely  
-     available, then the use of numerical methods to solve, or to approximate,
-     these solutions are necessary. Numerical methods for SPDEs have been
-     developed during the last decades, mostly of them are strong
-     approximations, in the probabilistic sense, to the stochastic solutions.
-     The list of references is large, here we will mention just a few and only
-     on spectral approaches. For other methods we refer to the book
-     \cite{milstein2013stochastic} and the references therein. For spectral
-     methods there is two families of different approaches, the based on the
-     Karhunen-Loeve expansion and the based on the Wiener-Chaos expansion, also
-     called  stochastic polynomial chaos expansion. However, since the former
-     approach has been proved to converge slower than the latter for non-linear
-     SPDEs then the latter is more convenient, see \cite{zhang2017numerical} for
-     further details.
+        It is well-known that analytical solutions of SPDEs are rarely 
+     available, then the use of numerical methods to approximate these solutions
+     are essential. Numerical methods for SPDEs have been developed during the
+     last decades, most of them are strong approximations, in the probabilistic
+     sense. The list of references is extensive, here we mention just a few on
+     spectral approaches. For other methods, we refer to the book
+     \cite{milstein2013stochastic} and the references therein.
+ 
+        The literature body of stochastic spectral methods identifies two 
+     important families, according to the Karhunen-Loeve expansion and the  
+     Wiener-Chaos expansion. However, since the former approach converges 
+     slower than the latter for non-linear SPDEs, schemes based in the 
+     Wiener-Chaos expansion are more convenient, see \cite{zhang2017numerical} 
+     for further details.
 
-        In contrast, numerical methods for SPDEs based on weak approximations, 
-    in the probability sense, is a virgin research field.  There is just a
-    few works on this direction, one result is the paper
-    \cite{schwab2013adaptive}, where they propose a space-time variational
-    method to approximate solution of Kolmogorov-type equations in infinite
-    dimensions. However, numerical experiments on this method are not
-    presented on their work. A second paper is the related to this work
-    \cite{de-fl}, where it is proposed a numerical method for Kolmogorov
-    equations associated to SPDEs, therefore, it is a numerical method for
-    the SPDE based on weak approximations. The proposed method has good
-    numerical performance with the three examples presented in \cite{de-fl}
-    and then it is interesting to explore several properties and behavior
-    of the numerical method, for instance, the rate of convergence (it is
-    well-known that, the rate of convergence of the weak approximations is
-    twice the rate of the strong approximations and then is interesting to
-    study it), the continuity with respect to the initial condition, etc.
+       The numerical analysis of SPDEs based on weak approximations, in the 
+     probability sense, is a virgin research field.  There are just a few works 
+     in this direction.  For example, Schwab and S\"{u}li proposed in 
+    \cite{schwab2013adaptive}  a variational space-time method to approximate 
+    the solution of an infinite-dimensional Kolmogorov-type equation.  However, 
+    their article lacks numerical experiments. 
     
-        Try to finding analytical solutions of FPK associated with SPDEs results
-    impractical. Thus, work with efficient and accurate numerical schemes is 
+        Our contribution is closed related to 
+    \cite{de-fl}, where the authors report a numerical method for Kolmogorov 
+    equations associated with SPDEs, that is, a scheme based on  weak 
+    approximations.
+    
+%    The proposed method has good
+%    numerical performance with the three examples presented in \cite{de-fl}
+%    and then it is interesting to explore several properties and behavior
+%    of the numerical method, for instance, the rate of convergence (it is
+%    well-known that, the rate of convergence of the weak approximations is
+%    twice the rate of the strong approximations and then is interesting to
+%    study it), the continuity with respect to the initial condition, etc.
+%    
+        Work with efficient and accurate numerical schemes is 
     crucial. In this way, the spectral methods play an essential role to obtain 
-    better schemes\textemdash under certain conditions; this sort of methods 
+    better schemes\textemdash under certain conditions this sort of methods 
     are  more accurate than finite differences of finite elements and need 
     fewer grid points. Here the adjective ``better'' would be under accuracy, 
     consistency, stability, and other targets properties. In this work, we 
