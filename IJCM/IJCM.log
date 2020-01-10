@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.8.10)  8 JAN 2020 19:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.8.10)  9 JAN 2020 20:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1103,110 +1103,82 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (/usr/local/texlive/2019/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 ) [5] [6]
-[7] [8] [9] [10] [11] [12] [13] [14] [15] [16] (./stochastic_fisher_kpp.tex
-Package epstopdf Info: Source file: <StochasticFisherEquation/Approximation_t=0
-.eps>
-(epstopdf)                    date: 2020-01-08 18:06:36
+[7] [8] [9] [10] [11] [12] [13] [14] [15] [16]
+Package epstopdf Info: Source file: <Fig1.eps>
+(epstopdf)                    date: 2020-01-09 20:01:12
 (epstopdf)                    size: 203879 bytes
-(epstopdf)             Output file: <StochasticFisherEquation/Approximation_t=0
--eps-converted-to.pdf>
-(epstopdf)                    date: 2020-01-08 18:06:36
+(epstopdf)             Output file: <Fig1-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-01-09 20:39:39
 (epstopdf)                    size: 12014 bytes
-(epstopdf)             Command: <repstopdf --outfile=StochasticFisherEquation/A
-pproximation_t=0-eps-converted-to.pdf StochasticFisherEquation/Approximation_t=
-0.eps>
-(epstopdf)             \includegraphics on input line 61.
+(epstopdf)             Command: <repstopdf --outfile=Fig1-eps-converted-to.pdf 
+Fig1.eps>
+(epstopdf)             \includegraphics on input line 1996.
 Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: /usr/local/texlive/2019/bin/x86_64-linux/pdflatex (file ./Stoch
-asticFisherEquation/Approximation_t=0-eps-converted-to.pdf): PDF inclusion: fou
-nd PDF version <1.7>, but at most version <1.5> allowed
-<StochasticFisherEquation/Approximation_t=0-eps-converted-to.pdf, id=102, 397.4
-85pt x 245.91875pt>
-File: StochasticFisherEquation/Approximation_t=0-eps-converted-to.pdf Graphic f
-ile (type pdf)
-<use StochasticFisherEquation/Approximation_t=0-eps-converted-to.pdf>
-Package pdftex.def Info: StochasticFisherEquation/Approximation_t=0-eps-convert
-ed-to.pdf  used on input line 61.
+<Fig1-eps-converted-to.pdf, id=102, 397.485pt x 245.91875pt>
+File: Fig1-eps-converted-to.pdf Graphic file (type pdf)
+<use Fig1-eps-converted-to.pdf>
+Package pdftex.def Info: Fig1-eps-converted-to.pdf  used on input line 1996.
 (pdftex.def)             Requested size: 408.0pt x 252.43231pt.
-<./StochasticFisherEquation/simulation_Approximation_color.png, id=103, 993.712
-5pt x 773.89125pt>
-File: ./StochasticFisherEquation/simulation_Approximation_color.png Graphic fil
-e (type png)
-<use ./StochasticFisherEquation/simulation_Approximation_color.png>
-Package pdftex.def Info: ./StochasticFisherEquation/simulation_Approximation_co
-lor.png  used on input line 75.
+<Fig2.png, id=103, 993.7125pt x 773.89125pt>
+File: Fig2.png Graphic file (type png)
+<use Fig2.png>
+Package pdftex.def Info: Fig2.png  used on input line 2010.
 (pdftex.def)             Requested size: 367.19751pt x 285.96921pt.
-<./StochasticFisherEquation/error_fisher.pdf, id=105, 356.00201pt x 217.24362pt
->
-File: ./StochasticFisherEquation/error_fisher.pdf Graphic file (type pdf)
-<use ./StochasticFisherEquation/error_fisher.pdf>
-Package pdftex.def Info: ./StochasticFisherEquation/error_fisher.pdf  used on i
-nput line 81.
-(pdftex.def)             Requested size: 408.0pt x 248.97298pt.
-) (./stochastic_burgers.tex [17]
-Package epstopdf Info: Source file: <./StochasticBurgersEquation/Approximation_
-t=0.eps>
-(epstopdf)                    date: 2020-01-08 18:06:36
+
+
+LaTeX Warning: File `error_fisher.eps' not found on input line 2016.
+
+Package epstopdf Info: Source file: <error_fisher.eps>
+(epstopdf)             Output file: <error_fisher-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-01-09 20:23:30
+(epstopdf)                    size: 15083 bytes
+(epstopdf)             Command: <repstopdf --outfile=error_fisher-eps-converted
+-to.pdf error_fisher.eps>
+(epstopdf)             \includegraphics on input line 2016.
+Package epstopdf Info: Output file is already uptodate.
+<error_fisher-eps-converted-to.pdf, id=105, 397.485pt x 245.91875pt>
+File: error_fisher-eps-converted-to.pdf Graphic file (type pdf)
+<use error_fisher-eps-converted-to.pdf>
+Package pdftex.def Info: error_fisher-eps-converted-to.pdf  used on input line 
+2016.
+(pdftex.def)             Requested size: 408.0pt x 252.43231pt.
+[17]
+Package epstopdf Info: Source file: <Fig4.eps>
+(epstopdf)                    date: 2020-01-09 20:01:12
 (epstopdf)                    size: 201472 bytes
-(epstopdf)             Output file: <./StochasticBurgersEquation/Approximation_
-t=0-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-01-08 18:06:36
+(epstopdf)             Output file: <Fig4-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-01-09 20:44:33
 (epstopdf)                    size: 11362 bytes
-(epstopdf)             Command: <repstopdf --outfile=./StochasticBurgersEquatio
-n/Approximation_t=0-eps-converted-to.pdf ./StochasticBurgersEquation/Approximat
-ion_t=0.eps>
-(epstopdf)             \includegraphics on input line 37.
+(epstopdf)             Command: <repstopdf --outfile=Fig4-eps-converted-to.pdf 
+Fig4.eps>
+(epstopdf)             \includegraphics on input line 2070.
 Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: /usr/local/texlive/2019/bin/x86_64-linux/pdflatex (file ./Stoch
-asticBurgersEquation/Approximation_t=0-eps-converted-to.pdf): PDF inclusion: fo
-und PDF version <1.7>, but at most version <1.5> allowed
-<./StochasticBurgersEquation/Approximation_t=0-eps-converted-to.pdf, id=109, 39
-7.485pt x 245.91875pt>
-File: ./StochasticBurgersEquation/Approximation_t=0-eps-converted-to.pdf Graphi
-c file (type pdf)
-<use ./StochasticBurgersEquation/Approximation_t=0-eps-converted-to.pdf>
-Package pdftex.def Info: ./StochasticBurgersEquation/Approximation_t=0-eps-conv
-erted-to.pdf  used on input line 37.
+<Fig4-eps-converted-to.pdf, id=109, 397.485pt x 245.91875pt>
+File: Fig4-eps-converted-to.pdf Graphic file (type pdf)
+<use Fig4-eps-converted-to.pdf>
+Package pdftex.def Info: Fig4-eps-converted-to.pdf  used on input line 2070.
 (pdftex.def)             Requested size: 408.0pt x 252.43231pt.
-<./StochasticBurgersEquation/simulation_Approximation_color.png, id=110, 960.58
-875pt x 782.925pt>
-File: ./StochasticBurgersEquation/simulation_Approximation_color.png Graphic fi
-le (type png)
-<use ./StochasticBurgersEquation/simulation_Approximation_color.png>
-Package pdftex.def Info: ./StochasticBurgersEquation/simulation_Approximation_c
-olor.png  used on input line 51.
+<Fig5.png, id=110, 960.58875pt x 782.925pt>
+File: Fig5.png Graphic file (type png)
+<use Fig5.png>
+Package pdftex.def Info: Fig5.png  used on input line 2084.
 (pdftex.def)             Requested size: 367.19751pt x 299.28267pt.
-Package epstopdf Info: Source file: <./StochasticBurgersEquation/error_burgers.
-eps>
-(epstopdf)                    date: 2020-01-08 18:06:36
+Package epstopdf Info: Source file: <Fig6.eps>
+(epstopdf)                    date: 2020-01-09 20:01:12
 (epstopdf)                    size: 202298 bytes
-(epstopdf)             Output file: <./StochasticBurgersEquation/error_burgers-
-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-01-08 18:06:36
-(epstopdf)                    size: 14721 bytes
-(epstopdf)             Command: <repstopdf --outfile=./StochasticBurgersEquatio
-n/error_burgers-eps-converted-to.pdf ./StochasticBurgersEquation/error_burgers.
-eps>
-(epstopdf)             \includegraphics on input line 64.
+(epstopdf)             Output file: <Fig6-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-01-09 20:49:30
+(epstopdf)                    size: 14720 bytes
+(epstopdf)             Command: <repstopdf --outfile=Fig6-eps-converted-to.pdf 
+Fig6.eps>
+(epstopdf)             \includegraphics on input line 2097.
 Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: /usr/local/texlive/2019/bin/x86_64-linux/pdflatex (file ./Stoch
-asticBurgersEquation/error_burgers-eps-converted-to.pdf): PDF inclusion: found 
-PDF version <1.7>, but at most version <1.5> allowed
-<./StochasticBurgersEquation/error_burgers-eps-converted-to.pdf, id=111, 397.48
-5pt x 245.91875pt>
-File: ./StochasticBurgersEquation/error_burgers-eps-converted-to.pdf Graphic fi
-le (type pdf)
-<use ./StochasticBurgersEquation/error_burgers-eps-converted-to.pdf>
-Package pdftex.def Info: ./StochasticBurgersEquation/error_burgers-eps-converte
-d-to.pdf  used on input line 64.
+<Fig6-eps-converted-to.pdf, id=111, 397.485pt x 245.91875pt>
+File: Fig6-eps-converted-to.pdf Graphic file (type pdf)
+<use Fig6-eps-converted-to.pdf>
+Package pdftex.def Info: Fig6-eps-converted-to.pdf  used on input line 2097.
 (pdftex.def)             Requested size: 408.0pt x 252.43231pt.
-) (./IJCM.bbl
+ (./IJCM.bbl
 Underfull \hbox (badness 6001) in paragraph at lines 9--20
 []\OT1/lmr/m/n/10 Viorel Barbu and Giuseppe Da Prato.  The Kol-mogorov equa-tio
 n for a
@@ -1224,7 +1196,7 @@ Underfull \hbox (badness 3635) in paragraph at lines 9--20
 8.  ISSN 0362-546X.  .  URL
  []
 
-[18 <./StochasticFisherEquation/Approximation_t=0-eps-converted-to.pdf>]
+[18 <./Fig1-eps-converted-to.pdf>]
 Underfull \hbox (badness 3977) in paragraph at lines 54--62
 []\OT1/lmr/m/n/10 Giuseppe Da Prato and Ar-naud De-buss-che.  m-Dissipativity o
 f Kol-mogorov
@@ -1254,7 +1226,7 @@ Underfull \hbox (badness 3439) in paragraph at lines 64--71
 6.  .  URL
  []
 
-[19 <./StochasticFisherEquation/simulation_Approximation_color.png>]
+[19 <./Fig2.png>]
 Underfull \hbox (badness 1194) in paragraph at lines 73--81
 \OT1/lmr/m/it/10 in Hilbert spaces\OT1/lmr/m/n/10 , vol-ume 293 of \OT1/lmr/m/i
 t/10 Lon-don Math-e-mat-i-cal So-ci-ety Lec-ture Note Se-
@@ -1284,7 +1256,7 @@ Underfull \hbox (badness 1502) in paragraph at lines 134--142
 u-siv-ity.  \OT1/lmr/m/it/10 Jour-nal
  []
 
-[20 <./StochasticFisherEquation/error_fisher.pdf>]
+[20 <./error_fisher-eps-converted-to.pdf>]
 Underfull \hbox (badness 2261) in paragraph at lines 144--148
 []\OT1/lmr/m/n/10 Alan Daniel Matzu-miya.  Github of the python im-ple-men-ta-t
 ion of the weak
@@ -1296,17 +1268,16 @@ Underfull \hbox (badness 1048) in paragraph at lines 144--148
 umiya/Paper\OT1/lmr/m/n/10 , May 2019.  URL
  []
 
-) [21 <./StochasticBurgersEquation/Approximation_t=0-eps-converted-to.pdf>]
-[22 <./StochasticBurgersEquation/simulation_Approximation_color.png> <./Stochas
-ticBurgersEquation/error_burgers-eps-converted-to.pdf>] (./IJCM.aux)
+) [21 <./Fig4-eps-converted-to.pdf>] [22 <./Fig5.png> <./Fig6-eps-converted-to.
+pdf>] (./IJCM.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 30214 strings out of 492623
- 609552 string characters out of 6129552
+ 30207 strings out of 492623
+ 608363 string characters out of 6129552
  730565 words of memory out of 5000000
  33656 multiletter control sequences out of 15000+600000
  648236 words of font info for 116 fonts, out of 8000000 for 9000
@@ -1350,10 +1321,10 @@ dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2019/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2019/texmf-dist/f
 onts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2019/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on IJCM.pdf (22 pages, 851386 bytes).
+Output written on IJCM.pdf (22 pages, 779482 bytes).
 PDF statistics:
- 300 PDF objects out of 1000 (max. 8388607)
- 210 compressed objects within 3 object streams
+ 312 PDF objects out of 1000 (max. 8388607)
+ 223 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  139 words of extra memory for PDF output out of 10000 (max. 10000000)
 
