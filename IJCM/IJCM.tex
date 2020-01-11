@@ -18,15 +18,9 @@
 \usepackage{etoolbox}
 \usepackage{todonotes}
 \usepackage{epstopdf}
-\usepackage{siunitx}
 \usepackage{amsopn}
 \patchcmd{\SetTagPlusEndMark}{$}{}{}{}
 \patchcmd{\SetTagPlusEndMark}{$}{}{}{}
-\ifpdf
-  \DeclareGraphicsExtensions{.eps,.pdf,.png,.jpg}
-\else
-  \DeclareGraphicsExtensions{.eps}
-\fi
 %
 \DeclareMathOperator{\diag}{diag}
 \newcommand{\cqd}{\hfill$\Box$}
@@ -74,11 +68,6 @@
 \newcommand{\creflastconjunction}{, and~}
 \crefname{hypothesis}{Hypothesis}{Hypotheses}
 \DeclareMathOperator{\sech}{sech}
-\ifpdf
-  \DeclareGraphicsExtensions{.eps,.pdf,.png,.jpg}
-\else
-  \DeclareGraphicsExtensions{.eps}
-\fi
 \begin{document}
 \articletype{ARTICLE TEMPLATE}% Specify the article type or omit as appropriate
 
@@ -1934,7 +1923,7 @@ solution of \eqref{P1s3.2}.
 %
     \subsection*{Stochastic Fisher-KPP equation in an interval}
     Let $\mathcal{H} = L^2 (0,1)$. We consider the stochastic
-Fisher-KPP equation 
+    Fisher-KPP equation 
     \begin{equation}
         \label{eqn:fisher-kpp}
         \begin{aligned}
@@ -1993,7 +1982,7 @@ Fisher-KPP equation
      }
     \label{fig:fisher_kpp_approximation_t0}
     \includegraphics[width=\linewidth, keepaspectratio]%
-    {Fig1.eps}
+    {Fig1.pdf}
 \end{figure}
 %
 \begin{figure}[htb]
@@ -2007,13 +1996,13 @@ Fisher-KPP equation
      }
     \label{fig:likening_fisher_kpp}
     \includegraphics[width=.9\linewidth, keepaspectratio]%
-    {Fig2.png}
+    {Fig2.pdf}
 \end{figure}
 %
 %
 %
 \begin{figure}[htb]
-    \includegraphics[width=\textwidth]{error_fisher.eps}
+    \includegraphics[width=\textwidth]{Fig3.pdf}
     \caption{
         $\mathcal{L}^2(\mathcal{H}, \mu)$
         distance between two solutions of the stochastic Fisher PDE 
@@ -2067,7 +2056,7 @@ illustrate a similar argument presented  in the above experiment.
      }
     \label{fig:approximationt0}
     \includegraphics[width=\linewidth, keepaspectratio]%
-    {Fig4.eps}
+    {Fig4.pdf}
 \end{figure}
 
 \begin{figure}[htb]
@@ -2081,7 +2070,7 @@ illustrate a similar argument presented  in the above experiment.
      }
     \label{fig:likening_burgers}
     \includegraphics[width=.9\textwidth, keepaspectratio]%
-    {Fig5.png}
+    {Fig5.pdf}
 \end{figure}
 %
 \begin{figure}[htb]
@@ -2094,7 +2083,7 @@ illustrate a similar argument presented  in the above experiment.
      }
     \label{fig:error_convergence}
     \includegraphics[width=\linewidth, keepaspectratio]%
-    {Fig6.eps}
+    {Fig6.pdf}
 \end{figure}
 
 \section{Conclusions}
