@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.8.10)  10 JAN 2020 18:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.8.10)  11 JAN 2020 12:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1061,102 +1061,101 @@ File: Fig6.pdf Graphic file (type pdf)
 <use Fig6.pdf>
 Package pdftex.def Info: Fig6.pdf  used on input line 2086.
 (pdftex.def)             Requested size: 408.0pt x 246.1569pt.
-(./IJCM.bbl
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 17.
-
- (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmtt.fd
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 212
+3.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Underfull \hbox (badness 6001) in paragraph at lines 9--20
+Underfull \hbox (badness 6001) in paragraph at lines 2115--2126
 []\OT1/lmr/m/n/10 Viorel Barbu and Giuseppe Da Prato.  The Kol-mogorov equa-tio
 n for a
  []
 
 
-Underfull \hbox (badness 3977) in paragraph at lines 9--20
+Underfull \hbox (badness 3977) in paragraph at lines 2115--2126
 \OT1/lmr/m/n/10 2D-Navier{Stokes stochas-tic flow in a chan-nel.  \OT1/lmr/m/it
 /10 Non-lin-ear Anal-y-sis: The-ory,
  []
 
 
-Underfull \hbox (badness 3635) in paragraph at lines 9--20
+Underfull \hbox (badness 3635) in paragraph at lines 2115--2126
 \OT1/lmr/m/it/10 Meth-ods & Ap-pli-ca-tions\OT1/lmr/m/n/10 , 69(3):940{949, 200
 8.  ISSN 0362-546X.  .  URL
  []
 
 [18 <./Fig1.pdf>]
-Underfull \hbox (badness 3977) in paragraph at lines 54--62
+Underfull \hbox (badness 3977) in paragraph at lines 2160--2168
 []\OT1/lmr/m/n/10 Giuseppe Da Prato and Ar-naud De-buss-che.  m-Dissipativity o
 f Kol-mogorov
  []
 
 
-Underfull \hbox (badness 4013) in paragraph at lines 54--62
+Underfull \hbox (badness 4013) in paragraph at lines 2160--2168
 \OT1/lmr/m/n/10 Op-er-a-tors Cor-re-spond-ing to Burg-ers Equa-tions with Space
 -time White Noise.
  []
 
 
-Underfull \hbox (badness 6236) in paragraph at lines 54--62
+Underfull \hbox (badness 6236) in paragraph at lines 2160--2168
 \OT1/lmr/m/it/10 Po-ten-tial Anal-y-sis\OT1/lmr/m/n/10 , 26(1):31{55, Feb 2007.
   ISSN 1572-929X.  .  URL
  []
 
 
-Underfull \hbox (badness 1874) in paragraph at lines 64--71
+Underfull \hbox (badness 1874) in paragraph at lines 2170--2177
 \OT1/lmr/m/it/10 sions\OT1/lmr/m/n/10 , vol-ume 44 of \OT1/lmr/m/it/10 En-cy-cl
 o-pe-dia of Math-e-mat-ics and its Ap-pli-ca-tions\OT1/lmr/m/n/10 .  Cam-
  []
 
 
-Underfull \hbox (badness 3439) in paragraph at lines 64--71
+Underfull \hbox (badness 3439) in paragraph at lines 2170--2177
 \OT1/lmr/m/n/10 bridge Uni-ver-sity Press, Cam-bridge, 1992.  ISBN 0-521-38529-
 6.  .  URL
  []
 
 [19 <./Fig2.pdf>]
-Underfull \hbox (badness 1194) in paragraph at lines 73--81
+Underfull \hbox (badness 1194) in paragraph at lines 2179--2187
 \OT1/lmr/m/it/10 in Hilbert spaces\OT1/lmr/m/n/10 , vol-ume 293 of \OT1/lmr/m/i
 t/10 Lon-don Math-e-mat-i-cal So-ci-ety Lec-ture Note Se-
  []
 
 
-Underfull \hbox (badness 3009) in paragraph at lines 83--91
+Underfull \hbox (badness 3009) in paragraph at lines 2189--2197
 \OT1/lmr/m/n/10 for Kol-mogorov equa-tions in Hilbert spaces.  \OT1/lmr/m/it/10
  In-fin. Di-mens. Anal. Quan-tum
  []
 
 
-Underfull \hbox (badness 3646) in paragraph at lines 83--91
+Underfull \hbox (badness 3646) in paragraph at lines 2189--2197
 \OT1/lmr/m/it/10 Probab. Re-lat. Top.\OT1/lmr/m/n/10 , 19(3):1650020, 37, 2016.
   ISSN 0219-0257.  .  URL
  []
 
 
-Underfull \hbox (badness 1460) in paragraph at lines 134--142
+Underfull \hbox (badness 1460) in paragraph at lines 2240--2248
 []\OT1/lmr/m/n/10 Ning Li, Joseph Fiordilino, and Xin-long Feng.  En-sem-ble Ti
 me-Stepping Al-go-
  []
 
 
-Underfull \hbox (badness 1502) in paragraph at lines 134--142
+Underfull \hbox (badness 1502) in paragraph at lines 2240--2248
 \OT1/lmr/m/n/10 rithm for the Convection-Diffusion Equa-tion with Ran-dom Dif-f
 u-siv-ity.  \OT1/lmr/m/it/10 Jour-nal
  []
 
 [20 <./Fig3.pdf>]
-Underfull \hbox (badness 2261) in paragraph at lines 144--148
+Underfull \hbox (badness 2261) in paragraph at lines 2250--2254
 []\OT1/lmr/m/n/10 Alan Daniel Matzu-miya.  Github of the python im-ple-men-ta-t
 ion of the weak
  []
 
 
-Underfull \hbox (badness 1048) in paragraph at lines 144--148
+Underfull \hbox (badness 1048) in paragraph at lines 2250--2254
 \OT1/lmr/m/n/10 spec-tral method.  \OT1/lmtt/m/n/10 https://github.com/alanmatz
 umiya/Paper\OT1/lmr/m/n/10 , May 2019.  URL
  []
 
-) [21 <./Fig4.pdf>] [22 <./Fig5.pdf> <./Fig6.pdf
+[21 <./Fig4.pdf>] [22 <./Fig5.pdf> <./Fig6.pdf
 
 pdfTeX warning: /usr/local/texlive/2019/bin/x86_64-linux/pdflatex (file ./Fig6.
 pdf): PDF inclusion: multiple pdfs with page group included in a single page
@@ -1167,8 +1166,8 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 27853 strings out of 492623
- 542043 string characters out of 6129552
+ 27850 strings out of 492623
+ 542021 string characters out of 6129552
  679166 words of memory out of 5000000
  31333 multiletter control sequences out of 15000+600000
  624276 words of font info for 101 fonts, out of 8000000 for 9000
@@ -1205,7 +1204,7 @@ ive/2019/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2019/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/20
 19/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texliv
 e/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on IJCM.pdf (22 pages, 875374 bytes).
+Output written on IJCM.pdf (22 pages, 875570 bytes).
 PDF statistics:
  276 PDF objects out of 1000 (max. 8388607)
  191 compressed objects within 2 object streams
