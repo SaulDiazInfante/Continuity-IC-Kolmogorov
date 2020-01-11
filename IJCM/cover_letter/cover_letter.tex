@@ -1,0 +1,93 @@
+\documentclass[10pt ,stdletter, dateno, sigleft]{newlfm}
+\usepackage{charter}
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@zfancyhead}{\fancy@reset}{\f@nch@reset}{}{}
+\patchcmd{\@set@em@up}{\f@ncyolh}{\f@nch@olh}{}{}
+\patchcmd{\@set@em@up}{\f@ncyolh}{\f@nch@olh}{}{}
+\patchcmd{\@set@em@up}{\f@ncyorh}{\f@nch@orh}{}{}
+\makeatother
+\newsavebox{\Luiuc}
+%\sbox{\Luiuc}{
+%	\parbox[b]{1.75in}{\vspace{0.5in}
+%	\includegraphics[scale=.1,keepaspectratio]{logo.png}}
+%}
+\makeletterhead{Uiuc}{\Lheader{\usebox{\Luiuc}}}
+
+\newlfmP{sigsize=50pt} % Slightly decrease the height of the signature field
+\newlfmP{addrfromphone} % Print a phone number under the sender's address
+\newlfmP{addrfromemail} % Print an email address under the sender's address
+\PhrPhone{Phone} % Customize the "Telephone" text
+\PhrEmail{Email} % Customize the "E-mail" text
+\lthUiuc
+%-------------------------------------------------------------------------------
+
+%	YOUR NAME AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\namefrom{Sa\'ul D\'iaz-Infante Velasco, Ph.D.} % Name
+\addrfrom{
+    \today\\[12pt]
+    \\
+    Sa\'ul D\'iaz-Infante Velasco, PhD
+    \\
+    CONACYT-Universidad de Sonora,
+    \\
+    Department of Mathematics, 
+    \\
+    Graduate division
+    \\
+    Blvd Luis Encinas y Rosales S/N,
+    \\
+    Hermosillo, Sonora C.P. 8300,
+}
+\phonefrom{+52(662) 2592219 ext. 2430} 
+\emailfrom{saul.diazinfante@unison.mx}
+
+%----------------------------------------------------------------------------------------
+%	ADDRESSEE AND GREETING/CLOSING
+%----------------------------------------------------------------------------------------
+
+\greetto{Dear Professor Khaliq,} % Greeting text
+\closeline{Sincerely yours,} % Closing text
+\nameto{Abdul Khaliq} % Addressee of the letter above the to address
+\addrto{
+    Editor-in-Chief,\\
+    International Journal of Computer Mathematics,\\
+    Middle Tennessee State University, \\
+    Department of Mathematical Sciences \\
+    Murfreesboro, TN 37132, USA \\
+}
+%----------------------------------------------------------------------------------------
+\begin{document}
+    \begin{newlfm}
+    
+             We are pleased to submit an original research article entitled
+        "Initial conditions continuity of a numerical approximation for 
+        Kolmogorov equations," by Francisco Delgado-Vences, Alan 
+        Matzumiya-Zazueta, and Sa\'ul D\'iaz-Infante to be considered for 
+        publication in the International Journal of Computer Mathematics.
+
+            In this article, we derive stability theory for the approximation 
+        of Kolmogorov equations in infinite dimensions. Our results are for the 
+        stability of the initial conditions of a weak spectral method. To the 
+        best of our knowledge, this manuscript is the first work that 
+        addresses this kind of numerical stability for weak spectral 
+        schemes of parabolic SPDEs driving by infinite-dimensional 
+        noise.
+    
+            Our manuscript has not been published and is not under 
+        consideration for publication elsewhere. We have no conflicts of 
+        interest to disclose.
+        
+        We also confirm that the co-authors have agreed to the present 
+        submitted version.
+        
+        Please address all correspondence concerning this manuscript to me at 
+        saul.diazinfante@unison.mx.
+        
+        Thank you for your consideration of this manuscript.
+     
+    %----------------------------------------------------------------------    
+ \end{newlfm}
+\end{document}
