@@ -8,16 +8,13 @@
 %\setlength\bibindent{2em}
 \usepackage{amsmath}
 \usepackage[caption = false]{subfig}
-%\usepackage{subcaption}
 \usepackage{float}
-%\usepackage{textcomp}
 \usepackage{amsthm}
 %\usepackage{showkeys}
 \usepackage{pdfsync}
 \usepackage{wasysym}
 \usepackage[english]{babel}
 \usepackage{amssymb}
-%\usepackage{cmmib57}
 \usepackage{exscale}
 \usepackage{amscd}
 \usepackage{latexsym}
@@ -90,13 +87,13 @@
 \newtheorem{notation}{Notation}
 \usepackage{lmodern}
 \usepackage{cleveref}
+\usepackage[style]{abstract}
 \newcommand{\creflastconjunction}{, and~}
 \crefname{hypothesis}{Hypothesis}{Hypotheses}
 \DeclareMathOperator{\sech}{sech}
 %%%
 \begin{document}
-
-
+     
      \title{
         Initial conditions stability of a numerical
         approximation for Kolmogorov equations
@@ -141,152 +138,100 @@
               }
         }
  }
-
+\begin{titlepage}
+    \maketitle
     \begin{abstract}
-            We characterize the stability respect to initial conditions of a
-        weak numerical scheme to approximate the solution of a family of
-        SPDEs. Our approach consists in solving the associated Kolmogorov
-        equation of the underlying SPDE whit a spectral method. We
+        Accoring to the numerical scheme reported in 
+        [Infin. Dimens. Anal. Quantum Probab. Relat. Top. {\bf 19} (2016), 
+        no.~3, 1650020, 37 pp.],
+        we characterize numerical stability respect to initial conditions. 
+        Our approach consists in solving the associated Kolmogorov
+        equation for a familiy of parabolic SPDE whit a spectral method 
+        and deduce mild conditions. We
         illustrate our results with stochastic versions of the   Burgers and
         Fisher equations.
     \end{abstract}
+\end{titlepage}
+
 %
-  {\bf Keywords:} Stability, spectral method, Kolmogorov equation,
+    {\bf Keywords:} 
+    Stability, spectral method, Kolmogorov equation,
         parabolic stochastic partial differential equations.
-
-\section{Introduction}
-        Stochastic Partial Differential Equations (SPDEs) are important tools in
-    modeling complex phenomena, they arise in many fields of knowledge like
-    Physics, Biology, Economy, Finance, etc. Develop efficient numerical
-    methods for simulating SPDEs is very important but also very difficult and
-    challenging.
-
-        The  Fokker-Planck-Kolmogorov (FPK) equation is a partial differential
-    equation that describes the time evolution of the probability density
-    function of the velocity of a particle under the influence of drag forces
-    and random forces, it is a kind of continuity equation for densities.
-    Citing \cite{da-za}
-    ``parabolic equations on Hilbert spaces appear in mathematical physics to
-    model systems with infinitely many degrees of freedom. Typical examples are
-    provided by spin configurations in statistical mechanics and by crystals in
-    solid state theory. Infinite-dimensional parabolic equations provide an
-    analytic description of infinite dimensional diffusion processes in such
-    branches of applied mathematics as population biology, fluid dynamics, and
-    mathematical finance.'' This kind of equations have been deeply studied in
-    the last years, see for instance \cite{bo-da-ro, da-fl-ro, da} and the
-    references therein.
-
-        Analytical solutions of SPDEs are rarely
-     available, then using numerical methods to approximate these solutions
-     are essential. Numerical methods for SPDEs have been developed during the
-     last decades, most of them are strong approximations, in the probabilistic
-     sense. The list of references is extensive, here we mention just a few on
-     spectral approaches. For other methods, we refer to the book
-     \cite{milstein2013stochastic} and the references therein.
-
-        The literature body of stochastic spectral methods identifies two
-     important families, according to the Karhunen-Loeve expansion and the
-     Wiener-Chaos expansion. However, since the former approach converges
-     slower than the latter for non-linear SPDEs, schemes based in the
-     Wiener-Chaos expansion are more convenient, see \cite{zhang2017numerical}
-     for further details.
-
-       The numerical analysis of SPDEs based on weak approximations, in the
-     probability sense, is a virgin research field.  There are just a few works
-     in this direction.  For example, Schwab and S\"{u}li proposed in
-    \cite{schwab2013adaptive}  a variational space-time method to approximate
-    the solution of an infinite-dimensional Kolmogorov-type equation.  However,
-    their article lacks numerical experiments.
-
-        Our contribution is closed related to
-    \cite{de-fl}, where the authors report a numerical method for Kolmogorov
-    equations associated with SPDEs, that is, a scheme based on  weak
-    approximations.
-
-        Work with efficient and accurate numerical schemes is
-    crucial. In this way, the spectral methods play an essential role to obtain
-    better schemes\textemdash under certain conditions this sort of methods
-    are  more accurate than finite differences of finite elements and need
-    fewer grid points. Here the adjective ``better'' would be under accuracy,
-    consistency, stability, and other targets properties. In this work, we
-    explore the ability of the method reported in \cite{de-fl} to preserve the
-    continuity respect to initial conditions. That is, if a given problem
-    satisfies certain regularity conditions, then two of its solution remain
-    closed if its initial function conditions are close. So, we desire that a
-    numerical method reproduce this
-    behavior and if it is the case, we say that an underlying method is stable
-    in this context.
-
-        Our main contribution is the characterization of mild conditions to
-    assure the continuity respect to initial function conditions to a family of
-    SPDEs and the stability of a regarding weak spectral approximation.
-    To the best of our knowledge, this paper is the first in report numerical
-    stability theory for Kolmogorov equations in infinite dimensions.
-
-        The stability theory for spectral methods is still under
-    construction and is an active research area. We mention the seminal works of
-    L.N. Trefethen and M.R. Trummer \cite{Trefethen1987}, D. Gottlieb et. al.
-    \cite{Gottlieb1987a} as reference for the deterministic case, and N. Li, J.
-    Fiordilino, and X. Feng, \cite{Li2019} A. Lang, A. Petersson,  and A.
-    Thalhammer, \cite{Lang2017} for the stochastic version.
-
-        This paper is organized as follows. In \Cref{fpk-sect} we review the
-    Fokker-Plank-Kolmogorov equation associated with SPDEs in
-    a separable Hilbert space. \Cref{sec:ContinuityRespectToInitialConditions}
-    provides conditions to assure stability respect initial conditions and in
-    \Cref{sec:NumericalExperiments} we illustrate our
-    results with numerical experiments.
-
+%---------------------------------------------------------------------------
 \section{Kolmogorov equations for SPDEs in Hilbert spaces}
 \label{fpk-sect}
         Let $\mathcal{H}$ be a separable infinite-dimensional Hilbert space with
-    inner product $( ,  )_\mathcal{H} $ and norm $\|\cdot\|_\mathcal{H}$. We
-    define a Gaussian measure $\mu$ with mean zero and nuclear covariance
-    operator $\Lambda$ with  $Tr(\Lambda)<+\infty$.
-
-    We focus on the following Kolmogorov equation
+    inner product $( ,  )_\mathcal{H} $ and norm $\|\cdot\|_\mathcal{H}$. 
+    
+     Consider the stochastic differential equation in $\mathcal{H}$
     \begin{equation}
-        \label{P1s2.3}
-        \frac{\partial u}{\partial t}
-            = \frac{1}{2} Tr(QD^2u)
-            + \langle Ax, Du
-                \rangle_\mathcal{H}
-            + \langle B(x),Du \rangle_\mathcal{H},
-            \qquad x\in D(A).
+    \label{P1s2.1}
+    dX_t = AX_t dt + B(X_t) dt + \sqrt{Q}dW_t,
     \end{equation}
+    where the operator 
+    $
+    A:\mathcal{D}(A)\subset \mathcal{H}\rightarrow
+    \mathcal{H}
+    $ is the infinitesimal generator of a strongly
+    continuous semigroup $e^{tA}$ in $\mathcal{H}$, $Q$ is a bounded operator 
+    from another Hilbert space $\mathcal{U}$ to $\mathcal{H}$
+    and $B:\mathcal{D}(B)\subset \mathcal{H}\rightarrow \mathcal{H}$ is a
+    nonlinear mapping.
+    
+    We define
+    \begin{equation}
+    \label{P1s2.2}
+    u(t,x) = \E \big[ \varphi(X_t^x) \big],
+    \end{equation}
+    where $\varphi:\mathcal{H}\rightarrow \IR$ and $X_t^x$ is the solution to
+    \eqref{P1s2.1} with initial conditions $X_0=x$ with
+    $x\in\mathcal{H}$. Then $u$ satisfies the Kolmogorov equation:
+       \begin{equation}
+    \label{P1s2.3}
+    \frac{\partial u}{\partial t}
+    = \frac{1}{2} Tr(QD^2u)
+    + \langle Ax, Du
+    \rangle_\mathcal{H} 
+    + \langle B(x),Du \rangle_\mathcal{H},
+    \qquad x\in D(A).
+    \end{equation}
+    
+  %  Here  $\mu$ is a Gaussian measure with mean zero and nuclear covariance 
+  %  operator $\Lambda$ with  $Tr(\Lambda)<+\infty$.
+ 
 
         Several authors have proved results on existence and uniqueness of the
-    solution of the Kolmogorov equations, see for instance Da Prato \cite{da}
-    for a survey, Da Prato-Debussche \cite{da-de} for the Burgers equation,
-    Barbu-Da Prato \cite{ba-da} for the 2D Navier-Stokes stochastic flow in a
+    solution of the Kolmogorov equations, see for instance Da Prato \cite{da} 
+    for a survey, Da Prato-Debussche \cite{da-de} for the Burgers equation,  
+    Barbu-Da Prato \cite{ba-da} for the 2D Navier-Stokes stochastic flow in a 
     channel.
 %
-    \subsection{On the Ornstein-Uhlenbeck semigroup}
+    \subsection{On the numerical scheme for the Kolmogorov equation}
         \label{OUS-sect}
-        Following \cite{liu},  in $\mathcal{H}$ we define a Gaussian measure
+        Following \cite{liu},  in $\mathcal{H}$ we define a Gaussian measure 
         $\mu$ with mean zero and nuclear covariance operator $\Lambda$ with
-        ${Tr(\Lambda)<+\infty}$ and since
+        ${Tr(\Lambda)<+\infty}$ and since 
         $
             \Lambda:\mathcal{H}\mapsto \mathcal{H}
-        $
+        $ 
     is a positive definite, self-adjoint operator then its square-root operator
-    $\Lambda^{1/2}$ is a positive definite, self-adjoint Hilbert-Schmidt
+    $\Lambda^{1/2}$ is a positive definite, self-adjoint Hilbert-Schmidt 
     operator on $\mathcal{H}$.
 
         Define the inner product
     $
-        ( g, h )_0 :=
-        \big(
+        ( g, h )_0 := 
+        \big( 
             \Lambda^{-1/2}g ,
             \Lambda^{-1/2} h
         \big)_\mathcal{H},
-        \quad
+        \quad 
         \hbox{\rm for}
-        \quad g, h \in
-        \Lambda^{1/2}
+        \quad g, h \in 
+        \Lambda^{1/2} 
         \mathcal{H}.
     $
-    Let $\mathcal{H}_0$ denote the Hilbert subspace of $\mathcal{H}$, which is
+    Let $\mathcal{H}_0$ denote the Hilbert subspace of $\mathcal{H}$, which is 
     the completion of $\Lambda^{1/2} \mathcal{H}$ with respect to the norm
     $\|g\|_0:= ( g, g )_0^{1/2} $. Then ${\mathcal{H}_0}$ is
     dense in $\mathcal{H}$ and the inclusion map
@@ -301,31 +246,31 @@
     measurable functionals on the probability space with inner
     product
     \[
-        \big[
+        \big[ 
             \Phi,
             \Psi
         \big]_\mathbb{H}
         :=
-            \int_{\mathcal{H}}
+            \int_{\mathcal{H}} 
             \Phi(v)
             \Psi(v)\mu(dv),\quad
-            \text{ for }
+            \text{ for } 
             \Phi,\Psi\in\mathbb{H},
     \]
-    and norm
+    and norm 
     $\|\Phi\|_{\mathbb{H}}:=\big [\Phi,\Phi\big ]_\mathbb{H}^{1/2}$.
     We choose a basis system $\{\varphi_k\}$ for $\mathcal{H}$.
 
-        A functional $\Phi:\mathcal{H}\mapsto \IR$, is said to be a smooth
+        A functional $\Phi:\mathcal{H}\mapsto \IR$, is said to be a smooth 
     simple functional (or a cylinder functional) if there exists a
-    $C^\infty$-function $\phi$ on $\IR^n$ and $n$-continuous linear
+    $C^\infty$-function $\phi$ on $\IR^n$ and $n$-continuous linear 
     functional $l_1,\ldots,l_n$ on $\mathcal{H}$ such that for
     $h\in\mathcal{H}$
     \begin{equation}
         \Phi(h)=\phi(h_1,\ldots,h_n)\quad
         \mbox{\rm where}\qquad h_i=l_i(h),\quad i=1,\ldots,n.\label{S1.2}
     \end{equation}
-    The set of all such functionals will be denoted by
+    The set of all such functionals will be denoted by 
     $\mathcal{S}(\mathbb{H})$.
 %
     Denote by $P_k(x)$ the Hermite polynomial of degree $k$ taking values in
@@ -344,14 +289,14 @@
     Define the set of infinite multi-index as
     \[
         \mathcal{J} =
-            \Big\{ \bm{\alpha}
+            \Big\{ \bm{\alpha} 
                 =(\alpha_i,i\ge 1)\quad \big|\quad\alpha_i\in
                 \IN\cup\{0\},\quad |\bm{\alpha}|
                 :=\sum_{i=1}^\infty
-                \alpha_i<+\infty
+                \alpha_i<+\infty  
             \Big\}.
     \]
-    For $\bm{n} \in \mathcal{J}$
+    For $\bm{n} \in \mathcal{J}$ 
     define the {\it Hermite polynomial functionals}
     on $\mathcal{H}$ by
     \begin{align}
@@ -361,9 +306,9 @@
     \end{align}
     and where
     $
-        l_i(h) =
-        \langle
-            h,  \Lambda^{-1/2} \varphi_i
+        l_i(h) = 
+        \langle 
+            h,  \Lambda^{-1/2} \varphi_i 
         \rangle_\mathcal{H}, \quad
         i=1,2,\ldots \quad
     $
@@ -376,10 +321,10 @@
         $\mathcal{H}$, we have $\E\big(l_i (h)\big) = \|\varphi_i \|^2  = 1$ and
         then $l_k (h)$ can be defined $\mu$-a.e. $h \in\mathcal{H}$,
         similar to defining a stochastic integral.
-
+    
         It is possible to identify the Hermite polynomial functionals
         defined in \eqref{s1.2}, for $h \in\mathcal{H}_0$, as a deterministic
-        version of the Wick polynomials defined on the canonical Wiener
+        version of the Wick polynomials defined on the canonical Wiener 
         space (for further details see \cite{im} for instance).
     \end{remark}
 
@@ -387,27 +332,47 @@
     Prato-Zabczyk \cite{da-za} or Lemma 3.1 in Chapter 9 from Chow \cite{liu}).
 
     \begin{lemma}\label{s1.le1}
-            For
-        $ h \in \mathcal{H} $ let
+            For 
+        $ h \in \mathcal{H} $ let 
         $
             l_i(h)
-                =\langle
+                =\langle 
                     h, \Lambda^{-1/2}\varphi_i
                  \rangle_\mathcal{H}
             \quad, i=1,2,\ldots
         $. The set $\{H_{\bm{n}}\}$ of all
-        Hermite polynomials on $\mathcal{H} $ forms a complete orthonormal
+        Hermite polynomials on $\mathcal{H} $ forms a complete orthonormal 
         system for $\mathbb{H} $. Hence the set of all functionals are dense in
         $\mathbb{H}$. Moreover, we have the direct sum decomposition:
         $
             \mathbb{H} = \bigoplus_{j=0}^\infty K_j,
         $
-        where $K_j$ is the subspace of $\mathbb{H} $ spanned by
+        where $K_j$ is the subspace of $\mathbb{H} $ spanned by 
         $\{H_{\bm{n}}: |\bm{n}|=j\}$.
     \end{lemma}
 %
-    Let $\Phi$ be a smooth simple functional given by \eqref{S1.2}.
-    Then the Fr\'echet derivatives, $D \Phi = \Phi'$ and
+    \begin{remark}\label{spectral-solution-Kolmogorov} 
+    Using this lemma, we write the solution of the Kolmogorov 
+    equation \eqref{P1s2.3} as
+    \begin{equation}
+        \label{s3.1}
+        u(t,x) =  
+            \sum_{ \bm{n} \in \mathcal{J}}
+                u_{ \bm{n} } (t) H_{\bm{n}}(x),
+                \qquad x \in \mathcal{H},\quad t\in[0,T],
+        \end{equation}
+    where $u_{\bm{n}}:[0,T] \mapsto \IR$ and $H_{\bm{n}}(x)$ 
+    are the Hermite functionals. This spectral 
+    decomposition is used in \cite{de-fl} to construct
+    a numerical scheme for approximate the solution of 
+    the Kolmogorov equation. The aim of this paper is to prove 
+    the stability with respect to the initial condition of this scheme.
+\end{remark}
+
+\section{Some preliminary results}\label{prelim-results}
+
+    Let $\Phi$ be a smooth simple functional given by \eqref{S1.2}. 
+    Then the Fr\'echet derivatives, $D \Phi = \Phi'$ and 
     $D_2 \Phi = \Phi''$ in $\mathcal{H}$ can be computed as follows:
     \begin{equation}
         \label{s1.3}
@@ -437,7 +402,7 @@
     Consider the following linear stochastic equation
     \begin{equation}
         \label{OU}
-        du_t=Au_tdt+dW_t, \quad
+        du_t=Au_tdt+dW_t, \quad 
         u_0=h\in \mathcal{H}.
     \end{equation}
     Where $A: \mathcal{D}(A) \subset \mathcal{H} \rightarrow \mathcal{H}$ is the
@@ -468,11 +433,11 @@
         $.
     \end{lemma}
 
-        Suppose that $A$ and $Q$ have the same eigenfunctions $e_k$ with
+        Suppose that $A$ and $Q$ have the same eigenfunctions $e_k$ with 
         eigenvalues $\lambda_k$ and $\rho_k$ respectively.
 
-        It is well-know (See for instance Da Prato and Zabczyk \cite{da-za})
-    that the solution of \eqref{OU} is a time-homogeneous Markov process with
+        It is well-know (See for instance Da Prato and Zabczyk \cite{da-za}) 
+    that the solution of \eqref{OU} is a time-homogeneous Markov process with 
     transition operator $P_t$  defined for $\Phi\in\mathbb{H}$ given by
     \begin{equation}
         (P_t\Phi)(h)=
@@ -493,7 +458,7 @@
     \begin{equation}
     \label{def-A0}
       \mathcal{A}_0
-        \Phi(v) = \tfrac{1}{2} Tr [RD^2 \Phi(v)]
+        \Phi(v) = \tfrac{1}{2} Tr [RD^2 \Phi(v)] 
             + \langle Av, D\Phi(v)\rangle
             ,\qquad v \in H,
     \end{equation}
@@ -528,11 +493,11 @@
     \end{lemma}
 
     \begin{lemma}\label{Pt-Her}
-            Let $H_n(h)$ be a Hermite polynomial functional given by
+            Let $H_n(h)$ be a Hermite polynomial functional given by 
             \eqref{s1.2}.
             Then the following hold:
         \begin{align}
-            \mathcal{A}_0 H_{\mathbf{n}}(h)
+            \mathcal{A}_0 H_{\mathbf{n}}(h) 
                 &= -\lambda_{\mathbf{n}} H_{\mathbf{n}}(h),
                 \\
             P_t H_{\mathbf{n}} (h)
@@ -565,7 +530,7 @@
 
     \begin{lemma}
         Assume the conditions for  \Cref{Pt-Her} hold. Then, for any
-        $\Phi,\Psi\in \mathcal{S}(\mathbb{H})$, the following Green’s formula
+        $\Phi,\Psi\in \mathcal{S}(\mathbb{H})$, the following Green’s formula 
         holds:
         \begin{align}
              \int_{\mathcal{H}} (\mathcal{A}_0 \Phi)\Psi d\mu &=
@@ -587,13 +552,13 @@
     $\alpha_{\mathbf{n}} \rightarrow \infty$ as $n \rightarrow \infty$.
     Define
     \begin{align*}
-         |||\Phi|||_{k,\alpha}
+         |||\Phi|||_{k,\alpha} 
             &= \Bigg[ \sum_{\mathbf{n}}
             \big(
                 1 + \alpha_{\mathbf{n}}
             \big) ^ k |\phi_n |^2 \Bigg]^{1/2} ,
         \\
-        |||\Phi|||_{0,\alpha}
+        |||\Phi|||_{0,\alpha} 
             &= |||\Phi|||=\Bigg[ \sum_{\mathbf{n}} |\phi_n|^2
         \Bigg]^{1/2},
     \end{align*}
@@ -601,21 +566,21 @@
     $\alpha = \{\alpha_n \}$, let $\mathbb{H}_{k,\alpha}$ denote
     the completion of $\mathcal{S}(\mathbb{H})$ with respect to the norm
     $|||\cdot|||_{k,\alpha}$. Then $\mathbb{H}_{k,\alpha}$ is called
-    a Gauss–Sobolev space of order $k$ with parameter $\alpha$. The dual space
+    a Gauss–Sobolev space of order $k$ with parameter $\alpha$. The dual space 
     of $\mathbb{H}_{k,\alpha}$ is $\mathbb{H}_{-k,\alpha}$.
     From now on, we will fix the sequence $\alpha_{\mathbf{n}} =
     \lambda_{\mathbf{n}} $, where $\lambda_{\mathbf{n}} $ is given in
-    \Cref{Pt-Her}. We shall simply denote $\mathbb{H}_{k,\alpha}$ by
+    \Cref{Pt-Her}. We shall simply denote $\mathbb{H}_{k,\alpha}$ by 
     $\mathbb{H}_{k}$ and
     $ |||\Phi|||_{k,\alpha}$ by $|||\Phi|||_{k}$.
 
-        The following results ensure the existence of an extension for the
+        The following results ensure the existence of an extension for the 
     operator $\mathcal{A}_0$ to a domain containing $\mathbb{H}_{2}$. Their
     proofs can be found in \cite{liu} for instance.
 
     \begin{theorem}\label{the-Pt-A}
         Let the conditions on $A$ and $Q$ in \Cref{lemma-AQ} hold.
-        Then \sloppy ${P_t: \mathbb{H}\rightarrow \mathbb{H}}$, for $t \ge 0$,
+        Then \sloppy ${P_t: \mathbb{H}\rightarrow \mathbb{H}}$, for $t \ge 0$, 
         is a contraction semigroup with the infinitesimal generator $\tilde{A}$.
         The domain of $\tilde{A}$ contains $\mathbb{H}_{2}$ and we have
         $\tilde{A} =\mathcal{A}_0 $ in $\mathcal{S}(\mathbb{H})$.
@@ -669,7 +634,7 @@
             \rangle
         \rangle_0 = [\cdot,\cdot]
     $.
-\subsection{A non linear Kolmogorov equation}
+%
     Consider the following \sloppy Kolmogorov equation,
 %
     \begin{equation}
@@ -703,13 +668,13 @@
                 A v, D\Phi(v)
             \rangle \ .
      \end{equation}
-        Hypothesis on $B$ will be specified latter. For now, we will consider
+        Hypothesis on $B$ will be specified latter. For now, we will consider 
     that it is a locally Lipschitz function. The additional term
     $ \langle B(v),D\Psi(v,t) \rangle_\mathcal{H}$ is defined $\mu$-a.e.
     $v\in\mathbb{H}_2$. We will allow the initial datum $\phi$ will be
     in $\mathbb{H}$.
 
-        We will study a mild solution of the equation \eqref{P1s3.1}. Let
+        We will study a mild solution of the equation \eqref{P1s3.1}. Let 
     $\lambda>0$ be a parameter. By changing $\Psi$ to $e^{\lambda t}\Psi$ in
     \eqref{P1s3.1} we get the following equation:
     \begin{equation}
@@ -735,7 +700,7 @@
 
         Denote by $P_t$ the semigroup with infinitesimal generator
     $\mathcal{A}_\lambda$. The existence of $P_t$ is ensured by the
-    \Cref{the-Pt-A}.Then, we can rewrite the equation \eqref{P1s3.2} in an
+    \Cref{the-Pt-A}.Then, we can rewrite the equation \eqref{P1s3.2} in an 
     integral form by using the semigroup $P_t$
     \begin{equation}
         \Psi(v,t)=
@@ -750,7 +715,7 @@
         Let $\Psi\in L^2((0,T);\mathbb{H})$ for some $T>0$. Then, for any
         $\lambda>0$ there exists $C_\lambda>0$ such that
          \begin{align}
-            |||\int_0^t e^{-\lambda (t-s)} P_{t-s} \Psi_{s} ds |||^2 \le
+            |||\int_0^t e^{-\lambda (t-s)} P_{t-s} \Psi_{s} ds |||^2 \le 
             C_\lambda
             \int_0^T |||\Psi_s|||_{-1}^2 ds,
             \qquad 0< t\le T
@@ -775,8 +740,8 @@
         Then, $B$ satisfies
         \begin{equation}
             \label{s3.1.1}
-            ||| \big(B(v),D\Phi(v) \big) |||_{-1}^2
-            \le C |||\Phi(v) |||^2
+            ||| \big(B(v),D\Phi(v) \big) |||_{-1}^2 
+            \le C |||\Phi(v) |||^2  
             \quad
             \text{ for any } \Phi\in \mathbb{H},
             \quad v\in \mathbb{H}_2 ,
@@ -787,7 +752,7 @@
         $\Psi\in C((0,T); \mathbb{H})$.
     \end{theorem}
 
-        For the part of the existence and uniqueness of the solution we will
+        For the part of the existence and uniqueness of the solution we will 
     adapt the proof of the Theorem 5.2 in Chapter 9 from \cite{liu}.
     \begin{proof}
         First we will prove \eqref{s3.1.1}. We have
@@ -805,41 +770,41 @@
             =\int_{\mathcal{H}} (B(v),D\Phi(v))_{\mathcal{H}} H_{\mathbf{n}}(v)
                 \mu(dv).
         \end{align}
-
+        
         By the \Cref{green-form}, in particular \eqref{s2.2.1}, we have
         $$
-            \int_{\mathcal{H}} (\Lambda h,D\Phi(v))_{\mathcal{H}}  \mu(dv)
+            \int_{\mathcal{H}} (\Lambda h,D\Phi(v))_{\mathcal{H}}  \mu(dv) 
             =
                 \int_{\mathcal{H}} (v,h)_{\mathcal{H}} \Phi(v)  \mu(dv) ,
         $$
-        for all $\Phi\in \mathcal{S}(\mathbb{H})$, $g,h\in \mathcal{H}$ and
-        $\mu\sim N(0,\Lambda)$. Then, in particular, in each direction
+        for all $\Phi\in \mathcal{S}(\mathbb{H})$, $g,h\in \mathcal{H}$ and 
+        $\mu\sim N(0,\Lambda)$. Then, in particular, in each direction 
         $H_{\mathbf{n}}$ this formula is still true, so we have
         $$
-            \int_{\mathcal{H}}
+            \int_{\mathcal{H}} 
                 (\Lambda h,D\Phi(v))_{\mathcal{H}} H_{\mathbf{n}}(v)
                 \mu(dv) =
-            \int_{\mathcal{H}} (v,h)_{\mathcal{H}} \Phi(v) H_{\mathbf{n}}(v)
+            \int_{\mathcal{H}} (v,h)_{\mathcal{H}} \Phi(v) H_{\mathbf{n}}(v) 
             \mu(dv) \ .
         $$
         Then, applying this last equality to \eqref{s3.1.2} we get
         \begin{align*}
-            \phi_n
+            \phi_n 
                 &=\int_{\mathcal{H}}
                     \big(
                         \Lambda[\Lambda^{-1}B(v)],D\Phi(v)
                     \big)_{\mathcal{H}} H_{\mathbf{n}}(v)
                 \mu(dv)\nonumber
             \\
-                &= \int_{\mathcal{H}}
+                &= \int_{\mathcal{H}} 
                 \big(
-                    \Lambda^{-1}B(v), v
+                    \Lambda^{-1}B(v), v 
                 \big)_{\mathcal{H}} \Phi(v)
                 H_{\mathbf{n}}(v) \mu(dv)\nonumber\\
-                &= \int_{\mathcal{H}}
+                &= \int_{\mathcal{H}} 
                     \big(
                         \Lambda^{-1/2}B(v),\Lambda^{1/2}v
-                    \big)_{\mathcal{H}}
+                    \big)_{\mathcal{H}} 
                     \Phi(v) H_{\mathbf{n}}(v) \mu(dv)
                     \ .
         \end{align*}
@@ -880,35 +845,35 @@
                 &
                     \le \int_{\mathcal{H}} \big| \big| \Lambda^{-1/2} B(v)
                     \big| \big|_{\mathcal{H}}^2
-                    \big| \big|
-                        \Lambda^{1/2}v
+                    \big| \big| 
+                        \Lambda^{1/2}v 
                     \big|\big|_{\mathcal{H}}^2
                     \big|H_{\mathbf{n}}(v)\big|^2 \mu(dv)
                     \\
                 &
-                    \le \sup_{v\in\mathcal{H}}
+                    \le \sup_{v\in\mathcal{H}} 
                     \big|\big|\Lambda^{-1/2}B(v)
                     \big|\big|_{\mathcal{H}}^2
-                    \int_{\mathcal{H}}
+                    \int_{\mathcal{H}} 
                     \big|\big|
-                        \Lambda^{1/2}v
+                        \Lambda^{1/2}v 
                     \big|\big|_{\mathcal{H}}^2
                     \big|H_{\mathbf{n}}(v)\big|^2 \mu(dv)
                     \\
-                &
-                    \le C \int_{\mathcal{H}}
+                & 
+                    \le C \int_{\mathcal{H}} 
                     \big|\big| v \big|\big|_{\mathcal{H}}^2
                     \big|H_{\mathbf{n}}(v)\big|^2 \mu(dv)
                 \\
-                &
+                & 
                     \le C \ .
         \end{align*}
 %
         The last inequality follows by using proposition 9.2.10 in page 198 from
         \cite{da-za1}. Then, by using this bound on \eqref{s3.1.3} we have.
         \begin{align*}
-            | \phi_n |^2
-                &
+            | \phi_n |^2 
+                & 
                 \le C \int_{\mathcal{H}}\big|  \Phi(v)\big|^2  \mu(dv)
             \\
                 &
@@ -916,18 +881,18 @@
         \end{align*}
         Thus,
         $$
-            |||
-                \big(B(v),D\Phi(v) \big)
-            |||_{-1}^2
-                \le
+            ||| 
+                \big(B(v),D\Phi(v) \big) 
+            |||_{-1}^2 
+                \le 
                     C |||\Phi(v) |||^2
-                    \sum_{\mathbf{n}} (1+\lambda_{\mathbf{n}})^{-1}
+                    \sum_{\mathbf{n}} (1+\lambda_{\mathbf{n}})^{-1}  
                 \le C |||\Phi(v) |||^2 ,
         $$
          which proves \eqref{s3.1.1}.
-
-            We now prove the existence and uniqueness of a solution to the
-            initial-
+        
+            We now prove the existence and uniqueness of a solution to the 
+            initial- 
         value problem \eqref{P1s3.2}. Let $\mathbb{X}_T$ denote the
         Banach space $\mathcal{C}([0,T];\mathbb{H})$ with the sup-norm
          \begin{equation*}
@@ -936,34 +901,34 @@
         In $\mathbb{X}_T$ define the linear operator $\mathbb{Q}$ as
         \begin{equation*}
             \mathbb{Q}\Psi =  e^{-\lambda t} P_t
-            \Phi
+            \Phi 
             + \int_0^t e^{-\lambda (t-s)}P_{t-s}(B,D\Psi_s) ds,
             \quad \text{for any } \Psi \in \mathbb{X}_T.
         \end{equation*}
         By \Cref{the-Pt-A} $P_t$ is a contraction semigroup, then using this
         fact and Lemma \ref{Lemma.s3.1} we have
         \begin{align*}
-            ||| \mathbb{Q}\Psi|||^2
-                &\le
-                2
-                \Bigg[
-                    ||| e^{-\lambda t}P_t\Phi|||^2
+            ||| \mathbb{Q}\Psi|||^2 
+                &\le 
+                2 
+                \Bigg[ 
+                    ||| e^{-\lambda t}P_t\Phi|||^2 
                     +
                     |||
-                        \int_0^t e^{-\lambda (t-s)}
-                        P_{t-s}(B,D\Psi_s) ds
+                        \int_0^t e^{-\lambda (t-s)} 
+                        P_{t-s}(B,D\Psi_s) ds 
                     |||^2
                 \Bigg]
                 \\
                 &\le 2
-                \Big[
-                    |||\Phi|||^2
-                    + C_\lambda
+                \Big[ 
+                    |||\Phi|||^2 
+                    + C_\lambda 
                     \int_0^t |||(B,D\Psi_s) |||_{-1}^2 ds
                 \Big] \\
-                &\le 2
-                |||\Phi|||^2
-                + C_1
+                &\le 2 
+                |||\Phi|||^2 
+                + C_1 
                 \int_0^t |||\Psi_s|||^2 ds,
         \end{align*}
         for some $C_1>0$. Hence,
@@ -971,129 +936,140 @@
          ||| \mathbb{Q} \Psi|||_T \le C(1 + ||| \Psi|||_T),
         $
         with $C = C(\Phi, \lambda, T)$. Then, the map $\mathbb{Q}:\mathbb{X}_T
-        \rightarrow \mathbb{X}_T$ is well defined. We now show that is a
+        \rightarrow \mathbb{X}_T$ is well defined. We now show that is a 
         contraction
         for a small $t$. Let $\Psi,\Psi'\in \mathbb{X}_T$. Then
         \begin{align*}
-            ||| \mathbb{Q}\Psi- \mathbb{Q}\Psi'|||^2
-                &=
+            ||| \mathbb{Q}\Psi- \mathbb{Q}\Psi'|||^2 
+                &=  
                 |||
                     \int_0^t e^{-\lambda (t-s)}
                         P_{t-s}
                         \big[
                             (B,D\Psi_s)-(B,D\Psi_s')
-                        \big] ds
+                        \big] ds 
                 |||^2
                 \\
-                &\le  C_\lambda
-                \int_0^t
+                &\le  C_\lambda 
+                \int_0^t 
                 |||
-                    (B,D\Psi_s-D\Psi')
+                    (B,D\Psi_s-D\Psi') 
                 |||_{-1}^2 ds \\
-                &\le  C_2
-                \int_0^t
+                &\le  C_2 
+                \int_0^t 
                 |||
                     \Psi_s-\Psi'
                 |||^2 ds,
         \end{align*}
-        for some $C_2>0$.
-
+        for some $C_2>0$. 
+    
             It follows that
         $
-            |||
+            ||| 
                 \mathbb{Q}\Psi - \mathbb{Q}\Psi'
-            |||_T
-            \le
+            |||_T  
+            \le  
             \sqrt{C_2 T}
             |||
                 \Psi_s - \Psi'
             |||_T.
         $
-        Then, for small $T$, $\mathbb{Q}$ is a contraction on $\mathbb{X}_T$.
+        Then, for small $T$, $\mathbb{Q}$ is a contraction on $\mathbb{X}_T$. 
         Hence the Cauchy problem \eqref{P1s3.2} has a unique mild solution.
     \end{proof}
 
- We now prove a theorem on the dependence on initial conditions for the mild
-solution of \eqref{P1s3.2}.
+
+\section{Numerical stability respect to  initial conditions}
+\label{sec:ContinuityRespectToInitialConditions}
+
+In this section, we prove the continuity with respect to the initial
+conditions for a numerical approximation of the Kolmogorov equation 
+associated with an SPDE. Here we understand that a  numerical scheme is 
+stable respect to initial conditions if this method reproduces the same 
+behavior when the continuous problem satisfies continuity respect initial 
+conditions.
+
+ We first prove the dependence on initial conditions 
+ for the mild solution of \eqref{P1s3.2}.
     \begin{theorem}
         \label{Cont-Mild-Sol}
-        Suppose that
+        Suppose that 
         $B:
             \mathcal{H}
-            \rightarrow
+            \rightarrow 
             \mathcal{H}_0
-        $ satisfies
-        $(B,D\Phi)\in L^2((0,T);\mathbb{H})$
+        $ satisfies 
+        $(B,D\Phi)\in L^2((0,T);\mathbb{H})$ 
         for any $\Phi\in\mathbb{H}$ and
         \begin{equation}\label{s2.22}
-            \sup_{v\in \mathcal{H}}
+            \sup_{v\in \mathcal{H}} 
             ||\Lambda^{-1/2}B(v)||_{\mathcal{H}}<+\infty.
         \end{equation}
         Then, the unique mild solution $\Psi\in C((0,T); \mathbb{H})$ for
         \eqref{P1s3.2} depends continuously on the initial conditions.
     \end{theorem}
     \begin{proof}
-        We know, with the assumption \eqref{s2.22}, that the existence of a
+        We know, with the assumption \eqref{s2.22}, that the existence of a 
         unique mild solution for \eqref{P1s3.2} is guaranteed by
-        \Cref{Th-EU}. We will denote by $\Psi_t^\varphi$ its mild solution at
+        \Cref{Th-EU}. We will denote by $\Psi_t^\varphi$ its mild solution at 
         time $t$ with initial condition $\varphi$:
         \begin{equation*}
             \Psi_t^\varphi
-            =   e^{-\lambda t} P_t
+            =   e^{-\lambda t} P_t  
             \varphi
-            +
+            +  
             \int_0^t e^{-\lambda (t-s)} P_{t-s}
             (B,D\Psi_s^\varphi) ds \ .
         \end{equation*}
         Then,
         \begin{align*}
             \Psi_t^\varphi-\Phi_t^\psi
-                &=
+                &=  
                 e^{-\lambda t} P_t \varphi -e^{-\lambda t} P_t
                 \psi +
-                \int_0^t
+                \int_0^t 
                 e^{-\lambda (t-s)}
                 P_{t-s}(B,D\Psi_s^\varphi-D\Phi_s^\psi) ds
                 \\
-                &=
-                e^{-\lambda t}
-                P_t (\varphi - \psi)
+                &= 
+                e^{-\lambda t} 
+                P_t (\varphi - \psi) 
                 + \int_0^t
-                    e^{-\lambda(t-s)} P_{t-s} (B, D \Psi_s^\varphi -
+                    e^{-\lambda(t-s)} P_{t-s} (B, D \Psi_s^\varphi - 
                     D\Phi_s^\psi) ds.
         \end{align*}
         From this expression we get
         \begin{align*}
-            \||
+            \|| 
                 \Psi_t^\varphi - \Phi_t^\psi
             \||^2
-            &\le
+            &\le 
             \| |
             e^{-\lambda t}
             P_t (\varphi - \psi)
             \||^2
             +
             \||
-            \int_0^t
+            \int_0^t 
                 e^{-\lambda (t-s)}
                 P_{t-s}
-                (B,D\Psi_s^\varphi-D\Phi_s^\psi)
+                (B,D\Psi_s^\varphi-D\Phi_s^\psi) 
             \| |^2ds
             \\
-            &\le
+            &\le  
             \||
                 \varphi - \psi
             \||^2
             + C_\lambda
-            \int_0^t
+            \int_0^t  
             \||
-                (B,D\Psi_s^\varphi-D\Phi_s^\psi)
+                (B,D\Psi_s^\varphi-D\Phi_s^\psi) 
             \||_{-1}^2 ds
         \\
-            &\le
+            &\le  
             \||\varphi - \psi\||^2
             + C_2
-            \int_0^t
+            \int_0^t  
                 \||
                     \Psi_s^\varphi-\Phi_s^\psi
                 \||^2 ds.
@@ -1103,9 +1079,9 @@ solution of \eqref{P1s3.2}.
             \||
                 \Psi_t^\varphi-\Phi_t^\psi
             \||^2
-            &\le
-            \exp(C_2t)
-            \|| \varphi - \psi \||^2,
+            &\le 
+            \exp(C_2t)  
+            \|| \varphi - \psi \||^2, 
         \end{align}
         which implies,
         $
@@ -1115,6 +1091,777 @@ solution of \eqref{P1s3.2}.
         This completes the proof.
     \end{proof}
 
+
+        We now will study the stability of the numerical scheme.
+    As before, we use \Cref{s1.le1} to write the solution $\Psi_t^\varphi$ 
+    as in a Fourier-Hermite decomposition:
+    \begin{align}
+        \Psi_t ^ \varphi=
+            \sum_{\bm{n}\in \mathcal{J}}
+            u_{\bm{n}}(t) H_{\bm{n}}(x),
+            \qquad
+            x \in \mathcal{H},
+            \quad t \in [0,T] \ .
+            \label{num-approx}
+    \end{align}
+
+    Note that coefficients $ u_{\bm{n}}(t)$ on the numerical approximations depend on the functional and on the initial condition and not 
+    the initial condition. First we prove an auxiliary result.
+
+    \begin{lemma}\label{le-s3-1}
+        Set $\{P_k(\xi)\}_{k\in \IN}$ the family of normalized Hermite 
+        polynomials in $\IR$. For every $k\in\IN$ and 
+        $\xi, \eta \in \IR$ such that
+        $\eta<\xi$ we have that
+        \begin{equation}
+            \label{Pk-dif}
+            P_k(\xi)-P_k(\eta)
+                = C(k)  Pe_{k+1}(\gamma) 
+                    \cdot (\xi-\eta), 
+        \end{equation}
+        where 
+        $ \gamma\in (\eta,\xi)$ and 
+        $C(k)=\frac{(-1)^k}{(k+1)(k!)^{1/2}} $.
+        Moreover, $Pe_k(x)$ is the unnormalized Hermite polynomial of $k$ 
+        degree.
+    \end{lemma}
+%
+    \begin{proof}
+             We know that
+             $
+                 P_k(\xi) = \frac{(-1)^k}{(k!)^{1/2}} 
+                 e^{\xi^2/2}\frac{d}{d\xi^k}e^{-\xi^2/2}.
+             $
+             Set $c(k)=(-1)^k (k!)^{-1/2}$, then
+            \begin{align*}
+                P_k(\xi)-P_k(\eta)
+                    &=c(k)
+                    \Big[
+                        e^{\xi^2/2}
+                        \frac{d}{d\xi^k} e^{-\xi ^ 2/2} - e^{\eta^2/2}
+                        \frac{d}{d\eta^k} e^{-\eta ^ 2/2}
+                    \Big] 
+                    \\
+                & =c(k)
+                    \Bigg[
+                        e^{x^2/2} \frac{d}{dx^k} e^{-x^2/2}
+                    \Big|_{x=\eta}^\xi\Bigg]
+                    \\
+                & = c(k) \int_{\eta}^\xi F_k(x) dx,
+            \end{align*}
+            where $F_k$ is a continuous function such that
+            $F_k'(x) = e^{x^2/2}\frac{d}{dx^k}e^{-x^2/2}$. 
+            In fact, denoting by $Pe_k(x)$ the
+            unnormalized Hermite polynomial of $k$ degree, results
+            $$
+                F_k'(x)=e^{x^2/2}\frac{d}{dx^k}e^{-x^2/2}= Pe_k(x),
+            $$
+            and since the Hermite polynomials constitute an Appell sequence we 
+            have that
+            $$
+                F_k'(x)=Pe_k(x)=\frac{1}{k+1} Pe_{k+1}'(x),
+            $$
+            which implies that $F_k(x)=\frac{1}{k+1} Pe_{k+1}(x)$. Now, since 
+            $F_k(x)$ is a continuous function, then there exists
+            $\gamma\in (\eta,\xi)$ such that
+            $$
+                \int_{\eta}^\xi F_k(x) dx = F_k(\gamma)\cdot (\xi-\eta).
+            $$
+            All these implies that
+            $
+                P_k(\xi)-P_k(\eta)= c(k) F_k(\gamma) \cdot (\xi-\eta).
+            $
+            From this expression the lemma follows immediately.
+        \end{proof}
+%
+        We will use some technical results on the SPDE to prove
+        the following result\textemdash the main result of this work.
+%
+        \begin{theorem}
+            \label{thm:ic_continuity}
+            Assume that the eigenvalues of $\Lambda$, satisfies that for every 
+            $k\in\IN$,
+            $\lambda_k<\lambda_{k+1}\rightarrow \infty $. Assume that
+            the functional $ \varphi$ is Lipschitz.
+            Then, the numeric approximation $\Psi_t^\varphi$ (given by 
+            \eqref{num-approx})
+            to the solution of the Kolmogorov equation
+            ${\Psi\in C((0,T); \mathbb{H})}$ depends continuously on the initial
+            conditions.
+        \end{theorem}
+        \begin{proof}
+        Let $x,y\in H$ be two different initial values. We want to estimate
+        $\Psi_t^x-\Psi_t^y$. By definition,
+        \begin{align}
+            \Psi_t^x
+                &= \sum_{\bar n\in \mathcal{J}}
+                    u_{\bar n} ^ x(t) H_{\bar n}(x) \ .
+        \end{align}
+        Thus,
+        %
+        \begin{equation}
+            \label{s3.4}
+            \begin{aligned}
+                \Psi_t^x-\Psi_t^y
+                &=
+                    \sum_{\bar n\in \mathcal{J}}
+                        u_{\bar n}^x(t)H_{\bar n}(x)
+                    -
+                    \sum_{\bar n\in \mathcal{J}}
+                        u_{\bar n}^y(t)H_{\bar n}(y)
+               \\
+                &=
+                    \sum_{\bar n\in \mathcal{J}}
+                        \Big[ u_{\bar n}^x(t )- u_{\bar n}^y(t)
+                        \Big]H_{\bar n}(x)
+                    +
+                    \sum_{\bar n\in \mathcal{J}}
+                        u_{\bar n}^y(t)
+                        \Big[
+                            H_{\bar n}(x) - H_{\bar n}(y)
+                        \Big].
+            \end{aligned}
+        \end{equation}
+        
+            We focus on the first term in \eqref{s3.4}. From the definition of 
+            the
+        initial condition we obtain the following expression for
+        the time-dependent coefficient
+        \begin{align*}
+          u_{\bar n}^x(t) &=
+            \int_{\mathcal{H}} H_{\bar n}(x) \E\big[\varphi(X_t^x)\big] \mu(dx) 
+            \ .
+        \end{align*}
+        %
+        From this we get
+        \begin{align*}
+            u_{\bar n}^x(t)-u_{\bar n}^y(t)
+                =&
+                \int_{\mathcal{H}} H_{\bar n}(x)
+                    \E\big[
+                        \varphi(X_t^x)
+                    \big]
+                    \mu(dx) -
+                    \int_{\mathcal{H}} H_{\bar n}(y)
+                    \E\big[
+                        \varphi(X_t^y)
+                    \big] \mu(dy)
+                \\
+                =&
+                \int_{\mathcal{H} \times \mathcal{H}} H_{\bar n}(x)
+                    \E\big[
+                        \varphi(X_t^x)
+                    \big] \mu(dx)\mu(dy)
+                \\
+                &-
+                     \int_{\mathcal{H}\times \mathcal{H}} H_{\bar n}(y)
+                        \E\big[
+                            \varphi(X_t^y)
+                        \big]
+                    \mu(dx)\mu(dy)
+                \\
+                =&
+                \int_{\mathcal{H}\times \mathcal{H}} H_{\bar n}(x)
+                    \Big(
+                        \E\big[
+                            \varphi(X_t^x)
+                        \big]
+                        -
+                        \E\big[
+                            \varphi(X_t^y)
+                        \big]
+                    \Big)
+                    \mu(dx)\mu(dy)
+                \\
+                &+
+                \int_{\mathcal{H}\times \mathcal{H}}
+                    \Big(
+                        H_{\bar n}(x) - H_{\bar n}(y)
+                    \Big)
+                    \E\big[
+                        \varphi(X_t^y)
+                    \big] \mu(dx) \mu(dy) \ .
+        \end{align*}
+        %
+        %
+        %
+        Then, by the Cauchy-Schwartz inequality, we obtain
+        %
+        %
+        %
+        \begin{equation}
+            \begin{aligned}
+                |u_{\bar n} ^ x(t) - u_{\bar n} ^ y(t)| ^ 2
+                    \le&
+                    \left|
+                        \int_{\mathcal{H} 
+                        \times
+                        \mathcal{H}} H_{\bar n}(x)
+                        \left(
+                            \E
+                             \left[
+                                \varphi(X_t^x)
+                             \right]
+                             -
+                            \E\left[
+                                \varphi(X_t^y)
+                            \right]
+                        \right) \mu(dx)\mu(dy)
+                    \right|^2
+                    \\
+                    &+
+                    \left|
+                        \int_{\mathcal{H}
+                        \times
+                        \mathcal{H}
+                        }
+                        \left(
+                            H_{\bar n}(x) - H_{\bar n}(y)
+                        \right)
+                        \E\left[
+                            \varphi(X_t ^ y)
+                        \right]
+                        \mu(dx)\mu(dy)
+                    \right|^2
+                    \\
+                    \le &
+                    \int_{\mathcal{H}\times \mathcal{H}}
+                        H_{\bar n}^2(x))
+                    \mu(dx)\mu(dy)
+                    \\
+                    &\times
+                        \int_{\mathcal{H}\times \mathcal{H}}
+                        \left|
+                            \E\left [
+                                \varphi(X_t^x)
+                            \right]
+                            -
+                            \E\left[
+                                \varphi(X_t^y)
+                            \right]
+                        \right|^2
+                        \mu(dx)\mu(dy)
+                    \\
+                    &+
+                    \int_{\mathcal{H} \times \mathcal{H}}
+                        \E^2
+                        \left[
+                            \varphi(X_t^y)
+                        \right]
+                    \mu(dx)\mu(dy)
+                    \\
+                     &\times
+                    \int_{\mathcal{H}\times \mathcal{H}}
+                    \left|
+                        H_{\bar n}(x)-H_{\bar n}(y)
+                    \right|^2
+                    \mu(dx)\mu(dy)
+                    \\
+                    =&
+                    \int_{\mathcal{H}\times \mathcal{H}}
+                    \left|
+                            \E 
+                            \left [
+                                \varphi(X_t^x)
+                            \right]
+                            -
+                            \E\left[
+                                \varphi(X_t^y)
+                            \right]
+                        \right|^2
+                        \mu(dx) \mu(dy)
+                    \\
+                    &+
+                    \int_{\mathcal{H}\times \mathcal{H}}
+                        \E^2
+                        \left[
+                            \varphi(X_t^y)
+                        \right]
+                    \mu(dx)\mu(dy)
+                    \\
+                    & \times
+                    \int_{\mathcal{H}\times \mathcal{H}}
+                    \left|
+                        H_{\bar n}(x)
+                            -
+                            H_{\bar n}(y)
+                    \right|^2
+                    \mu(dx)\mu(dy)
+                \ .
+            \end{aligned}
+            \label{s3.4.1}
+        \end{equation}
+        We now estimate the norm of the expression \eqref{s3.4} with the help of
+        \eqref{s3.4.1}.
+        %
+        \begin{equation}
+        \label{s3.8.1}
+            \begin{aligned}
+                \| \Psi_t ^ x - \Psi_t ^ y & \|_{
+                    \big(
+                        L^2(\mathcal{H},\mu)
+                    \big)^2
+                }^2
+                    =
+                        \int_{\mathcal{H}\times \mathcal{H}}
+                        |\Psi_t^x - \Psi_t^y|^2 \mu(dx) \mu(dy)
+                    \\
+                    \le&
+                    \int_{\mathcal{H} \times \mathcal{H}}
+                        \Big|
+                            \sum_{\bar n\in \mathcal{J}}
+                            \big[
+                                u_{\bar n} ^ x(t) - u_{\bar n} ^ y(t)
+                            \big]
+                            H_{\bar n}(x)
+                        \Big|^2
+                        \mu(dx) \mu(dy)
+                    \\
+                    &+
+                    \int_{\mathcal{H}\times \mathcal{H}}
+                    \Big|
+                        \sum_{\bar n\in \mathcal{J}}
+                            u_{\bar n}^y(t)
+                            \big[
+                                H_{\bar n}(x) - H_{\bar n}(y)
+                            \big]
+                    \Big|^2
+                    \mu(dx) \mu(dy)
+                    \\
+                    \le&
+                    \int_{\mathcal{H} \times \mathcal{H}}
+                    \sum_{\bar n\in \mathcal{J}}
+                    \big|
+                        u_{\bar n}^x(t) - u_{\bar n}^y(t)
+                    \big |^2
+                    H_{\bar n}^2(x)
+                    \mu(dx) \mu(dy)
+                    \\
+                    &+
+                    \int_{\mathcal{H}\times \mathcal{H}}
+                    \sum_{\bar n\in \mathcal{J}}
+                    \big[u_{\bar n} ^ y(t) \big]^2
+                    \sum_{\bar n\in \mathcal{J}}
+                    \big|
+                        H_{\bar n}(x) - H_{\bar n}(y)
+                    \big|^2
+                    \mu(dx) \mu(dy)
+                    \\
+                    =&
+                    \sum_{\bar n\in \mathcal{J}}
+                    \big|
+                        u_{\bar n}^x(t)-u_{\bar n}^y(t)
+                    \big |^2
+                    \int_{\mathcal{H} \times \mathcal{H}}
+                    H_{\bar n}^2 (x)
+                    \mu(dx) \mu(dy)
+                    \\
+                    &+
+                    \sum_{\bar n\in \mathcal{J}}
+                    \big[
+                        u_{\bar n}^y(t)
+                    \big] ^ 2
+                    \sum_{\bar n\in \mathcal{J}}
+                    \int_{\mathcal{H}\times \mathcal{H}}
+                    \big|
+                        H_{\bar n}(x) - H_{\bar n}(y)
+                    \big| ^ 2 \mu(dx)\mu(dy)
+                    \\
+                    =&
+                    \sum_{\bar n\in \mathcal{J}}
+                    \big[
+                        u_{\bar n}^y(t)
+                    \big] ^ 2
+                    \sum_{\bar n\in \mathcal{J}}
+                    \int_{\mathcal{H}\times \mathcal{H}}
+                    \big|
+                        H_{\bar n}(x) -H_{\bar n}(y)
+                    \big|^2 \mu(dx) \mu(dy)
+                    \\
+                    &+
+                    \sum_{\bar n\in \mathcal{J}}
+                                \big|
+                                    u_{\bar n}^x(t)-u_{\bar n}^y(t)
+                                \big| ^ 2
+                    \\
+                    =&
+                    \int_{\mathcal{H}\times \mathcal{H}}
+                    \Big|
+                        \E\big[
+                            \varphi(X_t^x)
+                        \big]
+                        -
+                        \E\big[
+                            \varphi(X_t^y)
+                        \big]
+                    \Big|^2
+                    \mu(dx)\mu(dy)
+                    \\
+                    &+
+                    \int_{\mathcal{H}\times \mathcal{H}}
+                    \E ^ 2\big[
+                        \varphi(X_t^y)
+                    \big] \mu(dx) \mu(dy)
+                    \\
+                    & \times
+                    \sum_{\bar n\in \mathcal{J}}
+                    \int_{\mathcal{H}\times \mathcal{H}}
+                    \Big|
+                        H_{\bar n}(x) - H_{\bar n}(y)
+                    \Big|^2  \mu(dx)\mu(dy)
+                    \\
+                    &+
+                    \sum_{\bar n\in \mathcal{J}}
+                    \big[
+                        u_{\bar n}^y(t)
+                    \big]^2
+                    \sum_{\bar n\in \mathcal{J}}
+                    \int_{\mathcal{H}\times \mathcal{H}}
+                    \big|
+                        H_{\bar n}(x) - H_{\bar n}(y)
+                    \big|^2 \mu(dx)\mu(dy)
+                    \ .
+            \end{aligned}
+        \end{equation}
+        
+            Note that
+        $\E^2\big[\varphi(X_t^y)\big]=u^2(t,x)\in L^2(\mathcal{H},\mu)$,
+        therefore the first integral in the second term is a continuous bounded
+        function of $t$. Moreover,
+        $\sum_{\bar n\in \mathcal{J}} \big[u_{\bar n}^y(t)\big]^2$ is the
+        $L^2(\mathcal{H},\mu)$-norm of the function $u(t,x)$, then the series
+        converges and it is also a continuous bounded function of $t$. Thus, 
+        from
+        \eqref{s3.8.1} we get
+        %
+        \begin{equation}
+        \label{s3.9.1}
+            \begin{aligned}
+                \| \Psi_t^x-\Psi_t^y\|_{\big(L^2(\mathcal{H},\mu) \big)^2}^2
+                \le&
+                \int_{\mathcal{H}\times \mathcal{H}}
+                    \Big|
+                        \E\big [
+                            \varphi(X_t^x)
+                        \big
+                        ]-
+                        \E\big[
+                            \varphi(X_t^y)
+                        \big]
+                    \Big|^2
+                \mu(dx)\mu(dy)
+                \\
+                 &+
+                 f(t)
+                 \sum_{\bar n\in \mathcal{J}}
+                 \int_{\mathcal{H}\times \mathcal{H}}
+                    \big|
+                        H_{\bar n}(x) - H_{\bar n}(y)
+                    \big|^2 \mu(dx)\mu(dy) \ ,
+            \end{aligned}
+        \end{equation}
+        where $f(t)= \sum_{\bar n\in \mathcal{J}} \big[u_{\bar n}^y(t)\big]^2+ 
+        \int_\mathcal{H}
+                    \E ^ 2\big[
+                        \varphi(X_t^y)
+                    \big] \mu(dy)
+                    $.
+        
+        From the proof of Theorem \ref{Cont-Mild-Sol} (see \eqref{s2.23}) we 
+        know that
+        \begin{equation}
+            \begin{aligned}
+                \| | \Psi_t^\varphi-\Phi_t^\psi\| |^2
+                    &=\int_{\mathcal{H}\times \mathcal{H}}
+                    \Big|
+                        \E\big [
+                            \varphi(X_t^x)
+                        \big]
+                        -
+                        \E\big[
+                            \varphi(X_t^y)
+                        \big]
+                    \Big|^2
+                    \mu(dx)
+                    \mu(dy)
+                    \\
+                    &\le
+                    \exp(Ct)
+                    \int_{\mathcal{H}\times \mathcal{H}}
+                        \|x-y\|_{\mathcal{H}}^2
+                        \mu(dx)\mu(dy)
+                    \\
+                    &= \exp(Ct) \|  |x-y\| |^2.\label{s3.10.1}
+            \end{aligned}
+        \end{equation}
+        Therefore the first term in the right side of \eqref{s3.9.1} is bounded 
+        by
+        \eqref{s3.10.1}.
+        
+        We now focus on the second term in the last inequality. Notice that for 
+        every
+        $\bar n\in \mathcal{J}$ we have
+        \begin{align}\label{s3.5}
+            H_{\bar n}(x) - H_{\bar n}(y) =
+                \prod_{i = 1} ^ \infty
+            \Big[
+                P_{n_i}( \xi_i ) - P_{n_i} (\eta_i)
+            \Big],
+        \end{align}
+        where $\xi_i= \langle x,\Lambda^{-1/2}e_i\rangle_{\mathcal{H}}$ and 
+        $\eta_i=
+        \langle y,\Lambda^{-1/2}e_i\rangle_{\mathcal{H}}$
+        (see \eqref{s1.2} and lines after that for the definition).
+        Hence, applying \Cref{le-s3-1} to equation \eqref{s3.5} we have that
+        
+        \begin{equation}
+        \label{s3.6}
+        \begin{aligned}
+            H_{\bar n}(x)-H_{\bar n}(y)&=\prod_{i=1}^\infty 
+            C(i)Pe_{i+1}(\gamma_i)
+            \cdot
+            (\xi_i-\eta_i)
+            \\
+            &=
+            \prod_{i=1}^\infty
+            C(i)Pe_{i+1}(\gamma_i)
+            \langle
+                x-y, \Lambda^{-1/2}e_i
+            \rangle_{\mathcal{H}},
+         \end{aligned}
+        \end{equation}
+        here $\gamma_i\in \big(\xi_i\wedge\eta_i, \xi_i\vee \eta_i  \big)$
+        for every $i\in \IN$.
+        Then
+        \begin{equation}
+            \label{s3.8}
+            \begin{aligned}
+                \sum_{\bar n\in \mathcal{J}}
+                &
+                \int_{\mathcal{H}\times \mathcal{H}}
+                    \big|
+                        H_{\bar n}(x) -H_{\bar n}(y)
+                    \big|^2
+                \mu(dx)\mu(dy)
+                \\
+                &=
+                \sum_{\bar n\in \mathcal{J}}
+                    \int_{\mathcal{H}\times \mathcal{H}}
+                        \Big|
+                            \prod_{i=1}^\infty C(i)Pe_{i+1}(\gamma_i)
+                            \langle
+                                x-y,
+                                \Lambda^{-1/2}e_i
+                            \rangle_{\mathcal{H}}
+                        \Big|^2
+                \mu(dx)\mu(dy)
+                \\
+                &=
+                \sum_{\bar n\in \mathcal{J}}
+                \int_{\mathcal{H}\times \mathcal{H}}
+                    \prod_{i=1}^\infty
+                    \Big[
+                        C(i) Pe_{i+1}(\gamma_i)\Big]^2
+                    \Big|
+                        \langle
+                            x-y,\Lambda^{-1/2}e_i
+                        \rangle_{\mathcal{H}}
+                    \Big|^2
+                    \mu(dx) \mu(dy)
+                \\
+                &\le
+                    \sum_{\bar n\in \mathcal{J}}
+                    \int_{\mathcal{H} \times \mathcal{H}}
+                        \prod_{i=1}^\infty
+                        \Big[
+                            C(i)Pe_{i+1}(\gamma_i)
+                        \Big]^2
+                        \| x-y\|_{\mathcal{H}}^2
+                        \|\Lambda^{-1/2} e_i\|_{\mathcal{H}}^2
+                    \mu(dx)\mu(dy)
+                \\
+                &=
+                    \sum_{\bar n\in \mathcal{J}}
+                    \int_{\mathcal{H}\times \mathcal{H}}
+                        \prod_{i=1}^\infty
+                        \Big[
+                            C(i)Pe_{i+1}(\gamma_i)
+                        \Big]^2
+                        \| x-y\|_{\mathcal{H}}^2
+                        \lambda_i^{-1}
+                        \|e_i\|_{\mathcal{H}}^2
+                    \mu(dx)\mu(dy)
+                \\
+                &=
+                \| x-y\|_{\mathcal{H}}^2
+                \sum_{\bar n\in \mathcal{J}}
+                    \prod_{i=1}^\infty
+                        \Big[
+                            C(i)
+                        \Big]^2
+                        \lambda_i^{-1}
+                        \int_{\mathcal{H}\times \mathcal{H}}
+                            \Big[
+                                Pe_{i+1}(\gamma_i)
+                            \Big]^2
+                        \mu(dx)\mu(dy) .
+            \end{aligned}
+        \end{equation}
+        Recall that for every $i \in \IN$ we have that 
+        $
+            \gamma_i\in
+            \big(
+                \xi_i \wedge\eta_i, \xi_i\vee \eta_i  
+           \big)
+        $, set 
+        $
+            \hat \gamma_i
+            \in 
+            \big(
+                \xi_i \wedge \eta_i,
+                \xi_i\vee \eta_i  
+            \big)
+        $ such that
+        $
+            Pe_i^2(\gamma_i)
+            \le Pe_{i+1}^2(\hat\gamma_i)
+        $ for every
+        $
+            \gamma_i
+            \in 
+            \big(
+                \xi_i \wedge\eta_i, 
+                \xi_i \vee
+                \eta_i
+            \big)
+        $, notice that the
+        existence of $\hat \gamma_i$ is
+        guaranteed since $Pe_{i+1}^2(\cdot)$ 
+        is a continuous function. Then, from
+        \eqref{s3.8} we get
+        \begin{equation}
+            \label{s3.9}
+            \begin{aligned}
+                \sum_{\bar n\in \mathcal{J}}
+                \int_{\mathcal{H}\times \mathcal{H}}
+                &
+                \big|
+                    H_{\bar n}(x) - H_{\bar n}(y)
+                \big|^2
+                \mu(dx)\mu(dy)
+                \\
+                &\le
+                \| x-y\|_{\mathcal{H}}^2
+                \sum_{\bar n\in \mathcal{J}}
+                    \prod_{i=1}^\infty
+                    \Big[
+                        C(i)
+                    \Big]^2
+                    \lambda_i^{-1}
+                    \Big[
+                        Pe_{i+1}(\hat \gamma_i)
+                    \Big]^2
+                    \int_{\mathcal{H}}
+                    \int_{\mathcal{H}}
+                    \mu(dx)\mu(dy)
+                \\
+                &=
+                \| x-y\|_{\mathcal{H}}^2
+                \sum_{\bar n\in \mathcal{J}}
+                    \prod_{i=1}^\infty
+                    \Big[
+                        C(i)
+                    \Big]^2
+                    \lambda_i^{-1}
+                    \Big[
+                        Pe_{i+1}(\hat \gamma_i)
+                    \Big]^2 .
+            \end{aligned}
+        \end{equation}
+        Here, we recall that $C(i)=\frac{(-1)^i}{(i+1)(i!)^{1/2}} $ then
+        $\frac{(-1)^i}{\big[(i+1)!\Big]^{1/2}} Pe_{i+1}(\hat \gamma_i)$
+        is the normalized Hermite polynomial of $i+1$ degree evaluated on
+        $\hat \gamma_i$ which is bounded by a constant $C$ for every $i\in\IN$.
+        Moreover, since $\lambda_k<\lambda_{k+1}\rightarrow \infty $
+        then this implies that
+        \begin{align}
+            \label{s3.10}
+          \sum_{\bar n\in \mathcal{J}}  \prod_{i=1}^\infty \Big[C(i)\Big]^2
+          \lambda_i^{-1} \Big[Pe_{i+1}(\hat \gamma_i)\Big]^2 & \le C \sum_{\bar 
+          n\in
+            \mathcal{J}}  \prod_{i=1}^\infty
+          \lambda_i^{-1}(i+1)^{-1}
+          \le C,
+        \end{align}
+        where $C$ is a finite constant. Putting together \eqref{s3.8} and
+        \eqref{s3.10} we get that
+        \begin{align}
+            \sum_{\bar n\in \mathcal{J}} \int_{\mathcal{H}\times \mathcal{H}}  
+            \big|
+            H_{\bar n}(x) -H_{\bar n}(y) \big|^2 \mu(dx)\mu(dy) &\le
+            C \| x-y\|_{\mathcal{H}} \ .
+            \label{s3.11}
+        \end{align}
+        Putting together inequalities \eqref{s3.9.1}, \eqref{s3.10.1} and
+        \eqref{s3.11} we obtain
+        \begin{align}
+          \| \Psi_t^x-\Psi_t^y\|_{\big(L^2(\mathcal{H},\mu) \big)^2}^2&\le   
+          \exp(Ct)
+          \int_{\mathcal{H}\times \mathcal{H}}
+          \| x-y\|_{\mathcal{H}}^2 \mu(dx)\mu(dy) +  f(t)\| x-y\|_{\mathcal{H}}.
+          \label{s3.17}
+        \end{align}
+        Now, if $\| x-y\|_{\mathcal{H}}\le \delta $, then from \eqref{s3.17} we 
+        get
+        $
+             \| 
+                \Psi_t^x - \Psi_t^y
+             \|_{\big( L^2(\mathcal{H}, \mu) \big)^2} 
+             \le
+                G(t) \delta
+        $.
+    \end{proof}
+%
+    \begin{remark}
+        If we consider in addition the supremum norm on $t$, then from
+        \eqref{s3.17} we get
+        \begin{equation}
+            \label{s3.13}
+            \begin{aligned}
+                \sup_{0\le t\le T}\| \Psi_t^x-\Psi_t^y\|_{
+                    \big(L^2(\mathcal{H},\mu) \big)^2} ^ 2
+                    \le&
+                     C \| x-y\|_{\mathcal{H}}^2
+                     \sup_{0\le t\le T} f(t)
+                     \\
+                     &+
+                    \exp(CT)
+                    \int_{\mathcal{H}\times \mathcal{H}}
+                    \|x-y\|_{\mathcal{H}}^2 \mu(dx)\mu(dy) \ .
+            \end{aligned}
+        \end{equation}
+        Notice that $f(t)$ is differentiable and continuous, then
+        $\sup_{0\le t\le T} f(t)\le C$, then from \eqref{s3.13} we obtain
+        \begin{equation}
+            \label{s3.14}
+            \begin{aligned}
+                \sup_{0\le t\le T}
+                \|
+                    \Psi_t^x-\Psi_t^y
+                \|_{\big(L^2(\mathcal{H},\mu)\big)^2}
+                &\le
+                C \| x-y\|_{\mathcal{H}}
+                \\
+                & +
+                \exp(CT)
+                \int_{\mathcal{H}\times \mathcal{H}}
+                \| x-y\|_{\mathcal{H}}^2 \mu(dx)\mu(dy) \ .
+            \end{aligned}
+        \end{equation}
+        From this inequality it is possible to show the continuously dependence 
+        on the initial conditions for this norm.
+    \end{remark}
+%---------------------------------------------------------------------------
 \section{Numerical stability respect to  initial conditions}
 \label{sec:ContinuityRespectToInitialConditions}
 
