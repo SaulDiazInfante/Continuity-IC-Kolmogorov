@@ -1,19 +1,11 @@
 \documentclass[12pt]{article}
+\usepackage[english]{babel}
 \usepackage{epstopdf}
-\usepackage[caption=false]{subfig}
-%\usepackage[nolists,tablesfirst]{endfloat}
-%from text if required
-%\usepackage[doublespacing]{setspace}
-%\setlength\parindent{24pt}
-%\setlength\bibindent{2em}
 \usepackage{amsmath}
-\usepackage[caption = false]{subfig}
 \usepackage{float}
 \usepackage{amsthm}
-%\usepackage{showkeys}
 \usepackage{pdfsync}
 \usepackage{wasysym}
-\usepackage[english]{babel}
 \usepackage{amssymb}
 \usepackage{exscale}
 \usepackage{amscd}
@@ -39,11 +31,11 @@
 \usepackage{booktabs}
 \usepackage{etoolbox}
 \usepackage{todonotes}
-%\usepackage{epstopdf}
 \usepackage{amsopn}
-%\patchcmd{\SetTagPlusEndMark}{$}{}{}{}
-%\patchcmd{\SetTagPlusEndMark}{$}{}{}{}
-%
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage[style]{abstract}
 \DeclareMathOperator{\diag}{diag}
 \newcommand{\cqd}{\hfill$\Box$}
 \newcommand{\f}{{\mathcal F}}
@@ -70,8 +62,8 @@
 \newcommand{\tf}{\mathcal{F}}
 \newcommand{\hac}{\mathcal{H}}
 \newcommand{\hact}{\mathcal{H}_T}
+\newcommand{\creflastconjunction}{, and~}
 %
-\usepackage[numbers,sort&compress]{natbib}
 \bibpunct[, ]{[}{]}{,}{n}{,}{,}
 \renewcommand\bibfont{\fontsize{10}{12}\selectfont}
 \theoremstyle{plain}% Theorem-like structures provided by amsthm.sty
@@ -85,13 +77,8 @@
 \theoremstyle{remark}
 \newtheorem{remark}{Remark}
 \newtheorem{notation}{Notation}
-\usepackage{lmodern}
-\usepackage{cleveref}
-\usepackage[style]{abstract}
-\newcommand{\creflastconjunction}{, and~}
 \crefname{hypothesis}{Hypothesis}{Hypotheses}
 \DeclareMathOperator{\sech}{sech}
-%%%
 \begin{document}
      
      \title{
@@ -122,6 +109,7 @@
                 Hermosillo, Sonora, M\'exico,
                 {alan.matzumiya@gmail.com}
               }
+            \\
             and %
             Saul Diaz-Infante
             %\textsuperscript{c}
@@ -138,32 +126,32 @@
               }
         }
  }
-\begin{titlepage}
-    \maketitle
-    \begin{abstract}
-        Accoring to the numerical scheme reported in 
-        [Infin. Dimens. Anal. Quantum Probab. Relat. Top. {\bf 19} (2016), 
-        no.~3, 1650020, 37 pp.],
-        we characterize numerical stability respect to initial conditions. 
-        Our approach consists in solving the associated Kolmogorov
-        equation for a familiy of parabolic SPDE whit a spectral method 
-        and deduce mild conditions. We
-        illustrate our results with stochastic versions of the   Burgers and
-        Fisher equations.
-    \end{abstract}
-\end{titlepage}
+    \begin{titlepage}
+        \maketitle
+        \begin{abstract}
+            %Background
+            Accoring to the numerical scheme reported in 
+            [Infin. Dimens. Anal. Quantum Probab. Relat. Top. {\bf 19} (2016), 
+            no.~3, 1650020, 37 pp.],
+            we characterize numerical stability respect to initial conditions. 
+            Our approach consists in solving the associated Kolmogorov
+            equation for a familiy of parabolic SPDE whit a spectral method 
+            and deduce mild conditions. We
+            illustrate our results with stochastic versions of the   Burgers and
+            Fisher equations.
+        \end{abstract}
+    \end{titlepage}
 
 %
     {\bf Keywords:} 
     Stability, spectral method, Kolmogorov equation,
         parabolic stochastic partial differential equations.
 %---------------------------------------------------------------------------
-\section{Kolmogorov equations for SPDEs in Hilbert spaces}
-\label{fpk-sect}
+    \section{Kolmogorov equations for SPDEs in Hilbert spaces}
+    \label{fpk-sect}
         Let $\mathcal{H}$ be a separable infinite-dimensional Hilbert space with
     inner product $( ,  )_\mathcal{H} $ and norm $\|\cdot\|_\mathcal{H}$. 
-    
-     Consider the stochastic differential equation in $\mathcal{H}$
+    Consider the stochastic differential equation in $\mathcal{H}$
     \begin{equation}
     \label{P1s2.1}
     dX_t = AX_t dt + B(X_t) dt + \sqrt{Q}dW_t,
@@ -180,26 +168,22 @@
     
     We define
     \begin{equation}
-    \label{P1s2.2}
-    u(t,x) = \E \big[ \varphi(X_t^x) \big],
+        \label{P1s2.2}
+        u(t,x) = \E \big[ \varphi(X_t^x) \big],
     \end{equation}
     where $\varphi:\mathcal{H}\rightarrow \IR$ and $X_t^x$ is the solution to
     \eqref{P1s2.1} with initial conditions $X_0=x$ with
     $x\in\mathcal{H}$. Then $u$ satisfies the Kolmogorov equation:
-       \begin{equation}
+    \begin{equation}
     \label{P1s2.3}
-    \frac{\partial u}{\partial t}
-    = \frac{1}{2} Tr(QD^2u)
-    + \langle Ax, Du
-    \rangle_\mathcal{H} 
-    + \langle B(x),Du \rangle_\mathcal{H},
-    \qquad x\in D(A).
+        \frac{\partial u}{\partial t}
+        = \frac{1}{2} Tr(QD^2u)
+        + \langle Ax, Du
+        \rangle_\mathcal{H} 
+        + \langle B(x),Du \rangle_\mathcal{H},
+        \qquad x\in D(A).
     \end{equation}
-    
-  %  Here  $\mu$ is a Gaussian measure with mean zero and nuclear covariance 
-  %  operator $\Lambda$ with  $Tr(\Lambda)<+\infty$.
  
-
         Several authors have proved results on existence and uniqueness of the
     solution of the Kolmogorov equations, see for instance Da Prato \cite{da} 
     for a survey, Da Prato-Debussche \cite{da-de} for the Burgers equation,  
@@ -316,13 +300,13 @@
     $n\in\IN$.
 %
     \begin{remark}
-        Notice that $l_i(h)$ is defined only for $h \in\mathcal{H}_0$. However,
-        regarding $h$ as a $\mu$-random variable in
-        $\mathcal{H}$, we have $\E\big(l_i (h)\big) = \|\varphi_i \|^2  = 1$ and
-        then $l_k (h)$ can be defined $\mu$-a.e. $h \in\mathcal{H}$,
+            Notice that $l_i(h)$ is defined only for $h \in\mathcal{H}_0$. 
+        However, regarding $h$ as a $\mu$-random variable in
+        $\mathcal{H}$, we have $\E\big(l_i (h)\big) = \|\varphi_i \|^2  = 1$ 
+        and then $l_k (h)$ can be defined $\mu$-a.e. $h \in\mathcal{H}$,
         similar to defining a stochastic integral.
     
-        It is possible to identify the Hermite polynomial functionals
+            It is possible to identify the Hermite polynomial functionals
         defined in \eqref{s1.2}, for $h \in\mathcal{H}_0$, as a deterministic
         version of the Wick polynomials defined on the canonical Wiener 
         space (for further details see \cite{im} for instance).
@@ -330,7 +314,6 @@
 
         We have the following result (See Theorems 9.1.5 and 9.1.7 in Da
     Prato-Zabczyk \cite{da-za} or Lemma 3.1 in Chapter 9 from Chow \cite{liu}).
-
     \begin{lemma}\label{s1.le1}
             For 
         $ h \in \mathcal{H} $ let 
@@ -360,7 +343,7 @@
             \sum_{ \bm{n} \in \mathcal{J}}
                 u_{ \bm{n} } (t) H_{\bm{n}}(x),
                 \qquad x \in \mathcal{H},\quad t\in[0,T],
-        \end{equation}
+    \end{equation}
     where $u_{\bm{n}}:[0,T] \mapsto \IR$ and $H_{\bm{n}}(x)$ 
     are the Hermite functionals. This spectral 
     decomposition is used in \cite{de-fl} to construct
@@ -368,9 +351,9 @@
     the Kolmogorov equation. The aim of this paper is to prove 
     the stability with respect to the initial condition of this scheme.
 \end{remark}
-
+%
 \section{Some preliminary results}\label{prelim-results}
-
+    %
     Let $\Phi$ be a smooth simple functional given by \eqref{S1.2}. 
     Then the Fr\'echet derivatives, $D \Phi = \Phi'$ and 
     $D_2 \Phi = \Phi''$ in $\mathcal{H}$ can be computed as follows:
@@ -434,9 +417,8 @@
     \end{lemma}
 
         Suppose that $A$ and $Q$ have the same eigenfunctions $e_k$ with 
-        eigenvalues $\lambda_k$ and $\rho_k$ respectively.
-
-        It is well-know (See for instance Da Prato and Zabczyk \cite{da-za}) 
+    eigenvalues $\lambda_k$ and $\rho_k$ respectively.
+    It is well-know (See for instance Da Prato and Zabczyk \cite{da-za}) 
     that the solution of \eqref{OU} is a time-homogeneous Markov process with 
     transition operator $P_t$  defined for $\Phi\in\mathbb{H}$ given by
     \begin{equation}
@@ -470,28 +452,29 @@
         Let $P_t$ be the transition operator as defined by \eqref{OU}. Then
         the following properties hold:
         \begin{enumerate}
-         \item
-            $P_t : \mathcal{S}(\mathbb{H})\rightarrow  \mathcal{S}(\mathbb{H})$
-            for $t \ge 0$.
-        \item
-            $\{P_t , t \ge 0\}$
-            is a strongly continuous semigroup on
-            $\mathcal{S}(\mathbb{H})$ so that, for any
-            $\Phi \in \mathcal{S}(\mathbb{H})$, we have $P_0 = I$ ,
-            $P_{t+s} \Phi = P_t P_s \Phi$, for all $t, s \ge 0$, and
-            $\lim_{t\downarrow 0}
-            P_t \Phi = \Phi$.
-        \item
-            $\mathcal{A}_0$ is the infinitesimal generator of $P_t$ so that, for
-            each $\Phi\in\mathcal{S}(\mathbb{H})$,
-            \[
-                \lim_{t\downarrow 0} \tfrac{1}{t}\big(P_t- I\big)\Phi
-                    = \mathcal{A}_0\Phi.
-            \]
+            \item
+                $P_t : \mathcal{S}(\mathbb{H})\rightarrow  \mathcal{S}(\mathbb{H})$
+                for $t \ge 0$.
+            \item
+                $\{P_t , t \ge 0\}$
+                is a strongly continuous semigroup on
+                $\mathcal{S}(\mathbb{H})$ so that, for any
+                $\Phi \in \mathcal{S}(\mathbb{H})$, we have $P_0 = I$ ,
+                $P_{t+s} \Phi = P_t P_s \Phi$, for all $t, s \ge 0$, and
+                $\lim_{t\downarrow 0}
+                P_t \Phi = \Phi$.
+            \item
+                $\mathcal{A}_0$ is the infinitesimal generator of 
+                $P_t$ so that, for
+                each $\Phi\in\mathcal{S}(\mathbb{H})$,
+                \[
+                    \lim_{t\downarrow 0} \tfrac{1}{t}\big(P_t- I\big)\Phi
+                        = \mathcal{A}_0\Phi.
+                \]
         \end{enumerate}
         \hfill $\Box$
     \end{lemma}
-
+    %
     \begin{lemma}\label{Pt-Her}
             Let $H_n(h)$ be a Hermite polynomial functional given by 
             \eqref{s1.2}.
@@ -512,7 +495,6 @@
 
     The following Theorem is a Green formula that we will need forward.
     Its proof can be seen, for instance, in \cite[][Thm. 3.3, Ch. 9]{liu}.
-
     \begin{theorem}\label{green-form}
         Let
         $
@@ -527,7 +509,7 @@
                 \label{s2.2.1}
         \end{align}
     \end{theorem}
-
+    %
     \begin{lemma}
         Assume the conditions for  \Cref{Pt-Her} hold. Then, for any
         $\Phi,\Psi\in \mathcal{S}(\mathbb{H})$, the following Green’s formula 
@@ -577,7 +559,6 @@
         The following results ensure the existence of an extension for the 
     operator $\mathcal{A}_0$ to a domain containing $\mathbb{H}_{2}$. Their
     proofs can be found in \cite{liu} for instance.
-
     \begin{theorem}\label{the-Pt-A}
         Let the conditions on $A$ and $Q$ in \Cref{lemma-AQ} hold.
         Then \sloppy ${P_t: \mathbb{H}\rightarrow \mathbb{H}}$, for $t \ge 0$, 
@@ -710,7 +691,7 @@
     \end{equation}
     where we denote $\phi=\phi(\cdot)$ and $\Psi_s=\Psi(\cdot,s)$.
     Chow \cite{liu} had proved the following lemma.
-
+    %
     \begin{lemma}\label{Lemma.s3.1}
         Let $\Psi\in L^2((0,T);\mathbb{H})$ for some $T>0$. Then, for any
         $\lambda>0$ there exists $C_\lambda>0$ such that
@@ -723,7 +704,7 @@
             \label{s3.1.0}
          \end{align}
     \end{lemma}
-
+    %
     We now prove the following theorem on existence and uniqueness of a mild
     solution to \eqref{P1s3.2}.
     \begin{theorem}
@@ -1560,13 +1541,17 @@ conditions.
                     \big|^2 \mu(dx)\mu(dy) \ ,
             \end{aligned}
         \end{equation}
-        where $f(t)= \sum_{\bar n\in \mathcal{J}} \big[u_{\bar n}^y(t)\big]^2+ 
-        \int_\mathcal{H}
+        where 
+        $
+            f(t) = 
+            \sum_{\bar n\in \mathcal{J}} 
+            \big[u_{\bar n}^y(t)\big]^2+ 
+            \int_\mathcal{H}
                     \E ^ 2\big[
                         \varphi(X_t^y)
                     \big] \mu(dy)
-                    $.
-        
+        $.
+        %
         From the proof of Theorem \ref{Cont-Mild-Sol} (see \eqref{s2.23}) we 
         know that
         \begin{equation}
@@ -1595,9 +1580,7 @@ conditions.
             \end{aligned}
         \end{equation}
         Therefore the first term in the right side of \eqref{s3.9.1} is bounded 
-        by
-        \eqref{s3.10.1}.
-        
+        by \eqref{s3.10.1}.
         We now focus on the second term in the last inequality. Notice that for 
         every
         $\bar n\in \mathcal{J}$ we have
@@ -1779,7 +1762,7 @@ conditions.
             \end{aligned}
         \end{equation}
         Here, we recall that $C(i)=\frac{(-1)^i}{(i+1)(i!)^{1/2}} $ then
-        $\frac{(-1)^i}{\big[(i+1)!\Big]^{1/2}} Pe_{i+1}(\hat \gamma_i)$
+        $\frac{(-1)^i}{[ (i+1)! ]^{1/2}} Pe_{i+1}(\hat \gamma_i)$
         is the normalized Hermite polynomial of $i+1$ degree evaluated on
         $\hat \gamma_i$ which is bounded by a constant $C$ for every $i\in\IN$.
         Moreover, since $\lambda_k<\lambda_{k+1}\rightarrow \infty $
@@ -1804,13 +1787,18 @@ conditions.
         \end{align}
         Putting together inequalities \eqref{s3.9.1}, \eqref{s3.10.1} and
         \eqref{s3.11} we obtain
-        \begin{align}
-          \| \Psi_t^x-\Psi_t^y\|_{\big(L^2(\mathcal{H},\mu) \big)^2}^2&\le   
-          \exp(Ct)
-          \int_{\mathcal{H}\times \mathcal{H}}
-          \| x-y\|_{\mathcal{H}}^2 \mu(dx)\mu(dy) +  f(t)\| x-y\|_{\mathcal{H}}.
-          \label{s3.17}
-        \end{align}
+       \begin{equation} 
+            \begin{aligned}
+              \| \Psi_t^x-\Psi_t^y\|_{\big(L^2(\mathcal{H},\mu) \big)^2}^2
+                \le &   
+              \exp(Ct)
+              \int_{\mathcal{H}\times \mathcal{H}}
+              \| x-y\|_{\mathcal{H}}^2 \mu(dx)\mu(dy) 
+              \\
+              & +  f(t)\| x-y\|_{\mathcal{H}}.
+              \label{s3.17}
+            \end{aligned}
+        \end{equation}
         Now, if $\| x-y\|_{\mathcal{H}}\le \delta $, then from \eqref{s3.17} we 
         get
         $
@@ -1909,11 +1897,9 @@ conditions.
             \quad t \in [0,T] \ .
             \label{num-approx}
     \end{align}
-
-        Note that the time-dependent coefficients $ u_{\bm{n}}(t)$ depend on the
-    functional and on the initial condition but it is not a function of
-    the initial condition. First we prove an auxiliary result.
-
+    %
+        Note that coefficients $ u_{\bm{n}}(t)$ only depends on time. 
+    First we prove an auxiliary result.
     \begin{lemma}\label{le-s3-1}
         Set $\{P_k(\xi)\}_{k\in \IN}$ the family of normalized Hermite
         polynomials in $\IR$. For every $k\in\IN$ and
@@ -1927,7 +1913,7 @@ conditions.
         \end{equation}
         where
         $ \gamma\in (\eta,\xi)$ and
-        $C(k)=\frac{(-1)^k}{(k+1)(k!)^{1/2}} $.
+        $C(k)=\frac{ (-1) ^ k}{ (k + 1) ( k! ) ^ {1 / 2}} $.
         Moreover, $Pe_k(x)$ is the unnormalized Hermite polynomial of $k$
         degree.
     \end{lemma}
@@ -2030,8 +2016,7 @@ conditions.
         \end{equation}
 
             We focus on the first term in \eqref{s3.4}. From the definition of
-            the
-        initial condition we obtain the following expression for
+        the initial condition we obtain the following expression for
         the time-dependent coefficient
         \begin{align*}
           u_{\bar n}^x(t) &=
@@ -2088,12 +2073,8 @@ conditions.
                         \varphi(X_t^y)
                     \big] \mu(dx) \mu(dy) \ .
         \end{align*}
-        %
-        %
-        %
+        
         Then, by the Cauchy-Schwartz inequality, we obtain
-        %
-        %
         %
         \begin{equation}
             \begin{aligned}
@@ -2366,14 +2347,17 @@ conditions.
                     \big|^2 \mu(dx)\mu(dy) \ ,
             \end{aligned}
         \end{equation}
-        where $f(t)= \sum_{\bar n\in \mathcal{J}} \big[u_{\bar n}^y(t)\big]^2+
-        \int_\mathcal{H}
-                    \E ^ 2\big[
-                        \varphi(X_t^y)
-                    \big] \mu(dy)
-                    $.
-
-        From the proof of Theorem \ref{Cont-Mild-Sol} (see \eqref{s2.23}) we
+        where 
+        $
+            f(t)= \sum_{\bar n\in \mathcal{J}} 
+            \big[u_{\bar n}^y(t)\big]^2+
+            \int_\mathcal{H}
+                \E ^ 2
+                \big[
+                    \varphi(X_t^y)
+                \big] \mu(dy)
+        $.
+            From the proof of Theorem \ref{Cont-Mild-Sol} (see \eqref{s2.23}) we
         know that
         \begin{equation}
             \begin{aligned}
@@ -2401,8 +2385,7 @@ conditions.
             \end{aligned}
         \end{equation}
         Therefore the first term in the right side of \eqref{s3.9.1} is bounded
-        by
-        \eqref{s3.10.1}.
+        by \eqref{s3.10.1}.
 
         We now focus on the second term in the last inequality. Notice that for
         every
@@ -2549,8 +2532,8 @@ conditions.
             \label{s3.9}
             \begin{aligned}
                 \sum_{\bar n\in \mathcal{J}}
-                \int_{\mathcal{H}\times \mathcal{H}}
                 &
+                \int_{\mathcal{H}\times \mathcal{H}}
                 \big|
                     H_{\bar n}(x) - H_{\bar n}(y)
                 \big|^2
@@ -2585,7 +2568,9 @@ conditions.
             \end{aligned}
         \end{equation}
         Here, we recall that $C(i)=\frac{(-1)^i}{(i+1)(i!)^{1/2}} $ then
-        $\frac{(-1)^i}{\big[(i+1)!\Big]^{1/2}} Pe_{i+1}(\hat \gamma_i)$
+        $
+            \frac{(-1) ^ i}{ [(i+1)!] ^ {1/2} } Pe_{i+1}(\hat \gamma_i)
+        $
         is the normalized Hermite polynomial of $i+1$ degree evaluated on
         $\hat \gamma_i$ which is bounded by a constant $C$ for every $i\in\IN$.
         Moreover, since $\lambda_k<\lambda_{k+1}\rightarrow \infty $
@@ -2610,13 +2595,18 @@ conditions.
         \end{align}
         Putting together inequalities \eqref{s3.9.1}, \eqref{s3.10.1} and
         \eqref{s3.11} we obtain
-        \begin{align}
-          \| \Psi_t^x-\Psi_t^y\|_{\big(L^2(\mathcal{H},\mu) \big)^2}^2&\le
-          \exp(Ct)
-          \int_{\mathcal{H}\times \mathcal{H}}
-          \| x-y\|_{\mathcal{H}}^2 \mu(dx)\mu(dy) +  f(t)\| x-y\|_{\mathcal{H}}.
-          \label{s3.17}
-        \end{align}
+        \begin{equation}
+            \label{s3.17}
+            \begin{aligned}
+                \| \Psi_t^x-\Psi_t^y\|_{\big(L^2(\mathcal{H},\mu) \big)^2}^2
+                 \le &
+                \exp(Ct)
+                \int_{\mathcal{H}\times \mathcal{H}}
+                \| x-y\|_{\mathcal{H}}^2 \mu(dx)\mu(dy) 
+                \\ 
+                & +  f(t)\| x-y\|_{\mathcal{H}}.
+            \end{aligned}
+        \end{equation}
         Now, if $\| x-y\|_{\mathcal{H}}\le \delta $, then from \eqref{s3.17} we
         get
         $
@@ -2676,11 +2666,11 @@ conditions.
     with two near initial function conditions $x(\xi)$,
     $\widehat{x}(\xi)$. In \cite{matsumyaRepo} we provide a GitHub repository
     with a Python implementation to reproduce the following figures. We also
-    provide in \cite{plotlyFisher, plotlyBurgers}, the 3D on-line plotly
-    versions of \Cref{fig:likening_fisher_kpp,fig:likening_burgers}.
+    provide in \cite{plotlyFisher, plotlyBurgers}, the 3D color on-line plotly
+    versions of the regarding solutions.
 %
     \subsection*{Stochastic Fisher-KPP equation in an interval}
-    Let $\mathcal{H} = L^2 (0,1)$. We consider the stochastic
+    Let $\mathcal{H} = L ^ 2 (0, 1)$. We consider the stochastic
     Fisher-KPP equation
     \begin{equation}
         \label{eqn:fisher-kpp}
@@ -2703,10 +2693,9 @@ conditions.
         \end{aligned}
     \end{equation}
     in the interval $[0, 1]$ and with initial function
-    conditions
-    $x(\xi))$ and  $\widehat{x}(\xi)$. In order to fix this
-    initial function
-    conditions  close, we use for our experiments
+    conditions $x(\xi))$ and  $\widehat{x}(\xi)$. 
+    In order to fix this initial function
+    conditions close, we use for our experiments
     \begin{equation}
         x(\xi) := \sech ^ 2( 5  (\xi - 0.5)),
         \qquad
@@ -2717,327 +2706,258 @@ conditions.
     where $T_k(\cdot)$ denotes the Chebyshev polynomial of the first kind. That
     is, $\widehat{x}(\cdot)$ is the Chebyshev truncated expansion of $x(\cdot)$.
 
-    \Cref{fig:fisher_kpp_approximation_t0} displays the
-    plots of this initial conditions. In \Cref{fig:likening_fisher_kpp} we
-    observe how the mentioned approximations remains close\textemdash blue
-    color scale denotes the solution of equation \ref{eqn:fisher-kpp}
-    with initial function condition $x(\xi)$, while yellow color corresponds
-    to the approximation with initial condition $\widehat{x}$. Since we employ
-    transparency to obtain this 3D plot, the  purple scale results from the
-    closeness of the solutions. Further, \Cref{fig:errorfisher}  suggest the
+    \Cref{fig:errorfisher}  suggest the
     conclusion of \Cref{thm:ic_continuity}, that is, the solutions of equation
     \eqref{eqn:fisher-kpp} are continuous respect to initial conditions and
     satisfies the estimation \eqref{s3.10.1}.
-
-%
-\begin{figure}[htb]
-    \centering
-    \caption{
-        Numerical Solution of the Fisher-KPP
-        \cref{eqn:fisher-kpp}
-        with initial conditions $x$, $\widehat{x}$ at time
-        $t=0$.
-     }
-    \label{fig:fisher_kpp_approximation_t0}
-    \includegraphics[width=\linewidth, keepaspectratio]%
-    {Fig1.pdf}
-\end{figure}
-%
-\begin{figure}[htb]
-    \centering
-    \caption{
-        Likening between two solution with closed
-        initial conditions $x$, $\widehat{x}$
-        of the stochastic Fisher-KPP
-        \cref{eqn:fisher-kpp}.
-        See \cite{plotlyFisher} to obtain other camera perspectives.
-     }
-    \label{fig:likening_fisher_kpp}
-    \includegraphics[width=.9\linewidth, keepaspectratio]%
-    {Fig2.pdf}
-\end{figure}
 %
 %
 %
-\begin{figure}[htb]
-    \includegraphics[width=\textwidth]{Fig3.pdf}
-    \caption{
-        $\mathcal{L}^2(\mathcal{H}, \mu)$
-        distance between two solutions of the stochastic Fisher PDE
-        with initial conditions $x = x(\xi)$, and  $y = \widehat{x}(\xi)$.
-    }
-    \label{fig:errorfisher}
-\end{figure}
-
-    \Cref{fig:likening_fisher_kpp} illustrates the distance between initial
-conditions. The yellow pallet with transparency and a blue scale highlight the
-zones where the two solutions are close. Thus, the zones where the color is
-purple denotes, where the two solutions of SPDEs are close.
-According to the $\mathcal{L}( \mathcal{H}, \mu)$-distance between the two
-underlying solutions, \Cref{fig:errorfisher} confirms the above argument.
-
+    \begin{figure}[htb]
+        \includegraphics[width=\textwidth]{Fig1.pdf}
+        \caption{
+            $\mathcal{L}^2(\mathcal{H}, \mu)$
+            distance between two solutions of the stochastic Fisher PDE
+            with initial conditions $x = x(\xi)$, and  $y = \widehat{x}(\xi)$.
+        }
+        \label{fig:errorfisher}
+    \end{figure}
 %
 \subsection*{Stochastic Burgers equation}
-Let $\mathcal{H} = L^2(0,1)$, consider the stochastic Burgers equation in the
-interval $[0, 1]$
-\begin{equation}
-    \label{eqn:stochastic_burgers}
-    \begin{aligned}
-        d X(t, \xi) &=
-            \left[
-                \nu \partial_{\xi} ^ 2 X(t, \xi)
-                + \frac{1}{2} \partial_{\xi} X^2(t, \xi)
-            \right]dt
-            +dW(t, \xi),
-            \\
-        X(t, 0) &= X(t, 1) =0, \quad t>0, \\
-        X(0, \xi) &= x(\xi), \quad x\in \mathcal{H} \ .
-    \end{aligned}
-\end{equation}
-As in the above experiment, we use the initial conditions
-$x(\xi)$ and its truncated Chebyshev expansion
-\begin{equation}
-    x(\xi) := \sin(\pi \xi),
-    \qquad
-    \widehat{x}(\xi) :=
-        \sum_{k=0} ^ N
-         T_k x(\xi).
-\end{equation}
-
-\Cref{fig:approximationt0,fig:likening_burgers,fig:error_convergence}
-illustrate a similar argument presented  in the above experiment.
-\begin{figure}[htb]
-    \caption{
-        Numerical Solution of the Burgers
-        \cref{eqn:stochastic_burgers}
-        with initial conditions $x(\xi)$, $\widehat{x}(\xi)$.
-     }
-    \label{fig:approximationt0}
-    \includegraphics[width=\linewidth, keepaspectratio]%
-    {Fig4.pdf}
-\end{figure}
-
-\begin{figure}[htb]
-    
-    \centering
-    \caption{
-        Likening between two solution with closed
-        initial conditions $x(\xi)$, and $\widehat{x}(\xi)$
-        of the stochastic Burgers
-        \cref{eqn:stochastic_burgers}.
-        See \cite{plotlyFisher} to obtain other camera perspectives.
-     }
-    \label{fig:likening_burgers}
-    \includegraphics[width=.9\textwidth, keepaspectratio]%
-    {Fig5.pdf}
-\end{figure}
-%
-\begin{figure}[htb]
-    \centering
-    \caption{
-        Distance between two solutions of the
-        stochastic Burgers
-        \cref{eqn:stochastic_burgers}
-        with initial conditions  $x = x(\xi)$, and $y = \widehat{x}(\xi)$.
-     }
-    \label{fig:error_convergence}
-    \includegraphics[width=\linewidth, keepaspectratio]%
-    {Fig6.pdf}
-\end{figure}
-\FloatBarrier
-\section{Conclusions}
-        To the best of our knowledge, our results represent the first
-    contribution to the numeric stability respect to initial conditions of weak
-    approximations of Kolmogorov equations in infinite dimensions. This kind of
-    stability, combining with the weak approximation approach,
-    would save computation time. That is, since our scheme asks specific
-    conditions to obtain a weak numerical solution of an underlying SPDE, we
-    convert the stochastic problem into a deterministic ODE for the first
-    moment. This procedure overcome Montecarlo type simulations to  approximate
-    moments or distributions\textemdash simulate many realization of the
-    numerical stochastic process to approximate distributions or moments.
-    Further, under  our setting, the regarding spectral approximation assures
-    high precision and order of convergence. Thus we guess
-    that our method would improve the time and save resources of
-    computation. We are preparing another article to confirm this
-    conjectures.
-
+    Let $\mathcal{H} = L^2(0,1)$, consider the stochastic Burgers equation in the
+    interval $[0, 1]$
+    \begin{equation}
+        \label{eqn:stochastic_burgers}
+        \begin{aligned}
+            d X(t, \xi) &=
+                \left[
+                    \nu \partial_{\xi} ^ 2 X(t, \xi)
+                    + \frac{1}{2} \partial_{\xi} X^2(t, \xi)
+                \right]dt
+                +dW(t, \xi),
+                \\
+            X(t, 0) &= X(t, 1) =0, \quad t>0, \\
+            X(0, \xi) &= x(\xi), \quad x\in \mathcal{H} \ .
+        \end{aligned}
+    \end{equation}
+    We use the initial conditions
+    $x(\xi)$ and its truncated Chebyshev expansion
+    \begin{equation}
+        x(\xi) := \sin(\pi \xi),
+        \qquad
+        \widehat{x}(\xi) :=
+            \sum_{k=0} ^ N
+             T_k x(\xi).
+    \end{equation}
+    %
+       According to the $\mathcal{L}( \mathcal{H}, \mu)$-distance between the two
+    underlying solutions, \Cref{fig:error_convergence} confirms the conclusion of
+    \Cref{thm:ic_continuity}.
+    %
+    \begin{figure}[htb]
+        \centering
+        \caption{
+            Distance between two solutions of the
+            stochastic Burgers
+            \cref{eqn:stochastic_burgers}
+            with initial conditions  $x = x(\xi)$, and $y = \widehat{x}(\xi)$.
+         }
+        \label{fig:error_convergence}
+        \includegraphics[width=\linewidth, keepaspectratio]%
+        {Fig2.pdf}
+    \end{figure}
+    \FloatBarrier
+    \section{Conclusions}
+            To the best of our knowledge, our results represent the first
+        contribution to the numeric stability respect to initial conditions of weak
+        approximations of Kolmogorov equations in infinite dimensions. This kind of
+        stability, combining with the weak approximation approach,
+        would save computation time. That is, since our scheme asks specific
+        conditions to obtain a weak numerical solution of an underlying SPDE, we
+        convert the stochastic problem into a deterministic ODE for the first
+        moment. This procedure overcome Montecarlo type simulations to  approximate
+        moments or distributions\textemdash simulate many realization of the
+        numerical stochastic process to approximate distributions or moments.
+        Further, under  our setting, the regarding spectral approximation assures
+        high precision and order of convergence. Thus we guess
+        that our method would improve the time and save resources of
+        computation. We are preparing another article to confirm this
+        conjectures.
 %\bibliographystyle{plainnat}
 %\bibliography{references.bib}
 \begin{thebibliography}{20}
-\providecommand{\natexlab}[1]{#1}
-\providecommand{\url}[1]{\texttt{#1}}
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi: #1}\else
-  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+    \providecommand{\natexlab}[1]{#1}
+    \providecommand{\url}[1]{\texttt{#1}}
+    \expandafter\ifx\csname urlstyle\endcsname\relax
+      \providecommand{\doi}[1]{doi: #1}\else
+      \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+    %
+    \bibitem[Barbu and Prato(2008)]{ba-da}
+    Viorel Barbu and Giuseppe~Da Prato.
+    \newblock {The Kolmogorov equation for a 2D-Navier–Stokes stochastic flow in
+      a channel}.
+    \newblock \emph{Nonlinear Analysis: Theory, Methods \& Applications},
+      69\penalty0 (3):\penalty0 940–949, 2008.
+    \newblock ISSN 0362-546X.
+    \newblock \doi{10.1016/j.na.2008.02.072}.
+    \newblock URL
+      \url{http://www.sciencedirect.com/science/article/pii/S0362546X08001569}.
+    \newblock Trends in Nonlinear Analysis: in Honour of Professor
+      V.Lakshmikantham.
 
-\bibitem[Barbu and Prato(2008)]{ba-da}
-Viorel Barbu and Giuseppe~Da Prato.
-\newblock {The Kolmogorov equation for a 2D-Navier–Stokes stochastic flow in
-  a channel}.
-\newblock \emph{Nonlinear Analysis: Theory, Methods \& Applications},
-  69\penalty0 (3):\penalty0 940–949, 2008.
-\newblock ISSN 0362-546X.
-\newblock \doi{10.1016/j.na.2008.02.072}.
-\newblock URL
-  \url{http://www.sciencedirect.com/science/article/pii/S0362546X08001569}.
-\newblock Trends in Nonlinear Analysis: in Honour of Professor
-  V.Lakshmikantham.
+    \bibitem[Bogachev et~al.(2011)Bogachev, Prato, and R\"{o}ckner]{bo-da-ro}
+    Vladimir Bogachev, Giuseppe~Da Prato, and Michael R\"{o}ckner.
+    \newblock Existence results for fokker–planck equations in hilbert spaces.
+    \newblock In Robert Dalang, Marco Dozzi, and Francesco Russo, editors,
+      \emph{Seminar on Stochastic Analysis, Random Fields and Applications VI},
+      page 23–35, Basel, 2011. Springer Basel.
+    \newblock ISBN 978-3-0348-0021-1.
 
-\bibitem[Bogachev et~al.(2011)Bogachev, Prato, and R\"{o}ckner]{bo-da-ro}
-Vladimir Bogachev, Giuseppe~Da Prato, and Michael R\"{o}ckner.
-\newblock Existence results for fokker–planck equations in hilbert spaces.
-\newblock In Robert Dalang, Marco Dozzi, and Francesco Russo, editors,
-  \emph{Seminar on Stochastic Analysis, Random Fields and Applications VI},
-  page 23–35, Basel, 2011. Springer Basel.
-\newblock ISBN 978-3-0348-0021-1.
+    \bibitem[Chow(2007)]{liu}
+    Pao-Liu Chow.
+    \newblock \emph{Stochastic partial differential equations}.
+    \newblock Chapman \& Hall/CRC Applied Mathematics and Nonlinear Science Series.
+      Chapman \& Hall/CRC, Boca Raton, FL, 2007.
+    \newblock ISBN 978-1-58488-443-9; 1-58488-443-6.
 
-\bibitem[Chow(2007)]{liu}
-Pao-Liu Chow.
-\newblock \emph{Stochastic partial differential equations}.
-\newblock Chapman \& Hall/CRC Applied Mathematics and Nonlinear Science Series.
-  Chapman \& Hall/CRC, Boca Raton, FL, 2007.
-\newblock ISBN 978-1-58488-443-9; 1-58488-443-6.
+    \bibitem[Da~Prato et~al.(2013)Da~Prato, Flandoli, and R\"{o}ckner]{da-fl-ro}
+    G.~Da~Prato, F.~Flandoli, and M.~R\"{o}ckner.
+    \newblock Fokker-planck equations for spde with non-trace-class noise.
+    \newblock \emph{Commun. Math. Stat.}, 1\penalty0 (3):\penalty0 281--304, 2013.
+    \newblock ISSN 2194-6701.
+    \newblock \doi{10.1007/s40304-013-0015-5}.
+    \newblock URL \url{https://doi.org/10.1007/s40304-013-0015-5}.
 
-\bibitem[Da~Prato et~al.(2013)Da~Prato, Flandoli, and R\"{o}ckner]{da-fl-ro}
-G.~Da~Prato, F.~Flandoli, and M.~R\"{o}ckner.
-\newblock Fokker-planck equations for spde with non-trace-class noise.
-\newblock \emph{Commun. Math. Stat.}, 1\penalty0 (3):\penalty0 281--304, 2013.
-\newblock ISSN 2194-6701.
-\newblock \doi{10.1007/s40304-013-0015-5}.
-\newblock URL \url{https://doi.org/10.1007/s40304-013-0015-5}.
+    \bibitem[Da~Prato(2004)]{da}
+    Giuseppe Da~Prato.
+    \newblock \emph{Kolmogorov equations for stochastic {PDE}s}.
+    \newblock Advanced Courses in Mathematics. CRM Barcelona. Birkh\"{a}user
+      Verlag, Basel, 2004.
+    \newblock ISBN 3-7643-7216-8.
+    \newblock \doi{10.1007/978-3-0348-7909-5}.
+    \newblock URL \url{https://doi.org/10.1007/978-3-0348-7909-5}.
 
-\bibitem[Da~Prato(2004)]{da}
-Giuseppe Da~Prato.
-\newblock \emph{Kolmogorov equations for stochastic {PDE}s}.
-\newblock Advanced Courses in Mathematics. CRM Barcelona. Birkh\"{a}user
-  Verlag, Basel, 2004.
-\newblock ISBN 3-7643-7216-8.
-\newblock \doi{10.1007/978-3-0348-7909-5}.
-\newblock URL \url{https://doi.org/10.1007/978-3-0348-7909-5}.
+    \bibitem[{Da Prato} and Debussche(2007)]{da-de}
+    Giuseppe {Da Prato} and Arnaud Debussche.
+    \newblock {m-Dissipativity of Kolmogorov Operators Corresponding to Burgers
+      Equations with Space-time White Noise}.
+    \newblock \emph{Potential Analysis}, 26\penalty0 (1):\penalty0 31–55, Feb
+      2007.
+    \newblock ISSN 1572-929X.
+    \newblock \doi{10.1007/s11118-006-9021-5}.
+    \newblock URL \url{https://doi.org/10.1007/s11118-006-9021-5}.
 
-\bibitem[{Da Prato} and Debussche(2007)]{da-de}
-Giuseppe {Da Prato} and Arnaud Debussche.
-\newblock {m-Dissipativity of Kolmogorov Operators Corresponding to Burgers
-  Equations with Space-time White Noise}.
-\newblock \emph{Potential Analysis}, 26\penalty0 (1):\penalty0 31–55, Feb
-  2007.
-\newblock ISSN 1572-929X.
-\newblock \doi{10.1007/s11118-006-9021-5}.
-\newblock URL \url{https://doi.org/10.1007/s11118-006-9021-5}.
+    \bibitem[Da~Prato and Zabczyk(1992)]{da-za1}
+    Giuseppe Da~Prato and Jerzy Zabczyk.
+    \newblock \emph{Stochastic equations in infinite dimensions}, volume~44 of
+      \emph{Encyclopedia of Mathematics and its Applications}.
+    \newblock Cambridge University Press, Cambridge, 1992.
+    \newblock ISBN 0-521-38529-6.
+    \newblock \doi{10.1017/CBO9780511666223}.
+    \newblock URL \url{https://doi.org/10.1017/CBO9780511666223}.
 
-\bibitem[Da~Prato and Zabczyk(1992)]{da-za1}
-Giuseppe Da~Prato and Jerzy Zabczyk.
-\newblock \emph{Stochastic equations in infinite dimensions}, volume~44 of
-  \emph{Encyclopedia of Mathematics and its Applications}.
-\newblock Cambridge University Press, Cambridge, 1992.
-\newblock ISBN 0-521-38529-6.
-\newblock \doi{10.1017/CBO9780511666223}.
-\newblock URL \url{https://doi.org/10.1017/CBO9780511666223}.
+    \bibitem[Da~Prato and Zabczyk(2002)]{da-za}
+    Giuseppe Da~Prato and Jerzy Zabczyk.
+    \newblock \emph{Second order partial differential equations in {H}ilbert
+      spaces}, volume 293 of \emph{London Mathematical Society Lecture Note
+      Series}.
+    \newblock Cambridge University Press, Cambridge, 2002.
+    \newblock ISBN 0-521-77729-1.
+    \newblock \doi{10.1017/CBO9780511543210}.
+    \newblock URL \url{https://doi.org/10.1017/CBO9780511543210}.
 
-\bibitem[Da~Prato and Zabczyk(2002)]{da-za}
-Giuseppe Da~Prato and Jerzy Zabczyk.
-\newblock \emph{Second order partial differential equations in {H}ilbert
-  spaces}, volume 293 of \emph{London Mathematical Society Lecture Note
-  Series}.
-\newblock Cambridge University Press, Cambridge, 2002.
-\newblock ISBN 0-521-77729-1.
-\newblock \doi{10.1017/CBO9780511543210}.
-\newblock URL \url{https://doi.org/10.1017/CBO9780511543210}.
+    \bibitem[Delgado-Vences and Flandoli(2016)]{de-fl}
+    Francisco Delgado-Vences and Franco Flandoli.
+    \newblock A spectral-based numerical method for {K}olmogorov equations in
+      {H}ilbert spaces.
+    \newblock \emph{Infin. Dimens. Anal. Quantum Probab. Relat. Top.}, 19\penalty0
+      (3):\penalty0 1650020, 37, 2016.
+    \newblock ISSN 0219-0257.
+    \newblock \doi{10.1142/S021902571650020X}.
+    \newblock URL \url{https://doi.org/10.1142/S021902571650020X}.
 
-\bibitem[Delgado-Vences and Flandoli(2016)]{de-fl}
-Francisco Delgado-Vences and Franco Flandoli.
-\newblock A spectral-based numerical method for {K}olmogorov equations in
-  {H}ilbert spaces.
-\newblock \emph{Infin. Dimens. Anal. Quantum Probab. Relat. Top.}, 19\penalty0
-  (3):\penalty0 1650020, 37, 2016.
-\newblock ISSN 0219-0257.
-\newblock \doi{10.1142/S021902571650020X}.
-\newblock URL \url{https://doi.org/10.1142/S021902571650020X}.
+    \bibitem[Diaz-Infante({\natexlab{a}})]{plotlyBurgers}
+    Saul Diaz-Infante.
+    \newblock Likening of two solutions of the burgers equation with two initial
+      function conditions.
+    \newblock https://plot.ly/~sauldiazinfante/30/ [2019/05/11], {\natexlab{a}}.
+    \newblock URL \url{https://plot.ly/~sauldiazinfante/30/}.
 
-\bibitem[Diaz-Infante({\natexlab{a}})]{plotlyBurgers}
-Saul Diaz-Infante.
-\newblock Likening of two solutions of the burgers equation with two initial
-  function conditions.
-\newblock https://plot.ly/~sauldiazinfante/30/ [2019/05/11], {\natexlab{a}}.
-\newblock URL \url{https://plot.ly/~sauldiazinfante/30/}.
+    \bibitem[Diaz-Infante({\natexlab{b}})]{plotlyFisher}
+    Saul Diaz-Infante.
+    \newblock Likening of two solutions of the fisher equation with two initial
+      function conditions.
+    \newblock https://plot.ly/~sauldiazinfante/28/ [2019/05/11], {\natexlab{b}}.
+    \newblock URL \url{https://plot.ly/~sauldiazinfante/28/}.
 
-\bibitem[Diaz-Infante({\natexlab{b}})]{plotlyFisher}
-Saul Diaz-Infante.
-\newblock Likening of two solutions of the fisher equation with two initial
-  function conditions.
-\newblock https://plot.ly/~sauldiazinfante/28/ [2019/05/11], {\natexlab{b}}.
-\newblock URL \url{https://plot.ly/~sauldiazinfante/28/}.
+    \bibitem[Gottlieb et~al.(1987)Gottlieb, Lustman, and Tadmor]{Gottlieb1987a}
+    David Gottlieb, Liviu Lustman, and Eitan Tadmor.
+    \newblock Stability analysis of spectral methods for hyperbolic
+      initial-boundary value systems.
+    \newblock \emph{SIAM J. Numer. Anal.}, 24\penalty0 (2):\penalty0 241--256,
+      1987.
+    \newblock ISSN 0036-1429.
+    \newblock \doi{10.1137/0724020}.
+    \newblock URL \url{https://doi.org/10.1137/0724020}.
 
-\bibitem[Gottlieb et~al.(1987)Gottlieb, Lustman, and Tadmor]{Gottlieb1987a}
-David Gottlieb, Liviu Lustman, and Eitan Tadmor.
-\newblock Stability analysis of spectral methods for hyperbolic
-  initial-boundary value systems.
-\newblock \emph{SIAM J. Numer. Anal.}, 24\penalty0 (2):\penalty0 241--256,
-  1987.
-\newblock ISSN 0036-1429.
-\newblock \doi{10.1137/0724020}.
-\newblock URL \url{https://doi.org/10.1137/0724020}.
+    \bibitem[Imkeller(2008)]{im}
+    Peter Imkeller.
+    \newblock \emph{Malliavin's calculus and applications in stochastic control and
+      finance}, volume~1 of \emph{IMPAN Lecture Notes}.
+    \newblock Polish Academy of Sciences, Institute of Mathematics, Warsaw, 2008.
+    \newblock ISBN 978-83-86806-02-7.
 
-\bibitem[Imkeller(2008)]{im}
-Peter Imkeller.
-\newblock \emph{Malliavin's calculus and applications in stochastic control and
-  finance}, volume~1 of \emph{IMPAN Lecture Notes}.
-\newblock Polish Academy of Sciences, Institute of Mathematics, Warsaw, 2008.
-\newblock ISBN 978-83-86806-02-7.
+    \bibitem[Lang et~al.(2017)Lang, Petersson, and Thalhammer]{Lang2017}
+    Annika Lang, Andreas Petersson, and Andreas Thalhammer.
+    \newblock {Mean-square stability analysis of approximations of stochastic
+      differential equations in infinite dimensions}.
+    \newblock \emph{BIT Numerical Mathematics}, 57\penalty0 (4):\penalty0
+      963–990, Dec 2017.
+    \newblock ISSN 1572-9125.
+    \newblock \doi{10.1007/s10543-017-0684-7}.
+    \newblock URL \url{https://doi.org/10.1007/s10543-017-0684-7}.
 
-\bibitem[Lang et~al.(2017)Lang, Petersson, and Thalhammer]{Lang2017}
-Annika Lang, Andreas Petersson, and Andreas Thalhammer.
-\newblock {Mean-square stability analysis of approximations of stochastic
-  differential equations in infinite dimensions}.
-\newblock \emph{BIT Numerical Mathematics}, 57\penalty0 (4):\penalty0
-  963–990, Dec 2017.
-\newblock ISSN 1572-9125.
-\newblock \doi{10.1007/s10543-017-0684-7}.
-\newblock URL \url{https://doi.org/10.1007/s10543-017-0684-7}.
+    \bibitem[Li et~al.(2019)Li, Fiordilino, and Feng]{Li2019}
+    Ning Li, Joseph Fiordilino, and Xinlong Feng.
+    \newblock {Ensemble Time-Stepping Algorithm for the Convection-Diffusion
+      Equation with Random Diffusivity}.
+    \newblock \emph{Journal of Scientific Computing}, 79\penalty0 (2):\penalty0
+      1271--1293, May 2019.
+    \newblock ISSN 1573-7691.
+    \newblock \doi{10.1007/s10915-018-0890-8}.
+    \newblock URL \url{https://doi.org/10.1007/s10915-018-0890-8}.
 
-\bibitem[Li et~al.(2019)Li, Fiordilino, and Feng]{Li2019}
-Ning Li, Joseph Fiordilino, and Xinlong Feng.
-\newblock {Ensemble Time-Stepping Algorithm for the Convection-Diffusion
-  Equation with Random Diffusivity}.
-\newblock \emph{Journal of Scientific Computing}, 79\penalty0 (2):\penalty0
-  1271--1293, May 2019.
-\newblock ISSN 1573-7691.
-\newblock \doi{10.1007/s10915-018-0890-8}.
-\newblock URL \url{https://doi.org/10.1007/s10915-018-0890-8}.
+    \bibitem[Matzumiya(2019)]{matsumyaRepo}
+    Alan~Daniel Matzumiya.
+    \newblock Github of the python implementation of the weak spectral method.
+    \newblock \url{https://github.com/alanmatzumiya/Paper}, May 2019.
+    \newblock URL \url{https://github.com/alanmatzumiya/Paper}.
 
-\bibitem[Matzumiya(2019)]{matsumyaRepo}
-Alan~Daniel Matzumiya.
-\newblock Github of the python implementation of the weak spectral method.
-\newblock \url{https://github.com/alanmatzumiya/Paper}, May 2019.
-\newblock URL \url{https://github.com/alanmatzumiya/Paper}.
+    \bibitem[Milstein and Tretyakov(2013)]{milstein2013stochastic}
+    Grigori~Noah Milstein and Michael~V Tretyakov.
+    \newblock \emph{Stochastic numerics for mathematical physics}.
+    \newblock Springer Science \& Business Media, 2013.
 
-\bibitem[Milstein and Tretyakov(2013)]{milstein2013stochastic}
-Grigori~Noah Milstein and Michael~V Tretyakov.
-\newblock \emph{Stochastic numerics for mathematical physics}.
-\newblock Springer Science \& Business Media, 2013.
+    \bibitem[Schwab and S{\"u}li(2013)]{schwab2013adaptive}
+    Christoph Schwab and Endre S{\"u}li.
+    \newblock Adaptive galerkin approximation algorithms for kolmogorov equations
+      in infinite dimensions.
+    \newblock \emph{Stochastic Partial Differential Equations: Analysis and
+      Computations}, 1\penalty0 (1):\penalty0 204--239, 2013.
 
-\bibitem[Schwab and S{\"u}li(2013)]{schwab2013adaptive}
-Christoph Schwab and Endre S{\"u}li.
-\newblock Adaptive galerkin approximation algorithms for kolmogorov equations
-  in infinite dimensions.
-\newblock \emph{Stochastic Partial Differential Equations: Analysis and
-  Computations}, 1\penalty0 (1):\penalty0 204--239, 2013.
+    \bibitem[Trefethen and Trummer(1987)]{Trefethen1987}
+    Lloyd~N. Trefethen and Manfred~R. Trummer.
+    \newblock An instability phenomenon in spectral methods.
+    \newblock \emph{SIAM J. Numer. Anal.}, 24\penalty0 (5):\penalty0 1008--1023,
+      1987.
+    \newblock ISSN 0036-1429.
+    \newblock \doi{10.1137/0724066}.
+    \newblock URL \url{https://doi.org/10.1137/0724066}.
 
-\bibitem[Trefethen and Trummer(1987)]{Trefethen1987}
-Lloyd~N. Trefethen and Manfred~R. Trummer.
-\newblock An instability phenomenon in spectral methods.
-\newblock \emph{SIAM J. Numer. Anal.}, 24\penalty0 (5):\penalty0 1008--1023,
-  1987.
-\newblock ISSN 0036-1429.
-\newblock \doi{10.1137/0724066}.
-\newblock URL \url{https://doi.org/10.1137/0724066}.
-
-\bibitem[Zhang and Karniadakis(2017)]{zhang2017numerical}
-Zhongqiang Zhang and George Karniadakis.
-\newblock \emph{Numerical methods for stochastic partial differential equations
-  with white noise}.
-\newblock Springer, 2017.
-
+    \bibitem[Zhang and Karniadakis(2017)]{zhang2017numerical}
+    Zhongqiang Zhang and George Karniadakis.
+    \newblock \emph{Numerical methods for stochastic partial differential equations
+      with white noise}.
+    \newblock Springer, 2017.
 \end{thebibliography}
 \end{document}
