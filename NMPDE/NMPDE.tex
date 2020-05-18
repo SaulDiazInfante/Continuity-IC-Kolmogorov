@@ -130,31 +130,112 @@
         \maketitle
         \begin{abstract}
             %Background
-            Accoring to the numerical scheme reported in 
-            [Infin. Dimens. Anal. Quantum Probab. Relat. Top. {\bf 19} (2016), 
-            no.~3, 1650020, 37 pp.],
-            we characterize numerical stability respect to initial conditions. 
-            Our approach consists in solving the associated Kolmogorov
-            equation for a familiy of parabolic SPDE whit a spectral method 
-            and deduce mild conditions. We
-            illustrate our results with stochastic versions of the   Burgers and
-            Fisher equations.
+            Delgado and Flandoli report in 
+            [Infin. Dimens. Anal. Quantum Probab. Relat. Top. {\bf 19} (2016),  no.~3, 
+            1650020, 37 pp.], a weak-numerical approximation for a parabolic family of infinite-dimensional SPDE. 
+            %Objective
+            According to this method, we characterize numerical 
+            stability for initial conditions. 
+            %Methods
+            We deduce sufficient conditions related with the  Fourier-Hermite spectral 
+            decomposition of the Ornstein-Uhlenbeck operator associated with the 
+            underlying SPDE.
+            %Results
+            Under these mild conditions, our results assure initial stability for both
+            \textemdash the underlying solution and the numerical approximation.
+            %Conclusions
+            We believe this contribution is an invitation to study other numerical stability definitions in the infinite-dimensional setting.
         \end{abstract}
     \end{titlepage}
-
+%
 %
     {\bf Keywords:} 
     Stability, spectral method, Kolmogorov equation,
         parabolic stochastic partial differential equations.
 %---------------------------------------------------------------------------
-    \section{Kolmogorov equations for SPDEs in Hilbert spaces}
+    \section{Introduction}
+%   
+        Solutions of SPDEs are rarely available, then the use of numerical 
+    methods to approximate these solutions are essential. 
+    The literature body of stochastic spectral methods identifies two 
+    essential families, according to the Karhunen-Loeve expansion 
+    and the  Wiener-Chaos expansion. However, since the former approach 
+    converges slower for non-linear SPDEs, schemes based in the 
+    Wiener-Chaos expansion are more convenient, 
+    see \cite{zhang2017numerical} for further details.
+ 
+       The numerical analysis of SPDEs based on weak approximations, 
+    in the probability sense, is a virgin research field. There are just 
+    a few works in this direction. Schwab and S\"{u}li propose in 
+    \cite{schwab2013adaptive} a variational space-time method to approximate 
+    the solution of an infinite-dimensional Kolmogorov-type equation. 
+     However, their article lacks numerical experiments.  
+    
+        Our contribution is closed related to  
+    \cite{de-fl}, where the authors report a numerical method for Kolmogorov 
+    equations associated with SPDEs, that is, a scheme based on 
+    weak approximations.
+        
+        Work with efficient and accurate numerical schemes is crucial.
+    In this way, spectral methods play an essential role in obtaining 
+    better schemes\textemdash under certain conditions, this sort of 
+    method is more accurate than finite differences of finite elements and 
+    need fewer grid points. Here the adjective ``better'' would be under 
+    accuracy, consistency, stability, and other targets properties.
+
+      We aim to explore the ability of the method reported in \cite{de-fl} 
+    to preserve the continuity respect to initial conditions. If a given 
+    problem satisfies certain regularity conditions, then two of its 
+    solution remains closed if its initial function conditions are close. 
+    So, we desire a numerical method to reproduce this behavior, 
+    and if it is the case, we say that an underlying method is IC-stable.
+    
+        Our main contribution is the characterization of mild conditions 
+    to assure the continuity respect to initial function conditions to a
+    family of SPDEs and the stability of a regarding weak spectral approximation. 
+    To the best of our knowledge, this paper is the first to report numerical
+    stability theory for Kolmogorov equations in infinite dimensions.
+        
+        The stability theory for spectral methods is still under construction and is an 
+    activeresearch area. We mention the seminal works of L.N. Trefethen and 
+    M.R. Trummer \cite{Trefethen1987}, D. Gottlieb et al. \cite{Gottlieb1987a} as 
+    reference for the deterministic case, and N. Li, J. Fiordilino, and X. Feng, 
+    \cite{Li2019} A. Lang, A. Petersson,  and A. Thalhammer, \cite{Lang2017} 
+    for the stochastic version.
+    
+        After this introduction, in \Cref{fpk-sect} we briefly review 
+    the Fokker-Plank-Kolmogorov equation associated with SPDEs in a 
+    separable Hilbert space. \Cref{prelim-results} shows some preliminary results
+    to prove in \Cref{sec:ContinuityRespectToInitialConditions}, our main 
+    result\textemdash conditions to assure stability respect initial conditions. 
+    \Cref{sec:NumericalExperiments} confirms and illustrates our results 
+    with the numerical simulation of Fisher and Burgers SPDEs. The last 
+    section encloses the conclusions and final remarks.
+
+    \section{Fokker-Planck-Kolmogorov equations
+        \\ for SPDEs in Hilbert spaces}
     \label{fpk-sect}
+ 
+        The  Fokker-Planck-Kolmogorov (FPK) equation is a partial differential
+    equation describing the time evolution of the probability density function  of
+    the particle's velocity under the influence of drag forces irregular forces,
+    and it is a kind of continuity equation for densities.  Citing \cite{da-za}
+    `parabolic equations on Hilbert spaces appear  in mathematical physics to
+    model systems with infinitely many degrees of freedom. Typical examples are 
+    provided by spin configurations in statistical mechanics and by crystals  in
+    solid-state theory. Infinite-dimensional parabolic equations provide  an
+    analytic description of infinite-dimensional diffusion processes in  such
+    branches of applied mathematics as population biology, fluid dynamics,  and
+    mathematical finance.'' This kind of equation has been intensely studied  in
+    recent years, for instance, \cite{bo-da-ro, da-fl-ro, da} and the  references
+    therein.
+
         Let $\mathcal{H}$ be a separable infinite-dimensional Hilbert space with
     inner product $( ,  )_\mathcal{H} $ and norm $\|\cdot\|_\mathcal{H}$. 
     Consider the stochastic differential equation in $\mathcal{H}$
     \begin{equation}
-    \label{P1s2.1}
-    dX_t = AX_t dt + B(X_t) dt + \sqrt{Q}dW_t,
+        \label{P1s2.1}
+        dX_t = AX_t dt + B(X_t) dt + \sqrt{Q}dW_t,
     \end{equation}
     where the operator 
     $
@@ -312,7 +393,7 @@
         space (for further details see \cite{im} for instance).
     \end{remark}
 
-        We have the following result (See Theorems 9.1.5 and 9.1.7 in Da
+        We need the following result (See Theorems 9.1.5 and 9.1.7 in Da
     Prato-Zabczyk \cite{da-za} or Lemma 3.1 in Chapter 9 from Chow \cite{liu}).
     \begin{lemma}\label{s1.le1}
             For 
