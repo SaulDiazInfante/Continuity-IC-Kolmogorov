@@ -79,12 +79,20 @@
 \newtheorem{notation}{Notation}
 \crefname{hypothesis}{Hypothesis}{Hypotheses}
 \DeclareMathOperator{\sech}{sech}
+\pagestyle{fancy}
+%\fancyhf{}% Clear header/footer
+\fancyhead[L]{%
+  \ifodd\value{page}\relax
+    \tiny{IC-stability for Kolmogorov equations in infinite dimension}% Odd page header
+  \else
+    \tiny{F. Delgado-Vences, A. Matzumiya, S. Diaz-Infante}% Even page header
+  \fi}
 \begin{document}
-     
+    %
      \title{
         Initial conditions stability of a numerical
         approximation for Kolmogorov equations
-        in infinite dimension.
+        in infinite dimension
       }
 %
     \author{
@@ -141,8 +149,8 @@
             decomposition of the Ornstein-Uhlenbeck operator associated with the 
             underlying SPDE.
             %Results
-            Under these mild conditions, our results assure initial stability for both
-            \textemdash the underlying solution and the numerical approximation.
+            Under these mild conditions, our results assure initial stability for 
+            both\textemdash the underlying solution and the numerical approximation.
             %Conclusions
             We believe this contribution is an invitation to study other numerical stability definitions in the infinite-dimensional setting.
         \end{abstract}
@@ -1039,8 +1047,7 @@
         Then, for small $T$, $\mathbb{Q}$ is a contraction on $\mathbb{X}_T$. 
         Hence the Cauchy problem \eqref{P1s3.2} has a unique mild solution.
     \end{proof}
-
-
+%---------------------------------------------------------------------------
 \section{Numerical stability respect to  initial conditions}
 \label{sec:ContinuityRespectToInitialConditions}
 
@@ -1051,8 +1058,9 @@ stable respect to initial conditions if this method reproduces the same
 behavior when the continuous problem satisfies continuity respect initial 
 conditions.
 
- We first prove the dependence on initial conditions 
- for the mild solution of \eqref{P1s3.2}.
+
+
+ We first prove a theorem on the dependence on initial conditions for the mild solution of \eqref{P1s3.2}.
     \begin{theorem}
         \label{Cont-Mild-Sol}
         Suppose that 
@@ -1155,8 +1163,8 @@ conditions.
 
 
         We now will study the stability of the numerical scheme.
-    As before, we use \Cref{s1.le1} to write the solution $\Psi_t^\varphi$ 
-    as in a Fourier-Hermite decomposition:
+         As before, we use \Cref{s1.le1} to write the solution $\Psi_t^\varphi$ as in a
+    Fourier-Hermite decomposition:
     \begin{align}
         \Psi_t ^ \varphi=
             \sum_{\bm{n}\in \mathcal{J}}
@@ -1166,10 +1174,7 @@ conditions.
             \quad t \in [0,T] \ .
             \label{num-approx}
     \end{align}
-
-    Note that coefficients $ u_{\bm{n}}(t)$ on the numerical approximations depend on the functional and on the initial condition and not 
-    the initial condition. First we prove an auxiliary result.
-
+          Now, we prove an auxiliary result.
     \begin{lemma}\label{le-s3-1}
         Set $\{P_k(\xi)\}_{k\in \IN}$ the family of normalized Hermite 
         polynomials in $\IR$. For every $k\in\IN$ and 
@@ -1622,17 +1627,13 @@ conditions.
                     \big|^2 \mu(dx)\mu(dy) \ ,
             \end{aligned}
         \end{equation}
-        where 
-        $
-            f(t) = 
-            \sum_{\bar n\in \mathcal{J}} 
-            \big[u_{\bar n}^y(t)\big]^2+ 
-            \int_\mathcal{H}
+        where $f(t)= \sum_{\bar n\in \mathcal{J}} \big[u_{\bar n}^y(t)\big]^2+ 
+        \int_\mathcal{H}
                     \E ^ 2\big[
                         \varphi(X_t^y)
                     \big] \mu(dy)
-        $.
-        %
+                    $.
+        
         From the proof of Theorem \ref{Cont-Mild-Sol} (see \eqref{s2.23}) we 
         know that
         \begin{equation}
@@ -1661,7 +1662,9 @@ conditions.
             \end{aligned}
         \end{equation}
         Therefore the first term in the right side of \eqref{s3.9.1} is bounded 
-        by \eqref{s3.10.1}.
+        by
+        \eqref{s3.10.1}.
+        
         We now focus on the second term in the last inequality. Notice that for 
         every
         $\bar n\in \mathcal{J}$ we have
@@ -1807,8 +1810,8 @@ conditions.
             \label{s3.9}
             \begin{aligned}
                 \sum_{\bar n\in \mathcal{J}}
-                \int_{\mathcal{H}\times \mathcal{H}}
                 &
+                \int_{\mathcal{H}\times \mathcal{H}}
                 \big|
                     H_{\bar n}(x) - H_{\bar n}(y)
                 \big|^2
@@ -1843,7 +1846,7 @@ conditions.
             \end{aligned}
         \end{equation}
         Here, we recall that $C(i)=\frac{(-1)^i}{(i+1)(i!)^{1/2}} $ then
-        $\frac{(-1)^i}{[ (i+1)! ]^{1/2}} Pe_{i+1}(\hat \gamma_i)$
+        $\frac{(-1)^i}{[(i+1)!]^{1/2}} Pe_{i+1}(\hat \gamma_i)$
         is the normalized Hermite polynomial of $i+1$ degree evaluated on
         $\hat \gamma_i$ which is bounded by a constant $C$ for every $i\in\IN$.
         Moreover, since $\lambda_k<\lambda_{k+1}\rightarrow \infty $
@@ -1868,18 +1871,13 @@ conditions.
         \end{align}
         Putting together inequalities \eqref{s3.9.1}, \eqref{s3.10.1} and
         \eqref{s3.11} we obtain
-       \begin{equation} 
-            \begin{aligned}
-              \| \Psi_t^x-\Psi_t^y\|_{\big(L^2(\mathcal{H},\mu) \big)^2}^2
-                \le &   
-              \exp(Ct)
-              \int_{\mathcal{H}\times \mathcal{H}}
-              \| x-y\|_{\mathcal{H}}^2 \mu(dx)\mu(dy) 
-              \\
-              & +  f(t)\| x-y\|_{\mathcal{H}}.
-              \label{s3.17}
-            \end{aligned}
-        \end{equation}
+        \begin{align}
+          \| \Psi_t^x-\Psi_t^y\|_{\big(L^2(\mathcal{H},\mu) \big)^2}^2&\le   
+          \exp(Ct)
+          \int_{\mathcal{H}\times \mathcal{H}}
+          \| x-y\|_{\mathcal{H}}^2 \mu(dx)\mu(dy) +  f(t)\| x-y\|_{\mathcal{H}}.
+          \label{s3.17}
+        \end{align}
         Now, if $\| x-y\|_{\mathcal{H}}\le \delta $, then from \eqref{s3.17} we 
         get
         $
@@ -1930,814 +1928,7 @@ conditions.
         From this inequality it is possible to show the continuously dependence 
         on the initial conditions for this norm.
     \end{remark}
-%---------------------------------------------------------------------------
-\section{Numerical stability respect to  initial conditions}
-\label{sec:ContinuityRespectToInitialConditions}
-
-        In this section, we prove the continuity with respect to the initial
-    conditions for a numerical approximation of the Kolmogorov equation
-    associated with an SPDE. Here we understand that a  numerical scheme is
-    stable respect to initial conditions if this method reproduces the same
-    behavior when the continuous problem satisfies continuity respect initial
-    conditions.
-
-    Consider the stochastic differential equation in $\mathcal{H}$
-    \begin{equation}
-        \label{P1s2.1}
-         dX_t = AX_t dt + B(X_t) dt + \sqrt{Q}dW_t,
-    \end{equation}
-    where the operator
-    $
-        A:\mathcal{D}(A)\subset \mathcal{H}\rightarrow
-        \mathcal{H}
-    $ is the infinitesimal generator of a strongly
-    continuous semigroup $e^{tA}$ in $\mathcal{H}$, $Q$ is a bounded operator
-    from another Hilbert space $\mathcal{U}$ to $\mathcal{H}$
-    and $B:\mathcal{D}(B)\subset \mathcal{H}\rightarrow \mathcal{H}$ is a
-    nonlinear mapping.
-
-    The equation \eqref{P1s2.1} can be associated to a Kolmogorov equation in
-    the next way, we define
-    \begin{equation}
-    \label{P1s2.2}
-        u(t,x) = \E \big[ \varphi(X_t^x) \big],
-    \end{equation}
-    where $\varphi:\mathcal{H}\rightarrow \IR$ and $X_t^x$ is the solution to
-    \eqref{P1s2.1} with initial conditions $X_0=x$ where
-    $x\in\mathcal{H}$. Then $u$ satisfies the Kolmogorov equation
-    \eqref{P1s2.3}.
-
-        We use \Cref{s1.le1} to write the solution $\Psi_t^\varphi$ as in a
-    Fourier-Hermite decomposition:
-    \begin{align}
-        \Psi_t ^ \varphi=
-            \sum_{\bm{n}\in \mathcal{J}}
-            u_{\bm{n}}(t) H_{\bm{n}}(x),
-            \qquad
-            x \in \mathcal{H},
-            \quad t \in [0,T] \ .
-            \label{num-approx}
-    \end{align}
-    %
-        Note that coefficients $ u_{\bm{n}}(t)$ only depends on time. 
-    First we prove an auxiliary result.
-    \begin{lemma}\label{le-s3-1}
-        Set $\{P_k(\xi)\}_{k\in \IN}$ the family of normalized Hermite
-        polynomials in $\IR$. For every $k\in\IN$ and
-        $\xi, \eta \in \IR$ such that
-        $\eta<\xi$ we have that
-        \begin{equation}
-            \label{Pk-dif}
-            P_k(\xi)-P_k(\eta)
-                = C(k)  Pe_{k+1}(\gamma)
-                    \cdot (\xi-\eta),
-        \end{equation}
-        where
-        $ \gamma\in (\eta,\xi)$ and
-        $C(k)=\frac{ (-1) ^ k}{ (k + 1) ( k! ) ^ {1 / 2}} $.
-        Moreover, $Pe_k(x)$ is the unnormalized Hermite polynomial of $k$
-        degree.
-    \end{lemma}
-%
-    \begin{proof}
-             We know that
-             $
-                 P_k(\xi) = \frac{(-1)^k}{(k!)^{1/2}}
-                 e^{\xi^2/2}\frac{d}{d\xi^k}e^{-\xi^2/2}.
-             $
-             Set $c(k)=(-1)^k (k!)^{-1/2}$, then
-            \begin{align*}
-                P_k(\xi)-P_k(\eta)
-                    &=c(k)
-                    \Big[
-                        e^{\xi^2/2}
-                        \frac{d}{d\xi^k} e^{-\xi ^ 2/2} - e^{\eta^2/2}
-                        \frac{d}{d\eta^k} e^{-\eta ^ 2/2}
-                    \Big]
-                    \\
-                & =c(k)
-                    \Bigg[
-                        e^{x^2/2} \frac{d}{dx^k} e^{-x^2/2}
-                    \Big|_{x=\eta}^\xi\Bigg]
-                    \\
-                & = c(k) \int_{\eta}^\xi F_k(x) dx,
-            \end{align*}
-            where $F_k$ is a continuous function such that
-            $F_k'(x) = e^{x^2/2}\frac{d}{dx^k}e^{-x^2/2}$.
-            In fact, denoting by $Pe_k(x)$ the
-            unnormalized Hermite polynomial of $k$ degree, results
-            $$
-                F_k'(x)=e^{x^2/2}\frac{d}{dx^k}e^{-x^2/2}= Pe_k(x),
-            $$
-            and since the Hermite polynomials constitute an Appell sequence we
-            have that
-            $$
-                F_k'(x)=Pe_k(x)=\frac{1}{k+1} Pe_{k+1}'(x),
-            $$
-            which implies that $F_k(x)=\frac{1}{k+1} Pe_{k+1}(x)$. Now, since
-            $F_k(x)$ is a continuous function, then there exists
-            $\gamma\in (\eta,\xi)$ such that
-            $$
-                \int_{\eta}^\xi F_k(x) dx = F_k(\gamma)\cdot (\xi-\eta).
-            $$
-            All these implies that
-            $
-                P_k(\xi)-P_k(\eta)= c(k) F_k(\gamma) \cdot (\xi-\eta).
-            $
-            From this expression the lemma follows immediately.
-        \end{proof}
-%
-        We will use some technical results on the SPDE to prove
-        the following result\textemdash the main result of this section.
-%
-        \begin{theorem}
-            \label{thm:ic_continuity}
-            Assume that the eigenvalues of $\Lambda$, satisfies that for every
-            $k\in\IN$,
-            $\lambda_k<\lambda_{k+1}\rightarrow \infty $. Assume that
-            the functional $ \varphi$ is Lipschitz.
-            Then, the numeric approximation $\Psi_t^\varphi$ (given by
-            \eqref{num-approx})
-            to the solution of the Kolmogorov equation
-            ${\Psi\in C((0,T); \mathbb{H})}$ depends continuously on the initial
-            conditions.
-        \end{theorem}
-        \begin{proof}
-        Let $x,y\in H$ be two different initial values. We want to estimate
-        $\Psi_t^x-\Psi_t^y$. By definition,
-        \begin{align}
-            \Psi_t^x
-                &= \sum_{\bar n\in \mathcal{J}}
-                    u_{\bar n} ^ x(t) H_{\bar n}(x) \ .
-        \end{align}
-        Thus,
-        %
-        \begin{equation}
-            \label{s3.4}
-            \begin{aligned}
-                \Psi_t^x-\Psi_t^y
-                &=
-                    \sum_{\bar n\in \mathcal{J}}
-                        u_{\bar n}^x(t)H_{\bar n}(x)
-                    -
-                    \sum_{\bar n\in \mathcal{J}}
-                        u_{\bar n}^y(t)H_{\bar n}(y)
-               \\
-                &=
-                    \sum_{\bar n\in \mathcal{J}}
-                        \Big[ u_{\bar n}^x(t )- u_{\bar n}^y(t)
-                        \Big]H_{\bar n}(x)
-                    +
-                    \sum_{\bar n\in \mathcal{J}}
-                        u_{\bar n}^y(t)
-                        \Big[
-                            H_{\bar n}(x) - H_{\bar n}(y)
-                        \Big].
-            \end{aligned}
-        \end{equation}
-
-            We focus on the first term in \eqref{s3.4}. From the definition of
-        the initial condition we obtain the following expression for
-        the time-dependent coefficient
-        \begin{align*}
-          u_{\bar n}^x(t) &=
-            \int_{\mathcal{H}} H_{\bar n}(x) \E\big[\varphi(X_t^x)\big] \mu(dx)
-            \ .
-        \end{align*}
-        %
-        From this we get
-        \begin{align*}
-            u_{\bar n}^x(t)-u_{\bar n}^y(t)
-                =&
-                \int_{\mathcal{H}} H_{\bar n}(x)
-                    \E\big[
-                        \varphi(X_t^x)
-                    \big]
-                    \mu(dx) -
-                    \int_{\mathcal{H}} H_{\bar n}(y)
-                    \E\big[
-                        \varphi(X_t^y)
-                    \big] \mu(dy)
-                \\
-                =&
-                \int_{\mathcal{H} \times \mathcal{H}} H_{\bar n}(x)
-                    \E\big[
-                        \varphi(X_t^x)
-                    \big] \mu(dx)\mu(dy)
-                \\
-                &-
-                     \int_{\mathcal{H}\times \mathcal{H}} H_{\bar n}(y)
-                        \E\big[
-                            \varphi(X_t^y)
-                        \big]
-                    \mu(dx)\mu(dy)
-                \\
-                =&
-                \int_{\mathcal{H}\times \mathcal{H}} H_{\bar n}(x)
-                    \Big(
-                        \E\big[
-                            \varphi(X_t^x)
-                        \big]
-                        -
-                        \E\big[
-                            \varphi(X_t^y)
-                        \big]
-                    \Big)
-                    \mu(dx)\mu(dy)
-                \\
-                &+
-                \int_{\mathcal{H}\times \mathcal{H}}
-                    \Big(
-                        H_{\bar n}(x) - H_{\bar n}(y)
-                    \Big)
-                    \E\big[
-                        \varphi(X_t^y)
-                    \big] \mu(dx) \mu(dy) \ .
-        \end{align*}
-        
-        Then, by the Cauchy-Schwartz inequality, we obtain
-        %
-        \begin{equation}
-            \begin{aligned}
-                |u_{\bar n} ^ x(t) - u_{\bar n} ^ y(t)| ^ 2
-                    \le&
-                    \left|
-                        \int_{\mathcal{H}
-                        \times
-                        \mathcal{H}} H_{\bar n}(x)
-                        \left(
-                            \E
-                             \left[
-                                \varphi(X_t^x)
-                             \right]
-                             -
-                            \E\left[
-                                \varphi(X_t^y)
-                            \right]
-                        \right) \mu(dx)\mu(dy)
-                    \right|^2
-                    \\
-                    &+
-                    \left|
-                        \int_{\mathcal{H}
-                        \times
-                        \mathcal{H}
-                        }
-                        \left(
-                            H_{\bar n}(x) - H_{\bar n}(y)
-                        \right)
-                        \E\left[
-                            \varphi(X_t ^ y)
-                        \right]
-                        \mu(dx)\mu(dy)
-                    \right|^2
-                    \\
-                    \le &
-                    \int_{\mathcal{H}\times \mathcal{H}}
-                        H_{\bar n}^2(x))
-                    \mu(dx)\mu(dy)
-                    \\
-                    &\times
-                        \int_{\mathcal{H}\times \mathcal{H}}
-                        \left|
-                            \E\left [
-                                \varphi(X_t^x)
-                            \right]
-                            -
-                            \E\left[
-                                \varphi(X_t^y)
-                            \right]
-                        \right|^2
-                        \mu(dx)\mu(dy)
-                    \\
-                    &+
-                    \int_{\mathcal{H} \times \mathcal{H}}
-                        \E^2
-                        \left[
-                            \varphi(X_t^y)
-                        \right]
-                    \mu(dx)\mu(dy)
-                    \\
-                     &\times
-                    \int_{\mathcal{H}\times \mathcal{H}}
-                    \left|
-                        H_{\bar n}(x)-H_{\bar n}(y)
-                    \right|^2
-                    \mu(dx)\mu(dy)
-                    \\
-                    =&
-                    \int_{\mathcal{H}\times \mathcal{H}}
-                    \left|
-                            \E
-                            \left [
-                                \varphi(X_t^x)
-                            \right]
-                            -
-                            \E\left[
-                                \varphi(X_t^y)
-                            \right]
-                        \right|^2
-                        \mu(dx) \mu(dy)
-                    \\
-                    &+
-                    \int_{\mathcal{H}\times \mathcal{H}}
-                        \E^2
-                        \left[
-                            \varphi(X_t^y)
-                        \right]
-                    \mu(dx)\mu(dy)
-                    \\
-                    & \times
-                    \int_{\mathcal{H}\times \mathcal{H}}
-                    \left|
-                        H_{\bar n}(x)
-                            -
-                            H_{\bar n}(y)
-                    \right|^2
-                    \mu(dx)\mu(dy)
-                \ .
-            \end{aligned}
-            \label{s3.4.1}
-        \end{equation}
-        We now estimate the norm of the expression \eqref{s3.4} with the help of
-        \eqref{s3.4.1}.
-        %
-        \begin{equation}
-        \label{s3.8.1}
-            \begin{aligned}
-                \| \Psi_t ^ x - \Psi_t ^ y & \|_{
-                    \big(
-                        L^2(\mathcal{H},\mu)
-                    \big)^2
-                }^2
-                    =
-                        \int_{\mathcal{H}\times \mathcal{H}}
-                        |\Psi_t^x - \Psi_t^y|^2 \mu(dx) \mu(dy)
-                    \\
-                    \le&
-                    \int_{\mathcal{H} \times \mathcal{H}}
-                        \Big|
-                            \sum_{\bar n\in \mathcal{J}}
-                            \big[
-                                u_{\bar n} ^ x(t) - u_{\bar n} ^ y(t)
-                            \big]
-                            H_{\bar n}(x)
-                        \Big|^2
-                        \mu(dx) \mu(dy)
-                    \\
-                    &+
-                    \int_{\mathcal{H}\times \mathcal{H}}
-                    \Big|
-                        \sum_{\bar n\in \mathcal{J}}
-                            u_{\bar n}^y(t)
-                            \big[
-                                H_{\bar n}(x) - H_{\bar n}(y)
-                            \big]
-                    \Big|^2
-                    \mu(dx) \mu(dy)
-                    \\
-                    \le&
-                    \int_{\mathcal{H} \times \mathcal{H}}
-                    \sum_{\bar n\in \mathcal{J}}
-                    \big|
-                        u_{\bar n}^x(t) - u_{\bar n}^y(t)
-                    \big |^2
-                    H_{\bar n}^2(x)
-                    \mu(dx) \mu(dy)
-                    \\
-                    &+
-                    \int_{\mathcal{H}\times \mathcal{H}}
-                    \sum_{\bar n\in \mathcal{J}}
-                    \big[u_{\bar n} ^ y(t) \big]^2
-                    \sum_{\bar n\in \mathcal{J}}
-                    \big|
-                        H_{\bar n}(x) - H_{\bar n}(y)
-                    \big|^2
-                    \mu(dx) \mu(dy)
-                    \\
-                    =&
-                    \sum_{\bar n\in \mathcal{J}}
-                    \big|
-                        u_{\bar n}^x(t)-u_{\bar n}^y(t)
-                    \big |^2
-                    \int_{\mathcal{H} \times \mathcal{H}}
-                    H_{\bar n}^2 (x)
-                    \mu(dx) \mu(dy)
-                    \\
-                    &+
-                    \sum_{\bar n\in \mathcal{J}}
-                    \big[
-                        u_{\bar n}^y(t)
-                    \big] ^ 2
-                    \sum_{\bar n\in \mathcal{J}}
-                    \int_{\mathcal{H}\times \mathcal{H}}
-                    \big|
-                        H_{\bar n}(x) - H_{\bar n}(y)
-                    \big| ^ 2 \mu(dx)\mu(dy)
-                    \\
-                    =&
-                    \sum_{\bar n\in \mathcal{J}}
-                    \big[
-                        u_{\bar n}^y(t)
-                    \big] ^ 2
-                    \sum_{\bar n\in \mathcal{J}}
-                    \int_{\mathcal{H}\times \mathcal{H}}
-                    \big|
-                        H_{\bar n}(x) -H_{\bar n}(y)
-                    \big|^2 \mu(dx) \mu(dy)
-                    \\
-                    &+
-                    \sum_{\bar n\in \mathcal{J}}
-                                \big|
-                                    u_{\bar n}^x(t)-u_{\bar n}^y(t)
-                                \big| ^ 2
-                    \\
-                    =&
-                    \int_{\mathcal{H}\times \mathcal{H}}
-                    \Big|
-                        \E\big[
-                            \varphi(X_t^x)
-                        \big]
-                        -
-                        \E\big[
-                            \varphi(X_t^y)
-                        \big]
-                    \Big|^2
-                    \mu(dx)\mu(dy)
-                    \\
-                    &+
-                    \int_{\mathcal{H}\times \mathcal{H}}
-                    \E ^ 2\big[
-                        \varphi(X_t^y)
-                    \big] \mu(dx) \mu(dy)
-                    \\
-                    & \times
-                    \sum_{\bar n\in \mathcal{J}}
-                    \int_{\mathcal{H}\times \mathcal{H}}
-                    \Big|
-                        H_{\bar n}(x) - H_{\bar n}(y)
-                    \Big|^2  \mu(dx)\mu(dy)
-                    \\
-                    &+
-                    \sum_{\bar n\in \mathcal{J}}
-                    \big[
-                        u_{\bar n}^y(t)
-                    \big]^2
-                    \sum_{\bar n\in \mathcal{J}}
-                    \int_{\mathcal{H}\times \mathcal{H}}
-                    \big|
-                        H_{\bar n}(x) - H_{\bar n}(y)
-                    \big|^2 \mu(dx)\mu(dy)
-                    \ .
-            \end{aligned}
-        \end{equation}
-
-            Note that
-        $\E^2\big[\varphi(X_t^y)\big]=u^2(t,x)\in L^2(\mathcal{H},\mu)$,
-        therefore the first integral in the second term is a continuous bounded
-        function of $t$. Moreover,
-        $\sum_{\bar n\in \mathcal{J}} \big[u_{\bar n}^y(t)\big]^2$ is the
-        $L^2(\mathcal{H},\mu)$-norm of the function $u(t,x)$, then the series
-        converges and it is also a continuous bounded function of $t$. Thus,
-        from
-        \eqref{s3.8.1} we get
-        %
-        \begin{equation}
-        \label{s3.9.1}
-            \begin{aligned}
-                \| \Psi_t^x-\Psi_t^y\|_{\big(L^2(\mathcal{H},\mu) \big)^2}^2
-                \le&
-                \int_{\mathcal{H}\times \mathcal{H}}
-                    \Big|
-                        \E\big [
-                            \varphi(X_t^x)
-                        \big
-                        ]-
-                        \E\big[
-                            \varphi(X_t^y)
-                        \big]
-                    \Big|^2
-                \mu(dx)\mu(dy)
-                \\
-                 &+
-                 f(t)
-                 \sum_{\bar n\in \mathcal{J}}
-                 \int_{\mathcal{H}\times \mathcal{H}}
-                    \big|
-                        H_{\bar n}(x) - H_{\bar n}(y)
-                    \big|^2 \mu(dx)\mu(dy) \ ,
-            \end{aligned}
-        \end{equation}
-        where 
-        $
-            f(t)= \sum_{\bar n\in \mathcal{J}} 
-            \big[u_{\bar n}^y(t)\big]^2+
-            \int_\mathcal{H}
-                \E ^ 2
-                \big[
-                    \varphi(X_t^y)
-                \big] \mu(dy)
-        $.
-            From the proof of Theorem \ref{Cont-Mild-Sol} (see \eqref{s2.23}) we
-        know that
-        \begin{equation}
-            \begin{aligned}
-                \| | \Psi_t^\varphi-\Phi_t^\psi\| |^2
-                    &=\int_{\mathcal{H}\times \mathcal{H}}
-                    \Big|
-                        \E\big [
-                            \varphi(X_t^x)
-                        \big]
-                        -
-                        \E\big[
-                            \varphi(X_t^y)
-                        \big]
-                    \Big|^2
-                    \mu(dx)
-                    \mu(dy)
-                    \\
-                    &\le
-                    \exp(Ct)
-                    \int_{\mathcal{H}\times \mathcal{H}}
-                        \|x-y\|_{\mathcal{H}}^2
-                        \mu(dx)\mu(dy)
-                    \\
-                    &= \exp(Ct) \|  |x-y\| |^2.\label{s3.10.1}
-            \end{aligned}
-        \end{equation}
-        Therefore the first term in the right side of \eqref{s3.9.1} is bounded
-        by \eqref{s3.10.1}.
-
-        We now focus on the second term in the last inequality. Notice that for
-        every
-        $\bar n\in \mathcal{J}$ we have
-        \begin{align}\label{s3.5}
-            H_{\bar n}(x) - H_{\bar n}(y) =
-                \prod_{i = 1} ^ \infty
-            \Big[
-                P_{n_i}( \xi_i ) - P_{n_i} (\eta_i)
-            \Big],
-        \end{align}
-        where $\xi_i= \langle x,\Lambda^{-1/2}e_i\rangle_{\mathcal{H}}$ and
-        $\eta_i=
-        \langle y,\Lambda^{-1/2}e_i\rangle_{\mathcal{H}}$
-        (see \eqref{s1.2} and lines after that for the definition).
-        Hence, applying \Cref{le-s3-1} to equation \eqref{s3.5} we have that
-
-        \begin{equation}
-        \label{s3.6}
-        \begin{aligned}
-            H_{\bar n}(x)-H_{\bar n}(y)&=\prod_{i=1}^\infty
-            C(i)Pe_{i+1}(\gamma_i)
-            \cdot
-            (\xi_i-\eta_i)
-            \\
-            &=
-            \prod_{i=1}^\infty
-            C(i)Pe_{i+1}(\gamma_i)
-            \langle
-                x-y, \Lambda^{-1/2}e_i
-            \rangle_{\mathcal{H}},
-         \end{aligned}
-        \end{equation}
-        here $\gamma_i\in \big(\xi_i\wedge\eta_i, \xi_i\vee \eta_i  \big)$
-        for every $i\in \IN$.
-        Then
-        \begin{equation}
-            \label{s3.8}
-            \begin{aligned}
-                \sum_{\bar n\in \mathcal{J}}
-                &
-                \int_{\mathcal{H}\times \mathcal{H}}
-                    \big|
-                        H_{\bar n}(x) -H_{\bar n}(y)
-                    \big|^2
-                \mu(dx)\mu(dy)
-                \\
-                &=
-                \sum_{\bar n\in \mathcal{J}}
-                    \int_{\mathcal{H}\times \mathcal{H}}
-                        \Big|
-                            \prod_{i=1}^\infty C(i)Pe_{i+1}(\gamma_i)
-                            \langle
-                                x-y,
-                                \Lambda^{-1/2}e_i
-                            \rangle_{\mathcal{H}}
-                        \Big|^2
-                \mu(dx)\mu(dy)
-                \\
-                &=
-                \sum_{\bar n\in \mathcal{J}}
-                \int_{\mathcal{H}\times \mathcal{H}}
-                    \prod_{i=1}^\infty
-                    \Big[
-                        C(i) Pe_{i+1}(\gamma_i)\Big]^2
-                    \Big|
-                        \langle
-                            x-y,\Lambda^{-1/2}e_i
-                        \rangle_{\mathcal{H}}
-                    \Big|^2
-                    \mu(dx) \mu(dy)
-                \\
-                &\le
-                    \sum_{\bar n\in \mathcal{J}}
-                    \int_{\mathcal{H} \times \mathcal{H}}
-                        \prod_{i=1}^\infty
-                        \Big[
-                            C(i)Pe_{i+1}(\gamma_i)
-                        \Big]^2
-                        \| x-y\|_{\mathcal{H}}^2
-                        \|\Lambda^{-1/2} e_i\|_{\mathcal{H}}^2
-                    \mu(dx)\mu(dy)
-                \\
-                &=
-                    \sum_{\bar n\in \mathcal{J}}
-                    \int_{\mathcal{H}\times \mathcal{H}}
-                        \prod_{i=1}^\infty
-                        \Big[
-                            C(i)Pe_{i+1}(\gamma_i)
-                        \Big]^2
-                        \| x-y\|_{\mathcal{H}}^2
-                        \lambda_i^{-1}
-                        \|e_i\|_{\mathcal{H}}^2
-                    \mu(dx)\mu(dy)
-                \\
-                &=
-                \| x-y\|_{\mathcal{H}}^2
-                \sum_{\bar n\in \mathcal{J}}
-                    \prod_{i=1}^\infty
-                        \Big[
-                            C(i)
-                        \Big]^2
-                        \lambda_i^{-1}
-                        \int_{\mathcal{H}\times \mathcal{H}}
-                            \Big[
-                                Pe_{i+1}(\gamma_i)
-                            \Big]^2
-                        \mu(dx)\mu(dy) .
-            \end{aligned}
-        \end{equation}
-        Recall that for every $i \in \IN$ we have that
-        $
-            \gamma_i\in
-            \big(
-                \xi_i \wedge\eta_i, \xi_i\vee \eta_i
-           \big)
-        $, set
-        $
-            \hat \gamma_i
-            \in
-            \big(
-                \xi_i \wedge \eta_i,
-                \xi_i\vee \eta_i
-            \big)
-        $ such that
-        $
-            Pe_i^2(\gamma_i)
-            \le Pe_{i+1}^2(\hat\gamma_i)
-        $ for every
-        $
-            \gamma_i
-            \in
-            \big(
-                \xi_i \wedge\eta_i,
-                \xi_i \vee
-                \eta_i
-            \big)
-        $, notice that the
-        existence of $\hat \gamma_i$ is
-        guaranteed since $Pe_{i+1}^2(\cdot)$
-        is a continuous function. Then, from
-        \eqref{s3.8} we get
-        \begin{equation}
-            \label{s3.9}
-            \begin{aligned}
-                \sum_{\bar n\in \mathcal{J}}
-                &
-                \int_{\mathcal{H}\times \mathcal{H}}
-                \big|
-                    H_{\bar n}(x) - H_{\bar n}(y)
-                \big|^2
-                \mu(dx)\mu(dy)
-                \\
-                &\le
-                \| x-y\|_{\mathcal{H}}^2
-                \sum_{\bar n\in \mathcal{J}}
-                    \prod_{i=1}^\infty
-                    \Big[
-                        C(i)
-                    \Big]^2
-                    \lambda_i^{-1}
-                    \Big[
-                        Pe_{i+1}(\hat \gamma_i)
-                    \Big]^2
-                    \int_{\mathcal{H}}
-                    \int_{\mathcal{H}}
-                    \mu(dx)\mu(dy)
-                \\
-                &=
-                \| x-y\|_{\mathcal{H}}^2
-                \sum_{\bar n\in \mathcal{J}}
-                    \prod_{i=1}^\infty
-                    \Big[
-                        C(i)
-                    \Big]^2
-                    \lambda_i^{-1}
-                    \Big[
-                        Pe_{i+1}(\hat \gamma_i)
-                    \Big]^2 .
-            \end{aligned}
-        \end{equation}
-        Here, we recall that $C(i)=\frac{(-1)^i}{(i+1)(i!)^{1/2}} $ then
-        $
-            \frac{(-1) ^ i}{ [(i+1)!] ^ {1/2} } Pe_{i+1}(\hat \gamma_i)
-        $
-        is the normalized Hermite polynomial of $i+1$ degree evaluated on
-        $\hat \gamma_i$ which is bounded by a constant $C$ for every $i\in\IN$.
-        Moreover, since $\lambda_k<\lambda_{k+1}\rightarrow \infty $
-        then this implies that
-        \begin{align}
-            \label{s3.10}
-          \sum_{\bar n\in \mathcal{J}}  \prod_{i=1}^\infty \Big[C(i)\Big]^2
-          \lambda_i^{-1} \Big[Pe_{i+1}(\hat \gamma_i)\Big]^2 & \le C \sum_{\bar
-          n\in
-            \mathcal{J}}  \prod_{i=1}^\infty
-          \lambda_i^{-1}(i+1)^{-1}
-          \le C,
-        \end{align}
-        where $C$ is a finite constant. Putting together \eqref{s3.8} and
-        \eqref{s3.10} we get that
-        \begin{align}
-            \sum_{\bar n\in \mathcal{J}} \int_{\mathcal{H}\times \mathcal{H}}
-            \big|
-            H_{\bar n}(x) -H_{\bar n}(y) \big|^2 \mu(dx)\mu(dy) &\le
-            C \| x-y\|_{\mathcal{H}} \ .
-            \label{s3.11}
-        \end{align}
-        Putting together inequalities \eqref{s3.9.1}, \eqref{s3.10.1} and
-        \eqref{s3.11} we obtain
-        \begin{equation}
-            \label{s3.17}
-            \begin{aligned}
-                \| \Psi_t^x-\Psi_t^y\|_{\big(L^2(\mathcal{H},\mu) \big)^2}^2
-                 \le &
-                \exp(Ct)
-                \int_{\mathcal{H}\times \mathcal{H}}
-                \| x-y\|_{\mathcal{H}}^2 \mu(dx)\mu(dy) 
-                \\ 
-                & +  f(t)\| x-y\|_{\mathcal{H}}.
-            \end{aligned}
-        \end{equation}
-        Now, if $\| x-y\|_{\mathcal{H}}\le \delta $, then from \eqref{s3.17} we
-        get
-        $
-             \|
-                \Psi_t^x - \Psi_t^y
-             \|_{\big( L^2(\mathcal{H}, \mu) \big)^2}
-             \le
-                G(t) \delta
-        $.
-    \end{proof}
-%
-    \begin{remark}
-        If we consider in addition the supremum norm on $t$, then from
-        \eqref{s3.17} we get
-        \begin{equation}
-            \label{s3.13}
-            \begin{aligned}
-                \sup_{0\le t\le T}\| \Psi_t^x-\Psi_t^y\|_{
-                    \big(L^2(\mathcal{H},\mu) \big)^2} ^ 2
-                    \le&
-                     C \| x-y\|_{\mathcal{H}}^2
-                     \sup_{0\le t\le T} f(t)
-                     \\
-                     &+
-                    \exp(CT)
-                    \int_{\mathcal{H}\times \mathcal{H}}
-                    \|x-y\|_{\mathcal{H}}^2 \mu(dx)\mu(dy) \ .
-            \end{aligned}
-        \end{equation}
-        Notice that $f(t)$ is differentiable and continuous, then
-        $\sup_{0\le t\le T} f(t)\le C$, then from \eqref{s3.13} we obtain
-        \begin{equation}
-            \label{s3.14}
-            \begin{aligned}
-                \sup_{0\le t\le T}
-                \|
-                    \Psi_t^x-\Psi_t^y
-                \|_{\big(L^2(\mathcal{H},\mu)\big)^2}
-                &\le
-                C \| x-y\|_{\mathcal{H}}
-                \\
-                & +
-                \exp(CT)
-                \int_{\mathcal{H}\times \mathcal{H}}
-                \| x-y\|_{\mathcal{H}}^2 \mu(dx)\mu(dy) \ .
-            \end{aligned}
-        \end{equation}
-        From this inequality it is possible to show the continuously dependence
-        on the initial conditions for this norm.
-    \end{remark}
+%----------------------------------------------------------------
 
 \section{Numerical experiments}
     \label{sec:NumericalExperiments}
@@ -2745,7 +1936,17 @@ conditions.
     scheme preserves the underlying initial condition continuity. To
     this end, we solve  a stochastic version of the  Fisher and Burgers PDEs
     with two near initial function conditions $x(\xi)$,
-    $\widehat{x}(\xi)$. In \cite{matsumyaRepo} we provide a GitHub repository
+    $\widehat{x}(\xi)$. 
+
+        The numerical scheme for Kolmogorov equations associated with these SPDEs
+    has been studied by Delgado-Vences and Flandoli in \cite{de-fl}. 
+    They rewrite these models as the abstract SPDE \eqref{P1s2.1} 
+    and define its associated Kolmogorov equation \eqref{P1s2.3}. 
+    Hence we assume that, for the following Fisher and Burgers SPDEs,  
+    the abstract form \eqref{P1s2.1} and its associated Kolmogorov 
+    equation \eqref{P1s2.3} are well-defined.
+
+        In \cite{matsumyaRepo} we provide a GitHub repository
     with a Python implementation to reproduce the following figures. We also
     provide in \cite{plotlyFisher, plotlyBurgers}, the 3D color on-line plotly
     versions of the regarding solutions.
